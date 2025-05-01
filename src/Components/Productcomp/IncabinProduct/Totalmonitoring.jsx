@@ -45,7 +45,7 @@ const Totalmonitoring = () => {
           if (element) {
             const header = document.querySelector('header') || document.querySelector('.mobile-header');
             const headerHeight = header ? header.offsetHeight : 80;
-            const yOffset = -headerHeight - 130;
+            const yOffset = -headerHeight -40;
   
             const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
   
@@ -69,7 +69,10 @@ const Totalmonitoring = () => {
             <Section id="top">
             <ProductBanner/>
             <Whatisneed/>
-            <div id="driverTab">
+            <div  id="driverTab">
+              <div className='Total-Tab-title'>
+                <p>e-con's Cameras for In-Cabin Monitoring Cameras</p>
+              </div>
             <DriverTab/>
             </div>
             </Section>

@@ -77,9 +77,6 @@ const Whatisneed = () => {
   ))}
 </div>
 
-
-        <br />
-        <h1 className="whatneed-econ">e-con's Cameras for Rear View</h1>
       </div>
     </div>
   );

@@ -29,7 +29,7 @@ const App = () => {
 
   return (
 
-          <BrowserRouter>
+          <BrowserRouter >
                     <HelmetProvider>
           
               <ScrollToTop /> 

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Carousel } from 'antd';
 import './vediosec.css';
+import Pedestrian from "../../../assets/homepage/obstacle-pedestrian-thumbnail.jpg";
+import LaneDeparture from "../../../assets/homepage/lane-keeping-assist-thumbnail.jpg";
+import CollisionWarning from "../../../assets/homepage/forward-collision-thumbnail.jpg";
 import surroundview from "../../../assets/homepage/surroundview-thumbnail.jpg";
 import deliveryrobot from "../../../assets/homepage/delivery-robot-thumbnail.jpg";
 import GMSLcamera from "../../../assets/homepage/forward-facing-thumbnail.jpg";
@@ -14,6 +17,11 @@ const VedioSection = () => {
   const [currentVideo, setCurrentVideo] = useState('');
 
   const allCardData = [
+    [
+      { image: Pedestrian, title: "Pedestrian & Obstacle avoidance systems", videoUrl: "https://www.youtube.com/embed/20ih9JyCuu4?autoplay=1" },
+      { image: LaneDeparture, title: "Lane Departure Warning / Lane Keeping Assist System", videoUrl: "https://www.youtube.com/embed/iih7ia04JXA?autoplay=1" },
+      { image: CollisionWarning, title: "Collision Warning System | STURDeCAM88", videoUrl: "https://www.youtube.com/embed/pLdavMYVnRs?autoplay=1" }
+    ],
     [
       { image: surroundview, title: "Surround View Camera for Industrial", videoUrl: "https://www.youtube.com/embed/VDIwwgNt6aE?autoplay=1" },
       { image: deliveryrobot, title: "Outdoor Delivery Robot", videoUrl: "https://www.youtube.com/embed/3f9qeT1YpgM?autoplay=1" },

@@ -46,7 +46,7 @@ const Section = ({ children, id }) => (
         if (element) {
           const header = document.querySelector('header') || document.querySelector('.mobile-header');
           const headerHeight = header ? header.offsetHeight : 80;
-          const yOffset = -headerHeight - 130;
+          const yOffset = -headerHeight -40;
 
           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
@@ -70,7 +70,10 @@ const Section = ({ children, id }) => (
       <Section id="top">
         <ProductBanner />
         <Whatisneed />
-        <div id="forwardTab">
+        <div  id="forwardTab">
+              <div className='Total-Tab-title'>
+                <p>e-con's Cameras for Forward Facing</p>
+              </div>
           <Forwardtab />
         </div>
       </Section>

@@ -37,6 +37,7 @@ const Section = ({ children, id }) => (
   )
 );
 
+
   useEffect(() => {
     const scrollToSection = () => {
       const hash = location.state?.hash || window.location.hash;
@@ -45,7 +46,7 @@ const Section = ({ children, id }) => (
         if (element) {
           const header = document.querySelector('header') || document.querySelector('.mobile-header');
           const headerHeight = header ? header.offsetHeight : 80;
-          const yOffset = -headerHeight - 130;
+          const yOffset = -headerHeight -40;
 
           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
@@ -69,7 +70,10 @@ const Section = ({ children, id }) => (
              <Section id="top">
             <ProductBanner/>
             <Whatisneed/>
-            <div id="surroundTab">
+            <div  id="surroundTab">
+              <div className='Total-Tab-title'>
+                <p>e-con's Cameras for Surround View</p>
+              </div>
             <Producttab />
             </div>
             </Section>
