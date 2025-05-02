@@ -1,4 +1,4 @@
-.casestudy-container {
+/* .casestudy-container {
     padding: 1.5em;
     background: #5b79b4;
 }
@@ -127,4 +127,111 @@
     .case-image {
         height: 200px; 
     }
-}
+} */
+.productcase-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   height: auto;
+   overflow-x: hidden;
+  }
+  
+  .productcase-title {
+    padding: 1.1em;
+    text-align: center; 
+    font-size: 2.5em;
+    color: #344ea1;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .productcase-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #f1f2f2;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 1000px;
+  }
+  
+  .productcase-card-left {
+    flex: 1;
+  }
+  
+  .productcase-card-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+  }
+  
+  .productcase-card-right {
+    flex: 1;
+    padding-left: 25px;
+  }
+  
+  .productcase-card-title {
+    line-height: 1.5em;
+    font-style: normal;
+    color: #003873;
+    font-size: 1.3em;
+    text-align: justify;
+  }
+  .casestudy-btn{
+    padding: 3px;
+    margin-top: 5px;
+    border-radius: 7px;
+  }
+  .productcase-card-paragraph {
+    line-height: 1.7em;
+    font-style: normal;
+    color: #344ea1;
+    font-size: 1.1em;
+    text-align: justify;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .productcase-card {
+      flex-direction: column;
+    }
+    .productcase-title {
+      padding: 1em;
+    }
+    .productcase-card-right {
+      padding-left: 0;
+      padding-top: 16px;
+      padding: 2em;
+      text-align: center;
+    }
+    .productcase-card-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .productcase-card-title {
+      font-size: 1em;
+    }
+  
+    .productcase-card-paragraph {
+      font-size: 1em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .productcase-card-title {
+      font-size: 1em;
+    }
+  
+    .productcase-card-paragraph {
+      font-size: 1em;
+    }
+    .productcase-card-image {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+  }
+  

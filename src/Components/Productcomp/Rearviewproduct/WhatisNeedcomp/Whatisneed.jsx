@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import "./Whatisneed.css";
 
 import hdr from "../../../../assets/Productpage/rearview/hdr.png";
 import diverselens  from "../../../../assets/Productpage/rearview/diverse-lens.png";

@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import "./Whatisneed.css";
 
 import hdr from "../../../../assets/Productpage/forwardfacing/hdr.png";
 import lfm from "../../../../assets/Productpage/forwardfacing/lfm.png";

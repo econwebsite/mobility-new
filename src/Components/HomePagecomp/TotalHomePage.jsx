@@ -4,7 +4,7 @@ import Homebanner from "./Homebanner/Homebanner";
 import Certification from "./Certification/Certification";
 import Manufacturing from "./Manufacturingcapablities/Manufacturing";
 import Watchvedios from "./Watchvedioscomp/Vediosection";
-// import Casestudy from "./Casestudycomp/Casestudy";
+import Casestudy from "./Casestudycomp/Casestudy";
 import Blog from "./Blogcomp/Blog";
 import ContactUs from "./Homecontactus/ContactUs";
 import Paragraph from "./Paragraphcomp/Paragraph";
@@ -77,13 +77,13 @@ const TotalHomePage = () => {
       <Section index={6}>
         <Watchvedios />
       </Section>
-      {/* <Section index={7}>
-        <Casestudy />
-      </Section> */}
       <Section index={7}>
-        <Blog />
+        <Casestudy />
       </Section>
       <Section index={8}>
+        <Blog />
+      </Section>
+      <Section index={9}>
         <ContactUs />
       </Section>
     </div>

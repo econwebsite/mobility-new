@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import "./Whatisneed.css";
 
 import resolution from "../../../../assets/Productpage/drivermonitoring/resolution.png";
 import highframerate from "../../../../assets/Productpage/drivermonitoring/highframe-rate.png";

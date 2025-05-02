@@ -21,6 +21,8 @@ import NotFoundPage from "./Components/Notfoundpage";
 import TotalIndustries from './Components/Industriescomp/TotalIndustries';
 import popupimg from "./assets/homepage/STURDeCAM88-popup.png"
 import PopupModal from './Components/Popupcomp/PopupModal';
+import Fullcasestudy from './Components/HomePagecomp/Casestudycomp/CasestudyContent/FullCasestudy';
+
 
 const App = () => {
   const [showPopup, setShowPopup] = useState(true);
@@ -29,7 +31,9 @@ const App = () => {
 
   return (
 
-          <BrowserRouter >
+          <BrowserRouter 
+          // basename="/mobility"
+          >
                     <HelmetProvider>
           
               <ScrollToTop /> 
@@ -54,7 +58,8 @@ const App = () => {
         <Route path="/blog/how-driver-monitoring-cameras-improve-safety-features/" element={<DrivermonBlog/>} />
         <Route path="/blog/how-forward-facing-camera-works-in-adas/" element={<ForwardBlog/>} />
         <Route path="/blog/how-surround-view-cameras-improve-driving-parking-safety/" element={<SurroundBlog/>} />
-       
+        <Route path="/fullcasestudy" element={<Fullcasestudy/>} />
+
         <Route path="/industries" element={<TotalIndustries/>} />
         <Route path="/industries/:marketName?" element={<TotalIndustries />} />        
         <Route path="*" element={<NotFoundPage />} />

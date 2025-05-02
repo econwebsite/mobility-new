@@ -117,16 +117,12 @@ function Modelform({ visible, onClose, type, docName, productName, title }) {
       queries: values.queries || ''
     };
   
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'contact_form_submit',
+      ...trackingData
+    });
   
-    if (window.gtag) {
-      window.gtag('event', 'contact_form_submit', {
-        event_category: 'form',
-        event_label: 'Contact Page',
-        value: 1,
-        ...trackingData,
-      });
-    }
-
 
     if (type === 'download') {
       values.productName = productName;
