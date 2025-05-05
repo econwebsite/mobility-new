@@ -24,13 +24,13 @@ const Section = ({ children, id }) => (
   isMobile ? (
     <div id={id} style={{ marginBottom: "1px" }}>{children}</div>
   ) : (
-    <motion.div
+  <motion.div
       id={id}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
       variants={sectionVariants}
-      style={{ marginBottom: "1px" }}
+      style={{ marginBottom: "1px",overflow:"hidden" }}
     >
       {children}
     </motion.div>

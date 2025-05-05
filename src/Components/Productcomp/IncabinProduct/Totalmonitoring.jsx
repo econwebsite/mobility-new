@@ -24,14 +24,14 @@ const Totalmonitoring = () => {
     isMobile ? (
       <div id={id} style={{ marginBottom: "1px" }}>{children}</div>
     ) : (
-      <motion.div
-        id={id}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }}
-        variants={sectionVariants}
-        style={{ marginBottom: "1px" }}
-      >
+       <motion.div
+           id={id}
+           initial="hidden"
+           whileInView="visible"
+           viewport={{ once: true, amount: 0.2 }}
+           variants={sectionVariants}
+           style={{ marginBottom: "1px",overflow:"hidden" }}
+         >
         {children}
       </motion.div>
     )

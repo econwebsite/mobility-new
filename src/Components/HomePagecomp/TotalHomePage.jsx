@@ -17,7 +17,7 @@ const isMobile = window.innerWidth <= 769;
 const sectionVariants = {
   hidden: (direction) => ({
     opacity: 0,
-    y: direction === "up" ? 40 : -20,
+    y: direction === "up" ? 20 : -10,
   }),
   visible: {
     opacity: 1,

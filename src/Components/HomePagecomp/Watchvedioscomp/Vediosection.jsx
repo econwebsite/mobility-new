@@ -18,9 +18,9 @@ const VedioSection = () => {
 
   const allCardData = [
     [
-      { image: Pedestrian, title: "Pedestrian & Obstacle avoidance systems", videoUrl: "https://www.youtube.com/embed/20ih9JyCuu4?autoplay=1" },
+      { image: Pedestrian, title: "Pedestrian & Obstacle avoidance system", videoUrl: "https://www.youtube.com/embed/20ih9JyCuu4?autoplay=1" },
       { image: LaneDeparture, title: "Lane Departure Warning / Lane Keeping Assist System", videoUrl: "https://www.youtube.com/embed/iih7ia04JXA?autoplay=1" },
-      { image: CollisionWarning, title: "Collision Warning System | STURDeCAM88", videoUrl: "https://www.youtube.com/embed/pLdavMYVnRs?autoplay=1" }
+      { image: CollisionWarning, title: "Forward Collision Warning System", videoUrl: "https://www.youtube.com/embed/pLdavMYVnRs?autoplay=1" }
     ],
     [
       { image: surroundview, title: "Surround View Camera for Industrial", videoUrl: "https://www.youtube.com/embed/VDIwwgNt6aE?autoplay=1" },

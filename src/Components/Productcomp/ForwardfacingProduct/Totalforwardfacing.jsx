@@ -7,6 +7,7 @@ import Forwardtab from "./ProductTabscomp/Forwardtab";
 import ProductBlog from "./ProductBlogs/ProductBlogs";
 import ContactUs from "../../HomePagecomp/Homecontactus/ContactUs";
 import ForwardApplications from './ProductApplication/ForwardApplications';
+import ReleatedVideos from "./ReleatedVedioscomp/Releatedvedios"
 import { Helmet } from 'react-helmet-async';
 
 
@@ -17,8 +18,12 @@ const Totalforwardfacing = () => {
   const isMobile = window.innerWidth <= 768;
 
 const sectionVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  hidden: {
+    opacity: 0,
+    y: 30,
+    scale: 0.98,
+    willChange: "opacity, transform",
+  },  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
 const Section = ({ children, id }) => (
@@ -29,9 +34,9 @@ const Section = ({ children, id }) => (
       id={id}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
       variants={sectionVariants}
-      style={{ marginBottom: "1px" }}
+      style={{ marginBottom: "1px",overflow:"hidden" }}
     >
       {children}
     </motion.div>
@@ -84,6 +89,8 @@ const Section = ({ children, id }) => (
       <Section>
         <ProductBlog />
       </Section>
+  <ReleatedVideos/>
+
       <Section>
         <ContactUs />
       </Section>

@@ -14,14 +14,14 @@ const FullCasestudy = () => {
   return (
     <div className="future-case-container">
        <Helmet>
-                <title>Building a Customized Multi-Camera Solution for Blind Spot Elimination in Large Mining Vehicles</title>
+                <title>Developing a rugged, multi-camera setup for off-road mining vehicles</title>
                 <meta name='description' content='Learn how e-con Systems developed a custom camera for an AI-driven, portable pre-cancer screening device. Discover the innovations and solutions provided.' />
             </Helmet>
       <div className='mainContainer'>
         <div className="future-case-banner">
           <img src={caseimg} alt="Banner" className="w-100" />
           <h1 className="future-case-heading">
-          Building a Customized Multi-Camera Solution for Blind Spot Elimination in Large Mining Vehicles
+          Developing a rugged, multi-camera setup for off-road mining vehicles
           </h1>
           <Modelbutton className="future-case-button" text="Download casestudy" backgroundColor="#344ea1" animationColor="#69ba2f" hoverColor="#69ba2f" productName="CaseStudy" docName="point-of-care-device" title="Case Study" />
 
@@ -29,22 +29,26 @@ const FullCasestudy = () => {
 
         <h2 className="future-case-sub-heading">Summary of the Solution</h2>
         <p className="future-case-paragraph">
-        e-con Systems enabled a rugged, custom multi-camera solution with high-quality imaging, IP67-rated enclosure and 360° visibility for large mining vehicles—helping the customer to overcome blind spots and operate safely in low-light, dusty environments.
+        e-con Systems worked with a leading mining technology provider to develop a rugged, multi-camera surround view system for large off-road vehicles. We deployed high-resolution cameras integrated with a high-performance Sony sensor and came with features like 15-meter cable support, IP67-rated enclosures, customized ISP tuning and more.
         </p>
 
         <h2 className="future-case-sub-heading">Key Challenges Faced by the Client</h2>
         <div className="future-case-image-row">
           <div className="future-case-challenge">
             <img src={aiicon1} alt="Challenge 1" className="future-case-challenge-image" />
-            <p>Minimum working distance of 10 to 150 mm</p>
+            <p>Lack of a seamless 360° view to fully eliminate blind spots</p>
           </div>
           <div className="future-case-challenge">
             <img src={aiicon2} alt="Challenge 2" className="future-case-challenge-image" />
-            <p>Android support with full access to the camera controls</p>
+            <p>Harsh environmental exposure that affects imaging performance</p>
           </div>
           <div className="future-case-challenge">
             <img src={aiicon3} alt="Challenge 3" className="future-case-challenge-image" />
-            <p>Unique form factor to fit into the application</p>
+            <p>Inability to provide alerts to operators based on real-time data</p>
+          </div>
+          <div className="future-case-challenge">
+            <img src={aiicon3} alt="Challenge 3" className="future-case-challenge-image" />
+            <p>Integration complexities with the systems of mining vehicles</p>
           </div>
         </div>
 
@@ -54,8 +58,10 @@ const FullCasestudy = () => {
           <img src={benifit} alt="Benefits" className="future-case-benefits-image" />
           <div className="future-case-benefits-details">
             <ul>
-              <li>Customized liquid lens and lens mount holder to meet the required working distance range</li>
-              <li>Android interface support with our proprietary Android SDK and video streaming application WebeeCAM</li>
+              <li>Improved safety through real-time monitoring of blind spots</li>
+              <li>Higher uptime due to fewer accidents and faster decision-making</li>
+              <li>Durability in extreme weather and terrain with IP67 camera enclosures</li>
+              <li>Faster deployment by avoiding changes to vehicle chassis or wiring</li>
               <Modelbutton className="ProductTabs-Button" text="Download casestudy" backgroundColor="#344ea1" animationColor="#69ba2f" hoverColor="#69ba2f" productName="CaseStudy" docName="point-of-care-device" title="Case Study"/>
 
             </ul>
