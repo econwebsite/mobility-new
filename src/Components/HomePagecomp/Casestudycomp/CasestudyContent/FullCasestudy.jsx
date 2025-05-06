@@ -1,12 +1,12 @@
 import React from "react";
 import './fullcase.css';
-import caseimg from "../../../../assets/homepage/home-banner.jpg";
-import aiicon1 from "../../../../assets/homepage/aiicon1.png";
-import aiicon2 from "../../../../assets/homepage/aiicon2.png";
-import aiicon3 from "../../../../assets/homepage/aiicon3.png";
-// import relatedCaseImg2 from "../../assets/Futurecasestudy/Improving-Dental.jpg";
-// import dualethernet from "../../assets/Futurecasestudy/Dual-ethrnet-cam.jpg";
-import benifit from "../../../../assets/homepage/combined-vibration.jpg"
+import caseimg from "../../../../assets/hubpage/casestudy/mining-banner.jpg";
+import threesixty from "../../../../assets/hubpage/casestudy/360-icon.png";
+import harshicon from "../../../../assets/hubpage/casestudy/harsh-environment-icon.png";
+import inability from "../../../../assets/hubpage/casestudy/real-time-data-icon.png";
+import integrity from "../../../../assets/hubpage/casestudy/integrity-complexities-icon.png";
+
+import miningcard from "../../../../assets/hubpage/casestudy/benifits-card-img.jpg"
 import Modelbutton from "../../../ButtonComp/Modelbutton";
 import { Helmet } from 'react-helmet-async';
 
@@ -35,19 +35,19 @@ const FullCasestudy = () => {
         <h2 className="future-case-sub-heading">Key Challenges Faced by the Client</h2>
         <div className="future-case-image-row">
           <div className="future-case-challenge">
-            <img src={aiicon1} alt="Challenge 1" className="future-case-challenge-image" />
+            <img src={threesixty} alt="Challenge 1" className="future-case-challenge-image" />
             <p>Lack of a seamless 360° view to fully eliminate blind spots</p>
           </div>
           <div className="future-case-challenge">
-            <img src={aiicon2} alt="Challenge 2" className="future-case-challenge-image" />
+            <img src={harshicon} alt="Challenge 2" className="future-case-challenge-image" />
             <p>Harsh environmental exposure that affects imaging performance</p>
           </div>
           <div className="future-case-challenge">
-            <img src={aiicon3} alt="Challenge 3" className="future-case-challenge-image" />
+            <img src={inability} alt="Challenge 3" className="future-case-challenge-image" />
             <p>Inability to provide alerts to operators based on real-time data</p>
           </div>
           <div className="future-case-challenge">
-            <img src={aiicon3} alt="Challenge 3" className="future-case-challenge-image" />
+            <img src={integrity} alt="Challenge 3" className="future-case-challenge-image" />
             <p>Integration complexities with the systems of mining vehicles</p>
           </div>
         </div>
@@ -55,7 +55,7 @@ const FullCasestudy = () => {
         {/* Benefits Section */}
         <h2 className="future-case-benefits-title">Benefits of the Solution</h2>
         <div className="future-case-benefits-container">
-          <img src={benifit} alt="Benefits" className="future-case-benefits-image" />
+          <img src={miningcard} alt="Benefits" className="future-case-benefits-image" />
           <div className="future-case-benefits-details">
             <ul>
               <li>Improved safety through real-time monitoring of blind spots</li>

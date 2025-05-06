@@ -108,7 +108,7 @@ function Modelform({ visible, onClose, type, docName, productName, title }) {
  const onFinish = (values) => {
   if(isError){
     setIsLoading(true);
-    const trackingData = {
+   const trackingData = {
       email: values.email,
       company_name: values.companyName,
       phone_number: values.contactNumber,
@@ -117,12 +117,12 @@ function Modelform({ visible, onClose, type, docName, productName, title }) {
       queries: values.queries || ''
     };
   
+  
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: 'contact_form_submit',
       ...trackingData
     });
-  
 
     if (type === 'download') {
       values.productName = productName;

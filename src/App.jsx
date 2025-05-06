@@ -58,7 +58,7 @@ const App = () => {
         <Route path="/blog/how-driver-monitoring-cameras-improve-safety-features/" element={<DrivermonBlog/>} />
         <Route path="/blog/how-forward-facing-camera-works-in-adas/" element={<ForwardBlog/>} />
         <Route path="/blog/how-surround-view-cameras-improve-driving-parking-safety/" element={<SurroundBlog/>} />
-        <Route path="/fullcasestudy" element={<Fullcasestudy/>} />
+        <Route path="/mining-vehical-casestudy" element={<Fullcasestudy/>} />
 
         <Route path="/industries" element={<TotalIndustries/>} />
         <Route path="/industries/:marketName?" element={<TotalIndustries />} />        

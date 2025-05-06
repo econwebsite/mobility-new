@@ -108,6 +108,22 @@ const ContactUs = () => {
     const onFinish = (values) => {
       if(isError){
       setIsLoading(true);
+      const trackingData = {
+        email: values.email,
+        company_name: values.companyName,
+        phone_number: values.contactNumber,
+        country: values.country,
+        state: values.state || '',
+        queries: values.queries || ''
+      };
+    
+    
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'contact_form_submit',
+        ...trackingData
+      });
+      
       axios.post(`https://api.dental.e-consystems.com/api/contactusform`, { values })
         .then(result => {
           message.success('Message sent successfully!');
