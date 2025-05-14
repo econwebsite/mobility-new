@@ -183,7 +183,7 @@ const NavBar = () => {
     }}>
       <MenuItem 
         component={Link} 
-        to="/industries/agricultural-vehicles" 
+        to="/industries/agricultural-vehicle-camera-systems" 
         onClick={() => {
           handleIndustriesPopoverClose();
           setMobileOpen(false);
@@ -193,7 +193,7 @@ const NavBar = () => {
       </MenuItem>
       <MenuItem 
         component={Link} 
-        to="/industries/mining-vehicles" 
+        to="/industries/mining-vehicle-camera-systems" 
         onClick={() => {
           handleIndustriesPopoverClose();
           setMobileOpen(false);
@@ -203,7 +203,7 @@ const NavBar = () => {
       </MenuItem>
       <MenuItem 
         component={Link} 
-        to="/industries/delivery-robots" 
+        to="/industries/autonomous-delivery-robot-cameras" 
         onClick={() => {
           handleIndustriesPopoverClose();
           setMobileOpen(false);
@@ -213,7 +213,7 @@ const NavBar = () => {
       </MenuItem>
       <MenuItem 
         component={Link} 
-        to="/industries/construction-vehicles" 
+        to="/industries/rugged-cameras-for-construction-vehicles" 
         onClick={() => {
           handleIndustriesPopoverClose();
           setMobileOpen(false);
@@ -223,7 +223,7 @@ const NavBar = () => {
       </MenuItem> 
       <MenuItem 
         component={Link} 
-        to="/industries/garbage-trucks" 
+        to="/industries/garbage-truck-vision-systems" 
         onClick={() => {
           handleIndustriesPopoverClose();
           setMobileOpen(false);
@@ -234,7 +234,7 @@ const NavBar = () => {
     
       <MenuItem 
         component={Link} 
-        to="/industries/autonomous-vehicles" 
+        to="/industries/autonomous-vehicle-vision-systems" 
         onClick={() => {
           handleIndustriesPopoverClose();
           setMobileOpen(false);
@@ -244,7 +244,7 @@ const NavBar = () => {
       </MenuItem>
       <MenuItem 
         component={Link} 
-        to="/industries/delivery-trucks" 
+        to="/industries/delivery-truck-vision-systems" 
         onClick={() => {
           handleIndustriesPopoverClose();
           setMobileOpen(false);
@@ -254,7 +254,7 @@ const NavBar = () => {
       </MenuItem>
       <MenuItem 
         component={Link} 
-        to="/industries/lawn-mowers" 
+        to="/industries/autonomous-lawn-mower-vision-systems" 
         onClick={() => {
           handleIndustriesPopoverClose();
           setMobileOpen(false);
@@ -356,14 +356,14 @@ const NavBar = () => {
         {mobileIndustriesOpen && (
           <List sx={{ pl: 2 }}>
             {[
-              { label: 'Agricultural Vehicles', path: '/industries/agricultural-vehicles' },
-              { label: 'Mining Vehicles', path: '/industries/mining-vehicles' },
-              { label: 'Delivery Robots', path: '/industries/delivery-robots' },
-              { label: 'Construction Vehicles', path: '/industries/construction-vehicles' },
-              { label: 'Garbage Trucks', path: '/industries/garbage-trucks' },
-              { label: 'Autonomous Vehicles', path: '/industries/autonomous-vehicles' },
-              { label: 'Delivery Trucks', path: '/industries/delivery-trucks' },
-              { label: 'Lawn Mowers', path: '/industries/lawn-mowers' },
+              { label: 'Agricultural Vehicles', path: '/industries/agricultural-vehicle-camera-systems' },
+              { label: 'Mining Vehicles', path: '/industries/mining-vehicle-camera-systems' },
+              { label: 'Delivery Robots', path: '/industries/autonomous-delivery-robot-cameras' },
+              { label: 'Construction Vehicles', path: '/industries/rugged-cameras-for-construction-vehicles' },
+              { label: 'Garbage Trucks', path: '/industries/garbage-truck-vision-systems' },
+              { label: 'Autonomous Vehicles', path: '/industries/autonomous-vehicle-vision-systems' },
+              { label: 'Delivery Trucks', path: '/industries/delivery-truck-vision-systems' },
+              { label: 'Lawn Mowers', path: '/industries/autonomous-lawn-mower-vision-systems' },
 
    
             ].map((item, index) => (

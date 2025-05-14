@@ -19,9 +19,8 @@ import ForwardBlog from "./Components/FutureBlog/ForwardBlog"
 import SurroundBlog from "./Components/FutureBlog/SurroundBlog"
 import NotFoundPage from "./Components/Notfoundpage";
 import TotalIndustries from './Components/Industriescomp/TotalIndustries';
-import popupimg from "./assets/homepage/STURDeCAM88-popup.png"
-import PopupModal from './Components/Popupcomp/PopupModal';
-import Fullcasestudy from './Components/HomePagecomp/Casestudycomp/CasestudyContent/FullCasestudy';
+
+import Fullcasestudy from './Components/HomePagecomp/Casestudycomp/CasestudyContent/MiningCasestudy';
 
 
 const App = () => {
@@ -40,12 +39,7 @@ const App = () => {
 
     <div className='fixed-container'>
       <NavBar/>
-      <PopupModal
-            show={showPopup}
-            onClose={handleClosePopup}
-            imageUrl={popupimg} 
-            linkUrl="https://www.e-consystems.com/nvidia-cameras/jetson-agx-orin-cameras/4k-omnivision-ox08b40-140db-hdr-gmsl2-camera.asp"       
-          />
+
       <Routes>
         <Route path="/" element={<TotalHomePage />} />
         <Route path="/surround-view-cameras" element={<TotalSurroundview/>} />
@@ -58,7 +52,7 @@ const App = () => {
         <Route path="/blog/how-driver-monitoring-cameras-improve-safety-features/" element={<DrivermonBlog/>} />
         <Route path="/blog/how-forward-facing-camera-works-in-adas/" element={<ForwardBlog/>} />
         <Route path="/blog/how-surround-view-cameras-improve-driving-parking-safety/" element={<SurroundBlog/>} />
-        <Route path="/mining-vehical-casestudy" element={<Fullcasestudy/>} />
+        <Route path="/case-study/rugged-multi-camera-setup-for-off-road-mining-vehicles" element={<Fullcasestudy/>} />
 
         <Route path="/industries" element={<TotalIndustries/>} />
         <Route path="/industries/:marketName?" element={<TotalIndustries />} />        

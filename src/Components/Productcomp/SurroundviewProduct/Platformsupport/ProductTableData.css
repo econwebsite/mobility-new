@@ -1,110 +1,193 @@
 .ProductTableData-TotalContBox {
   width: 100%;
-  overflow-x: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.ProductTableData-ContainerBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  background-color: white;
+
+.ProductTable-Box {
+  margin-bottom: 1.5rem;
 }
-.ProductTable-title{
+
+.ProductTable-title {
   color: #003873;
-  font-weight: 500;
-  font-size: 1.1em;
-  padding: 1em 0.5em 1em 0.5em;
+  font-size: 1.3rem;
+  padding: 1em;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ProductTable-title img {
+  height: 1.5rem;
+  width: auto;
+}
+
+.ProductTableData-ImageHighlightRow {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  gap: 1rem;
 }
 
 .ProductTableData-ImageColumn {
-  flex-basis: 30%;
+  border-radius: 8px;
+  padding: 1.5rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 0px;
-
+  justify-content: center;
 }
 
-.ProductTableData-LeftColumn {
-  flex-basis: 70%;
-  height: 100%;
+.ProductTableData-ImageColumn img {
+  max-width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: contain;
+      transform: scale(1);
+    transition: transform 2s ease-in-out;
+
+}
+.ProductTableData-ImageColumn img:hover{
+  transform: scale(1.10);
   
 }
-.ProductTableData-LeftColumn td{
-  color: #344ea1;
-}
-.ProductTableData-ImageColumn img {
-  width: 100%;
-  height: auto;
-  max-height: 275px;
-  margin-top: 0px;
-  margin-bottom: 20px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0 !important;
-  border-color: #344ea1;
-}
-
-.ProductTableData-LeftColumn td {
-  padding: 15px;
-  vertical-align: middle;
-  text-align: left; 
-}
-.ProductTableData-ImageWrapper {
+.ProductTableData-HighlightColumn {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
-
 }
 
-.ProducTable-button {
-  margin-top: 10px; 
-  text-align: center;
-  font-size: 0.9em;
-  padding: 15px 5px; 
+.highlight-heading {
+  color: #003873;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #00aeef;
+}
+
+.highlight-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.highlight-list li {
+  color: #344ea1;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.highlight-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 1.2em;
+  height: 1.2em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M7.629 13.814L3.47 9.655l-1.413 1.414 5.572 5.571 11.314-11.314-1.414-1.414z' fill='%2300aeef'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+}
+
+.ProductTabs-total-Button {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.ProductTabs-Button {
+  padding: 13px 6px;
+  font-size: 0.95rem;
   border-radius: 6px;
+  text-align: center;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  color: white;
 }
 
-
-
-table td{
-border: 1px solid #344ea1;
+.ProductTabs-Button1 {
+  padding: 1px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 120px;
 }
 
 @media (max-width: 768px) {
-  .ProductTableData-ContainerBox {
-    flex-direction: column; 
-    border: none;
+  .ProductTabs-total-Button {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .ProductTableData-ImageHighlightRow {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
-  table td {
-    border-right: 1px solid #344ea1 !important;
-    border-top: 1px solid #344ea1;
-    font-size: small !important;
+  .ProductTabs-Button {
+    min-width: 100%;
+    padding: 0.75rem 1rem;
   }
+  .ProductTabs-Button1{
+        min-width: 100%;
+text-align: center;
+  }
+  .ProductTableData-ImageColumn img:hover{
+  transform: none;
+  
+}
+}
 
-  .ProductTableData-ImageColumn {
-    flex-basis: 100%;
-    margin-bottom: 20px;
-  }
+.ProductTableData-TableWrapper {
+  margin-top: 2rem;
+  overflow: hidden;
+}
+.product-spec-table td.label-cell {
+  width: 30%;
+  font-weight: 500;
+  color: #003873;
+}
 
-  .ProductTableData-ImageColumn img {
-    width: 90% !important;
-    margin-bottom: 10px;
-  }
+.product-spec-table td.value-cell {
+  width: 60%;
+  color: #344ea1;
+}
 
-  .ProductTableData-LeftColumn {
-    flex-basis: 100%;
-  }
-  .ProductTableData-ContainerBox {
-    background-color: white;
-  }
+.table {
+  margin-bottom: 0;
+}
 
+.table td, .table th {
+  border-color: #344ea1;
+  vertical-align: middle;
+}
+
+.table th {
+  background: #003873;
+  color: #003873;
+  font-weight: 600;
+  padding: 1rem;
+  
+}
+
+.table td {
+  
+  color: #2d3a5f;
+  padding: 0.7rem;
+  
+}
+
+.table tr:nth-child(even) {
+  background: #003873;
+}
+
+.table-cell strong {
+  color: #003873;
 }

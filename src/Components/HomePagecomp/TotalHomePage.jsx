@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import { motion } from "framer-motion";
 import Homebanner from "./Homebanner/Homebanner";
 import Certification from "./Certification/Certification";
@@ -25,7 +25,7 @@ const sectionVariants = {
     transition: { duration: 0.6, ease: "easeOut", delay: 0.1 },
   },
 };
-
+ 
 const Section = ({ children, index }) => {
   if (isMobile) {
     return <div style={{ marginBottom: "0px" }}>{children}</div>;
@@ -50,12 +50,22 @@ const Section = ({ children, index }) => {
 };
 
 const TotalHomePage = () => {
+    const [isContactPage, setIsContactPage] = useState(false);
+  
+
+    useEffect(() => {
+      let url = window.location.pathname.replace('/', '');
+      if (url === "mobility/"? "/":"/") {
+        setIsContactPage(true);
+      }
+    }, []);
+  
   return (
     <div style={{ padding: "0px", margin: "0px" }}>
-          <Helmet>
+       {isContactPage &&    <Helmet>
       <title>Rugged IP69K ADAS Cameras for Autonomous & Off-Road Mobility</title>
       <meta name='description' content='IP69K ADAS cameras with HDR, LFM & ISO/IATF-certified build. Engineered for autonomous, off-road vehicles & delivery robots in extreme environments.' />
-      </Helmet>
+      </Helmet>}
       <Section index={0}>
         <Homebanner />
       </Section>
@@ -71,9 +81,9 @@ const TotalHomePage = () => {
       <Section index={4}>
         <Certification />
       </Section>
-      {/* <Section index={5}>
+      <Section index={5}>
         <Manufacturing />
-      </Section> */}
+      </Section>
       <Section index={6}>
         <Watchvedios />
       </Section>

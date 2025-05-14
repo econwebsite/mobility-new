@@ -117,33 +117,49 @@ const MarketWe = () => {
   const navigate = useNavigate();
   const [selectedMarket, setSelectedMarket] = useState(Object.keys(marketData)[0]);
 
-  const urlToMarketKey = (urlName) => {
-    if (!urlName) return '';
-    return urlName
-      .toLowerCase() 
-      .replace(/-/g, ' ')
-      .replace(/\b\w/g, c => c.toUpperCase()); 
-  };
+const urlToMarketKeyMap = {
+  "agricultural-vehicle-camera-systems": "Agricultural Vehicles",
+  "mining-vehicle-camera-systems": "Mining Vehicles",
+  "autonomous-delivery-robot-cameras": "Delivery Robots",
+  "rugged-cameras-for-construction-vehicles": "Construction Vehicles",
+  "garbage-truck-vision-systems": "Garbage Trucks",
+  "autonomous-vehicle-vision-systems": "Autonomous Vehicles",
+  "delivery-truck-vision-systems": "Delivery Trucks",
+  "autonomous-lawn-mower-vision-systems": "Lawn Mowers"
+};
 
-  const marketKeyToUrl = (key) => {
-    return key
-      .toLowerCase() 
-      .replace(/ /g, '-'); 
-  };
+const marketKeyToUrlMap = Object.entries(urlToMarketKeyMap).reduce(
+  (acc, [url, key]) => ({ ...acc, [key]: url }),
+  {}
+);
 
-  useEffect(() => {
-    if (marketName) {
-      const marketKey = urlToMarketKey(marketName);
-      if (marketData[marketKey]) {
-        setSelectedMarket(marketKey);
-      }
+const urlToMarketKey = (urlName) => {
+  if (!urlName) return '';
+  const mappedKey = urlToMarketKeyMap[urlName.toLowerCase()];
+  if (mappedKey) return mappedKey;
+  return urlName
+    .toLowerCase()
+    .replace(/-/g, ' ')
+    .replace(/\b\w/g, c => c.toUpperCase());
+};
+
+const marketKeyToUrl = (marketKey) => {
+  return marketKeyToUrlMap[marketKey] || 
+    marketKey.toLowerCase().replace(/ /g, '-');
+};
+
+useEffect(() => {
+  if (marketName) {
+    const marketKey = urlToMarketKey(marketName);
+    if (marketData[marketKey]) {
+      setSelectedMarket(marketKey);
     }
-  }, [marketName]);
-
-  const handleMarketChange = (market) => {
-    const urlchanging = marketKeyToUrl(market);
-    navigate(`/industries/${urlchanging}`);
-  };
+  }
+}, [marketName]);
+const handleMarketChange = (market) => {
+  const urlSlug = marketKeyToUrl(market);
+  navigate(`/industries/${urlSlug}`);
+};
 
   return (
     <div className="marketwe-container">

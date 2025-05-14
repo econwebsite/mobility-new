@@ -13,8 +13,8 @@ const BlogHubpage = () => {
   return (
     <div className="BlogHubPage-Total">
         <Helmet>
-      <title>e-con Systems: ODM Solutions for Mobility Cameras</title>
-      <meta name='description' content='e-con Systems Mobility offers ODM solutions for' />
+      <title>Driving the Future | e-con Mobility Blogs & Updates</title>
+      <meta name='description' content='Explore the latest in rugged camera technology, ADAS innovations, and mobility insights from e-con Mobility. Stay ahead with our expert blogs and updates.' />
       </Helmet>
       <h1 className="BlogHubPage-title">BLOG</h1>
       <div className="BlogHubPage-cards">

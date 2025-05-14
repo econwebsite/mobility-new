@@ -65,7 +65,7 @@ const Section = ({ children, id }) => (
     return (
         <div>
             <Helmet>
-      <title>Rear View Camera for ADAS & Mobility</title>
+      <title>Rear View Cameras for ADAS & Mobility</title>
       <meta name='description' content='Industrial-grade rear view cameras with wide-angle visibility and high-resolution imaging for safe reversing, blind spot elimination, and surround view integration.' />
       </Helmet>
              <Section id="top">

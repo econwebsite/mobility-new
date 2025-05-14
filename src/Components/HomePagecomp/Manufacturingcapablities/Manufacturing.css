@@ -1,154 +1,169 @@
-.manufacturing-container {
-  width: 100%;
-  background-color: #f1f2f2;
-  padding: 10px 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.manufacturing-comp-section {
+  position: relative;
+  padding: 3em 1em;
+  background: #3e5ba8;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.manufacturing-comp-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120vw;
+  height: 120vh;
+  background: radial-gradient(circle at 50% 50%, rgba(41, 98, 255, 0.15) 0%, rgba(41, 98, 255, 0) 70%);
+  pointer-events: none;
+}
+
+.manufacturing-comp-wrapper {
+  position: relative;
+  max-width: 1400px;
   margin: 0 auto;
+  z-index: 2;
 }
 
-.manufacturing-heading {
-  font-size: 2.5em;
-  font-weight: 200;
-  padding: 0.8em 0 0.5em 0;
-  color: #344ea1;
-}
-
-.manufacturing-paragraph {
-  font-size: 1rem;
-  color: #003873;
-  max-width: 1100px;
-  margin-bottom: 45px;
+.manufacturing-comp-heading {
+  font-size: 2.5rem;
   text-align: center;
+    color: white;
+  margin-bottom: 2rem;
+}
+
+.manufacturing-comp-heading-gradient {
+  color: white !important;
+  color: transparent;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200 !important;
+  padding: 0.5em;
+  font-size: 2.5rem;
+}
+
+.manufacturing-comp-description {
+  font-size: 1.25rem;
+  color: #a0b4d6;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto 4rem;
   line-height: 1.6;
+  padding: 0 1rem;
 }
 
-.manufacturing-tabs {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
+.manufacturing-comp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 0 2rem;
 }
 
-.manufacturing-tab-button {
-  background: #ffffff;
-  border: 2px solid #ccc;
-  border-radius: 25px;
-  font-size: 1rem;
-  font-weight: 400;
-  cursor: pointer;
-  padding: 10px 30px;
-  color: #344ea1;
-  transition: all 0.3s ease;
-}
-
-.manufacturing-tab-button:hover {
-  background-color: #e6ecf8;
-  color: #003873;
-  border-color: #344ea1;
-}
-
-.manufacturing-tab-button.active {
-  background-color: #344ea1;
-  color: #ffffff;
-  border-color: #344ea1;
-}
-
-.manufacturing-tab-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; 
-  gap: 30px;
-  width: 100%;
-  max-width: 1200px; 
-  margin: 0 auto; 
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeIn 0.6s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.manufacturing-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  width: calc(25% - 30px); 
-  max-width: 250px;
-  min-height: 250px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.manufacturing-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-.manufacturing-card-image {
-  width: 100%;
-  max-width: 200px;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.manufacturing-card-title {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #003873;
-}
-
-/* Tablet */
 @media (max-width: 1024px) {
-  .manufacturing-card {
-    width: calc(50% - 20px);
+  .manufacturing-comp-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
   }
 
-  .manufacturing-heading {
-    font-size: 2em;
-  }
-
-  .manufacturing-tab-button {
-    font-size: 0.95rem;
-    padding: 8px 20px;
+  .manufacturing-comp-heading {
+    font-size: 2.3rem;
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
-  .manufacturing-container {
-    padding: 20px 15px;
+  .manufacturing-comp-section {
+    padding: 3em 1em;
   }
 
-  .manufacturing-paragraph {
-    font-size: 0.95rem;
-    text-align: justify;
-    margin-bottom: 25px;
+
+  .manufacturing-comp-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0;
+  }
+.manufacturing-comp-heading-gradient{
+  font-size: 1.8rem;
+}
+  .manufacturing-comp-description {
+    font-size: 1.1rem;
   }
 
-  .manufacturing-tab-button {
-    padding: 6px 16px;
-    font-size: 0.85rem;
+  .manufacturing-comp-title {
+    font-size: 1.3rem;
   }
+}
 
-  .manufacturing-card {
-    width: 100%;
-    max-width: 100%;
-  }
+.manufacturing-comp-card {
+  position: relative;
+  perspective: 1000px;
+  min-height: 120px;
+  animation: cardEntrance 0.8s ease-out var(--delay) forwards;
+  opacity: 0;
+}
 
-  .manufacturing-tab-content {
-    gap: 20px;
+@keyframes cardEntrance {
+  from {
+    transform: translateY(50px) rotateX(20deg);
+    opacity: 0;
   }
+  to {
+    transform: translateY(0) rotateX(0);
+    opacity: 1;
+  }
+}
+
+.manufacturing-comp-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  transform-style: preserve-3d;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+}
+
+.manufacturing-comp-hover-gradient {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 50% 50%, rgba(41, 98, 255, 0.4) 0%, rgba(41, 98, 255, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.manufacturing-comp-card:hover .manufacturing-comp-card-inner {
+  transform: translateY(-8px) rotateX(3deg) rotateY(2deg);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4);
+}
+
+.manufacturing-comp-card:hover .manufacturing-comp-hover-gradient {
+  opacity: 1;
+}
+
+.manufacturing-comp-content {
+  position: relative;
+  z-index: 2;
+}
+
+.manufacturing-comp-title {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-weight: 200;
+  line-height: 1.4;
+}
+
+.manufacturing-comp-line {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #2962ff 0%, #00b8d4 100%);
+  transition: width 0.4s ease;
+}
+
+.manufacturing-comp-card:hover .manufacturing-comp-line {
+  width: 80px;
 }

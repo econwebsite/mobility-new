@@ -36,35 +36,66 @@ const [initialLeftTab, setInitialLeftTab] = useState(null);
       images: [],
     },
      '3MP GMSL2': {
-          tabs: ['STURDeCAM31', 'STRUDeCAM34'],
+          tabs: ['STURDeCAM31', 'STURDeCAM34'],
           content: {
-            'STURDeCAM31': {
-              tableData: [
-                ['Sony&reg ISX031', '3MP @ 60 fps'],
-            ['In-Built ISP', '120dB HDR'],
-            ['GMSL2 Interface', 'Output format: UYVY'],
-            ['IP69K', 'Operating Temperature : -40°C to 85°C'],
-            ['Multi-Camera Sync (Upto 8 cameras)', 'Compliance & Standards:<br>ISO 11452'],
-            ['Form factor:25 x 25 mm', '54.04°(H), 42.86°(V), 70.17°(D)'],
-              ],
-              title:"STURDeCAM31 - 3MP Sony® ISX031 120dB HDR Camera for Autonomous Mobility",
-               documentname:"e-con-STURDeCAM31-technical-documents.zip",
-          doctitle:"technical documents for STURDeCAM31"
-            },
-            'STRUDeCAM34': {
-              tableData: [
-                [' onsemi&reg; AR0341AT', '3MP @ 30 fps'],
-            ['In-Built ISP', '150dB HDR'],
-            ['GMSL2 Interface', 'Output format :UYVY'],
-            ['IP69K', 'Operating Temperature: -40°C to 85°C'],
-            ['Multi-Camera Sync (Upto 8 cameras)', 'Compliance & Standards :<br>ISO 11450'],
-            ['Form factor: 25 x 25 mm', 'FOV: 64.62° (H), 51.28° (V), 83.5° (D)'],
-              ],
-              title:"STURDeCAM34 - 3MP AR0341AT 140dB HDR Camera Module",
-               documentname:"e-con-STURDeCAM34-technical-documents.zip",
-               doctitle:"technical documents for STURDeCAM34"
+        'STURDeCAM31': {
+          tableData: [
+            ['Sensor ','Sony&reg ISX031'],
+            ['Frame Rate ', '3MP @ 60 fps'],
+            ['Output Format ', 'UYVY'],
+            ['Interface ', 'GMSL2&trade;'],
+            ['FOV ', '54.04°(H), 42.86°(V), 70.17°(D) '],
+            ['Temperature ', '-40°C to 85°C'],
+            ['Certifications ', 'ISO 16750-3 & ISO 16750-4 (Shock and Vibration)'],
+            ['No of Cameras Supported ', 'upto 8 cameras'],
+           ['ISP ', 'On-board high performance ISP'],
+          ['Form factor ', '25 x 25 mm'],
+          ],
+          highlights: [
+            "Houses STURDeCAM31 - HDR camera module based on Sony® ISX031 sensor incorporating sub-pixel technology",
+            "Low-light 120dB HDR without Motion artifacts",
+            "LED Flicker Mitigation (LFM)",
+            "GMSL2 interface (Coaxial cable of upto 15m with FAKRA connector)",
+            "Synchronized multi-camera solution (upto 4 cameras - 3MP @60fps, upto 8 cameras - 3MP @30fps)",
+            "IP69K-rated camera designed for autonomous mobility",
+            "Ensures resilient camera streaming by monitoring sensor, MCU, and GMSL link health"
+          ],
+          title: "STURDeCAM31 - 3MP Sony® ISX031 120dB HDR Camera for Autonomous Mobility",
+          documentname: "e-con-STURDeCAM31-technical-documents.zip",
+          doctitle: "Technical documents for STURDeCAM31",
+          buynow:"https://www.e-consystems.com/webstore-dst.asp#STURDeCAM31",
 
-            }
+        },
+          'STURDeCAM34': {
+         tableData: [
+            ['Sensor','onsemi&reg AR0341AT'],
+            ['Frame Rate', '3MP @ 60 fps'],
+            ['Output Format', 'UYVY'],
+            ['Interface', 'GMSL2&trade;'],
+            ['FOV', '64.62° (H), 51.28° (V), 83.5° (D)'],
+            ['Temperature', '-40°C to 85°C'],
+            ['Certifications', 'CISPR-25 + ISO 11452-2/4 (Automotive EMC std)'],
+            ['No of Cameras Supported', 'upto 8 cameras'],
+           ['ISP', 'On-board high performance ISP'],
+          ['Form factor', '25 x 25 mm'],
+          ],
+          highlights: [
+          "Houses AR0341AT Image Sensor from onsemi&reg;",
+          "Super-exposure pixel technology",
+          "Camera provides upto 140dB High Dynamic Range (Supports upto 150dB HDR via raw data output)",
+          "Exceptional LED Flicker Mitigation (LFM)",
+          "Patented hot-pluggable GMSL support*",
+          "GMSL2™ interface to transmit power and data up to 15m",
+          "IP69K-rated enclosure",
+          "Ensures resilient camera streaming by monitoring sensor, ISP and GMSL link health"
+          ],
+
+          title: "STURDeCAM34 - 3MP AR0341AT 140dB HDR Camera Module",
+          documentname: "e-con-STURDeCAM34-technical-documents.zip",
+          doctitle: "Technical documents for STURDeCAM34",
+         buynow:"https://www.e-consystems.com/webstore-dst.asp#STURDeCAM34_CUOAGX",
+
+        }
           },
           bgColor: 'white',
           color: '#344ea1',
@@ -73,19 +104,30 @@ const [initialLeftTab, setInitialLeftTab] = useState(null);
         'POE/GigE': {
           tabs: ['RouteCAM_CU22',],
           content: {
-            'RouteCAM_CU22': {
-              tableData: [
-                [' Sony® STARVIS™  2 IMX662', 'Full HD @ 60 fps'],
-                ['In-Built ISP', '88dB HDR'],
-                ['GigE Interface', ' MJPEG, H.265 &  H.264 <br> Output format'],
-                ['Form factor:46 x 46 mm', 'FOV: 151.74°(D), 130°(H), 70.75°(V)'],
-                ['IP67', 'Operating Temperature: -30°C to 70°C'],
-                ['Compliance & Standards: ISO 13766'],
-              ],
-              title:"RouteCAM_CU22_IP67 - Outdoor Lowlight GigE HDR Camera",
- documentname:"e-con-RouteCAM_CU22_IP67-technical-documents.zip",
-          doctitle:"technical documents for RouteCAM_CU22_IP67"
-            },
+        'RouteCAM_CU22': {
+          tableData: [
+            ["Sensor","Sony&reg; STARVIS&trade; IMX662"],
+            ['Frame Rate', '60 fps'],
+            ['Output Format', 'Compressed MJPEG, H.265 and H.264 formats'],
+            ['Interface', 'GigE'],
+            ['FOV', '151.74°(D), 130°(H), 70.75°(V)'],
+            ['Temperature', '-30°C to 70°C'],
+           ['ISP', 'On-board high performance ISP'],
+          ['Form factor', '46mm x 46mm'],
+          ],
+           highlights: [
+            "Power-over-Ethernet (PoE) camera",
+            "Houses Sony Starvis 2 IMX662 Ultra Low-light Image Sensor",
+            "High Dynamic Range",
+            "Low Latency upto 75ms",
+            "PTP Network Time Synchronization",
+            "IP67-Rated Enclosure",
+            "Compatible with CloVis Central™ - Device Management Platform *"
+           ],
+          title: "RouteCAM_CU22_IP67 - Outdoor Lowlight GigE HDR Camera",
+          documentname: "e-con-RouteCAM_CU22_IP67-technical-documents.zip",
+          doctitle: "Technical documents for RouteCAM_CU22",
+        },
           },
           bgColor: 'white',
           color: '#344ea1',
@@ -174,7 +216,7 @@ const handleLeftTabClick = (tab) => {
 
               {selectedRightTab && currentContent && (
                 <div className="rearview-ContentBox">
-                  <ProductTableData tableData={currentContent.tableData} imageSrc={currentImage} productName={selectedRightTab} title={currentContent.title} documentname={currentContent.documentname} doctitle={currentContent.doctitle}/>
+                  <ProductTableData tableData={currentContent.tableData} imageSrc={currentImage} productName={selectedRightTab} title={currentContent.title}  highlights={currentContent.highlights} documentname={currentContent.documentname} doctitle={currentContent.doctitle} buynow={currentContent.buynow}/>
  <div className="Productinsidetab-container">
                     <div className="Productinsidetab-image-row">
                       {images.map((image, index) => (
@@ -191,12 +233,7 @@ const handleLeftTabClick = (tab) => {
                       <div className="Productinsidetab-divider"></div>
                     </div>
                   </div>
-                  <div className="ProductTabs-total-Button">
-                  <Modelbutton className="ProductTabs-Button"  backgroundColor="#00aeef"  type="Contact Us"  animationColor="#344ea1" hoverColor="#344ea1" />
-                  <Modelbutton text="Download Tech document" backgroundColor="#00aeef" textColor="#131b2d"  hoverTextColor="#344ea1" className="ProductTabs-Button" to="" productName="ProductDocument" docName={currentContent.documentname} title={currentContent.doctitle}/>
-
-
-        </div>
+              
                   </div>
               )}
             </div>

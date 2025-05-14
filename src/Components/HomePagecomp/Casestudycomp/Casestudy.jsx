@@ -78,7 +78,7 @@ const ProductCaseStudy = () => {
           <br></br>
           <p className="productcase-card-paragraph">
           e-con Systems enabled a rugged, custom multi-camera solution with high-quality imaging, IP67-rated enclosure and 360° visibility for large mining vehicles—helping the customer to overcome blind spots and operate safely in low-light, dusty environments.</p>
-          <AnimationButton className="casestudy-btn" text="Read more" backgroundColor="#003873" animationColor="#69ba2f" hoverColor="#69ba2f" to="/mining-vehical-casestudy"></AnimationButton>
+          <AnimationButton className="casestudy-btn" text="Read more" backgroundColor="#003873" animationColor="#69ba2f" hoverColor="#69ba2f" to="/case-study/rugged-multi-camera-setup-for-off-road-mining-vehicles"></AnimationButton>
 
 
         </div>

@@ -38,30 +38,56 @@ const [initialLeftTab, setInitialLeftTab] = useState(null);
       tabs: ['eDACAM27', 'eDACAM29'],
       content: {
         'eDACAM27': {
-          tableData: [
-            ['OMNIVISION™ OV2312', '2MP @ 60 fps'],
-            ['In-Built ISP', 'Chroma: RGB-IR'],
-            ['NIR Sensitivity: 940 nm / 850 nm ', 'Global Shutter'],
-            ['GMSL2 Interface', 'Output Format: UYVY'],
-            ['Form factor: 42mm x 42mm', 'FOV: 75°(H), 62°(V), 88°(D)'],
-            ['IP Rating (Optional)', 'Compliance & Standards :<br>ISO 11452'],
+            tableData: [
+            ['Sensor','Sony&reg; STARVIS™ IMX662'],
+            ['Frame Rate', '60 fps'],
+            ['Output Format', 'Compressed MJPEG, H.265 and H.264 formats'],
+            ['Interface', 'GigE'],
+            ['FOV', '151.74°(D), 130°(H), 70.75°(V)'],
+            ['Temperature', '-30°C to 70°C'],
+           ['ISP', 'On-board high performance ISP'],
+          ['Form factor', '46mm x 46mm'],
           ],
+           highlights: [
+            "Power-over-Ethernet (PoE) camera",
+            "Houses Sony Starvis 2 IMX662 Ultra Low-light Image Sensor",
+            "High Dynamic Range",
+            "Low Latency upto 75ms",
+            "PTP Network Time Synchronization",
+            "IP67-Rated Enclosure",
+            "Compatible with CloVis Central™ - Device Management Platform *"
+           ],
           title: "eDACAM27 - 2MP OV2312 Global Shutter Camera with 15m cable support",
           documentname: "eSTURDeCAM27-technical-documents.zip",
-          doctitle: "Technical documents for STURDeCAM27"
+          doctitle: "Technical documents for STURDeCAM27",
+          buynow:"https://www.e-consystems.com/webstore-dst.asp#STURDeCAM88_CUOAGX",
+
         },
         'eDACAM29': {
-          tableData: [
-            ['OMNIVISION™ OV2311', '2MP @ 60 fps'],
-            ['Without ISP', 'Monochrome'],
-            ['NIR Sensitivity: 940 nm / 850 nm ', 'Global Shutter'],
-            ['GMSL2 Interface', 'Output Format: Y8'],
-            ['Form factor:42mm x 42mm', 'FOV: 57°(H), 44°(V), 70°(D)'],
-            ['IP Rating (Optional)', 'Compliance & Standards :<br>ISO 16750'],
+           tableData: [
+            ['Sensor','Sony&reg; STARVIS™ IMX662'],
+            ['Frame Rate', '60 fps'],
+            ['Output Format', 'Compressed MJPEG, H.265 and H.264 formats'],
+            ['Interface', 'GigE'],
+            ['FOV', '151.74°(D), 130°(H), 70.75°(V)'],
+            ['Temperature', '-30°C to 70°C'],
+           ['ISP', 'On-board high performance ISP'],
+          ['Form factor', '46mm x 46mm'],
           ],
+           highlights: [
+            "Power-over-Ethernet (PoE) camera",
+            "Houses Sony Starvis 2 IMX662 Ultra Low-light Image Sensor",
+            "High Dynamic Range",
+            "Low Latency upto 75ms",
+            "PTP Network Time Synchronization",
+            "IP67-Rated Enclosure",
+            "Compatible with CloVis Central™ - Device Management Platform *"
+           ],
           title: "eDACAM29 - 2MP OV2311 Global Shutter Camera with 15m cable support",
           documentname: "e-con-STURDeCAM29-technical-documents.zip",
-          doctitle: "Technical documents for STURDeCAM29"
+          doctitle: "Technical documents for STURDeCAM29",
+           buynow:"https://www.e-consystems.com/webstore-dst.asp#STURDeCAM88_CUOAGX",
+
         },
       },
       bgColor: 'white',
@@ -148,7 +174,7 @@ const handleLeftTabClick = (tab) => {
 
               {selectedRightTab && currentContent && (
                 <div className="DriverTab-ContentBox">
-                  <ProductTableData tableData={currentContent.tableData} imageSrc={currentImage} productName={selectedRightTab} title={currentContent.title} documentname={currentContent.documentname} doctitle={currentContent.doctitle}/>
+                  <ProductTableData tableData={currentContent.tableData} imageSrc={currentImage} productName={selectedRightTab} title={currentContent.title}  highlights={currentContent.highlights} documentname={currentContent.documentname} doctitle={currentContent.doctitle} buynow={currentContent.buynow}/>
 
                   <div className="DriverTab-insidetab-container">
                     <div className="DriverTab-insidetab-image-row">
@@ -166,11 +192,7 @@ const handleLeftTabClick = (tab) => {
                     
                     </div>
                   </div>    
-                  <div className="ProductTabs-total-Button">
-                  <Modelbutton className="ProductTabs-Button"  backgroundColor="#00aeef"  type="Contact Us"  animationColor="#344ea1" hoverColor="#344ea1" />
-                  {/* <Modelbutton text="Download Tech document" backgroundColor="#00aeef" textColor="#131b2d"  hoverTextColor="#344ea1" className="ProductTabs-Button" to="" productName="ProductDocument" docName={currentContent.documentname} title={currentContent.doctitle}/> */}
-
-        </div>
+                
                 </div>
               )}
             </div>
