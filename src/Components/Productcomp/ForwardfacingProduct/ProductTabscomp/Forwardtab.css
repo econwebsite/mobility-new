@@ -184,7 +184,9 @@
     justify-content: center;
     gap: 5px;
   }
-
+.ForwardTabs-LeftHeading.all-tab {
+    display: none !important;
+  }
   .ForwardTabs-LeftHeading {
     flex: 1;
     padding: 10px;

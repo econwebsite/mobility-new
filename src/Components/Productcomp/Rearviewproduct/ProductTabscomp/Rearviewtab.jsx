@@ -35,6 +35,95 @@ const [initialLeftTab, setInitialLeftTab] = useState(null);
       color: '#344ea1',
       images: [],
     },
+    'ALL': {
+          tabs: ['STURDeCAM31', 'STURDeCAM34', 'RouteCAM_CU22'],
+          content: {
+            'STURDeCAM31': {
+              tableData: [
+                ['Sensor ', 'Sony&reg ISX031'],
+                ['Frame Rate ', '3MP @ 60 fps'],
+                ['Output Format ', 'UYVY'],
+                ['Interface ', 'GMSL2&trade;'],
+                ['FOV ', '54.04°(H), 42.86°(V), 70.17°(D) '],
+                ['Temperature ', '-40°C to 85°C'],
+                ['Certifications ', 'ISO 16750-3 & ISO 16750-4 (Shock and Vibration)'],
+                ['No of Cameras Supported ', 'upto 8 cameras'],
+                ['ISP ', 'On-board high performance ISP'],
+                ['Form factor ', '25 x 25 mm'],
+              ],
+              highlights: [
+                "Houses STURDeCAM31 - HDR camera module based on Sony® ISX031 sensor incorporating sub-pixel technology",
+                "Low-light 120dB HDR without Motion artifacts",
+                "LED Flicker Mitigation (LFM)",
+                "GMSL2 interface (Coaxial cable of upto 15m with FAKRA connector)",
+                "Synchronized multi-camera solution (upto 4 cameras - 3MP @60fps, upto 8 cameras - 3MP @30fps)",
+                "IP69K-rated camera designed for autonomous mobility",
+                "Ensures resilient camera streaming by monitoring sensor, MCU, and GMSL link health"
+              ],
+              title: "STURDeCAM31 - 3MP Sony® ISX031 120dB HDR Camera for Autonomous Mobility",
+              documentname: "e-con-STURDeCAM31-technical-documents.zip",
+              doctitle: "Technical documents for STURDeCAM31",
+              buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM31",
+            },
+            'STURDeCAM34': {
+              tableData: [
+                ['Sensor', 'onsemi&reg AR0341AT'],
+                ['Frame Rate', '3MP @ 60 fps'],
+                ['Output Format', 'UYVY'],
+                ['Interface', 'GMSL2&trade;'],
+                ['FOV', '64.62° (H), 51.28° (V), 83.5° (D)'],
+                ['Temperature', '-40°C to 85°C'],
+                ['Certifications', 'CISPR-25 + ISO 11452-2/4 (Automotive EMC std)'],
+                ['No of Cameras Supported', 'upto 8 cameras'],
+                ['ISP', 'On-board high performance ISP'],
+                ['Form factor', '25 x 25 mm'],
+              ],
+              highlights: [
+                "Houses AR0341AT Image Sensor from onsemi&reg;",
+                "Super-exposure pixel technology",
+                "Camera provides upto 140dB High Dynamic Range (Supports upto 150dB HDR via raw data output)",
+                "Exceptional LED Flicker Mitigation (LFM)",
+                "Patented hot-pluggable GMSL support*",
+                "GMSL2™ interface to transmit power and data up to 15m",
+                "IP69K-rated enclosure",
+                "Ensures resilient camera streaming by monitoring sensor, ISP and GMSL link health"
+              ],
+              title: "STURDeCAM34 - 3MP AR0341AT 140dB HDR Camera Module",
+              documentname: "e-con-STURDeCAM34-technical-documents.zip",
+              doctitle: "Technical documents for STURDeCAM34",
+              buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM34_CUOAGX",
+            },
+           
+             'RouteCAM_CU22': {
+              tableData: [
+                ['Sensor', 'Sony&reg; STARVIS™ IMX662'],
+                ['Frame Rate', '60 fps'],
+                ['Output Format', 'Compressed MJPEG, H.265 and H.264 formats'],
+                ['Interface', 'GigE'],
+                ['FOV', '151.74°(D), 130°(H), 70.75°(V)'],
+                ['Temperature', '-30°C to 70°C'],
+                ['ISP', 'On-board high performance ISP'],
+                ['Form factor', '46mm x 46mm'],
+              ],
+              highlights: [
+                "Power-over-Ethernet (PoE) camera",
+                "Houses Sony Starvis 2 IMX662 Ultra Low-light Image Sensor",
+                "High Dynamic Range",
+                "Low Latency upto 75ms",
+                "PTP Network Time Synchronization",
+                "IP67-Rated Enclosure",
+                "Compatible with CloVis Central™ - Device Management Platform *"
+              ],
+              title: "RouteCAM_CU22_IP67 - Outdoor Lowlight GigE HDR Camera",
+              documentname: "e-con-RouteCAM_CU22_IP67-technical-documents.zip",
+              doctitle: "Technical documents for RouteCAM_CU22",
+            },
+            
+          },
+      bgColor: 'white',
+          color: '#344ea1',
+          images: [STURDeCAM31,STURDeCAM34,routecam22]
+        },
      '3MP GMSL2': {
           tabs: ['STURDeCAM31', 'STURDeCAM34'],
           content: {
@@ -185,7 +274,7 @@ const handleLeftTabClick = (tab) => {
               {Object.keys(rightTabs).map((heading, index) => (
                 <div
                   key={index}
-                  className={`rearview-LeftHeading ${heading === 'Supported Cameras' ? 'Supported Cameras' : ''} ${selectedLeftTab === heading ? 'active' : ''}`}
+                  className={`rearview-LeftHeading ${heading === 'ALL' ? 'all-tab' : ''} ${heading === 'Supported Cameras' ? 'Supported Cameras' : ''} ${selectedLeftTab === heading ? 'active' : ''}`}
                   onClick={() => handleLeftTabClick(heading)}
                   style={{
                     backgroundColor: rightTabs[heading].bgColor,

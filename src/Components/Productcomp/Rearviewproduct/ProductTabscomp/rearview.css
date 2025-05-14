@@ -161,7 +161,9 @@
     flex-direction: column;
     padding: 1em;
   }
-
+.rearview-LeftHeading.all-tab {
+    display: none !important;
+  }
   .rearview-LeftSide,
   .rearview-RightSide {
     width: 100%;
