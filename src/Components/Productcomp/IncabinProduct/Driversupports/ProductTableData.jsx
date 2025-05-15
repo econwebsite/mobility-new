@@ -31,11 +31,11 @@ function ProductTableData({
 
             <div className="ProductTableData-HighlightColumn">
               <h5 className="highlight-heading">Highlights</h5>
-              <ul className="highlight-list">
-                {highlights?.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
+                   <ul className="highlight-list">
+  {highlights?.map((item, index) => (
+    <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+  ))}
+</ul>
             </div>
           </div>
 
@@ -55,6 +55,7 @@ function ProductTableData({
               backgroundColor="#344ea1" 
               hoverColor="#00aeef"
             />
+             {documentname && (
             <Modelbutton 
               text="Download Tech document" 
               className="ProductTabs-Button"
@@ -64,6 +65,7 @@ function ProductTableData({
               docName={documentname} 
               title={doctitle} 
             />
+             )}
           </div>
         </div>
 

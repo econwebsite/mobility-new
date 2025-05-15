@@ -31,11 +31,11 @@ function ProductTableData({
 
             <div className="ProductTableData-HighlightColumn">
               <h5 className="highlight-heading">Highlights</h5>
-              <ul className="highlight-list">
-                {highlights?.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
+                   <ul className="highlight-list">
+  {highlights?.map((item, index) => (
+    <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+  ))}
+</ul>
             </div>
           </div>
 

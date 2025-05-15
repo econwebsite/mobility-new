@@ -15,12 +15,34 @@ import nvidia from "../../../../assets/Productpage/platformsupport/nividia.jpg";
 import npx from "../../../../assets/Productpage/platformsupport/npx.jpg";
 import renesas from "../../../../assets/Productpage/platformsupport/renesas.jpg"
 
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return windowSize;
+};
+
 const Producttab = () => {
-  const [selectedLeftTab, setSelectedLeftTab] = useState('3MP GMSL2');
+  const [selectedLeftTab, setSelectedLeftTab] = useState('All Cameras');
   const [selectedRightTab, setSelectedRightTab] = useState('STURDeCAM31');
   const [initialLeftTab, setInitialLeftTab] = useState(null);
   const [initialRightTab, setInitialRightTab] = useState(null);
   const location = useLocation();
+const windowSize = useWindowSize();
 
   const images = [
     { id: 1, src: [platform], alt: 'platform support' },
@@ -35,60 +57,68 @@ const Producttab = () => {
       bgColor: '#f1f2f2',
       color: '#344ea1',
     },
-    'ALL': {
+    'All Cameras': {
       tabs: ['STURDeCAM31', 'STURDeCAM34', 'STURDeCAM88', 'STURDeCAM84', 'RouteCAM_CU22'],
       content: {
         'STURDeCAM31': {
           tableData: [
-            ['Sensor ', 'Sony&reg ISX031'],
+            ['Sensor ', 'Sony&reg; ISX031'],
             ['Frame Rate ', '3MP @ 60 fps'],
             ['Output Format ', 'UYVY'],
             ['Interface ', 'GMSL2&trade;'],
             ['FOV ', '54.04°(H), 42.86°(V), 70.17°(D) '],
             ['Temperature ', '-40°C to 85°C'],
-            ['Certifications ', 'ISO 16750-3 & ISO 16750-4 (Shock and Vibration)'],
-            ['No of Cameras Supported ', 'upto 8 cameras'],
+          ['No of Cameras Supported ', 'upto 8 cameras'],
             ['ISP ', 'On-board high performance ISP'],
             ['Form factor ', '25 x 25 mm'],
+            ['Certifications ', `
+  <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
+  <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
+  <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
+`],  
           ],
           highlights: [
-            "Houses STURDeCAM31 - HDR camera module based on Sony® ISX031 sensor incorporating sub-pixel technology",
+            "HDR camera module based on Sony® ISX031 sensor incorporating sub-pixel technology",
             "Low-light 120dB HDR without Motion artifacts",
             "LED Flicker Mitigation (LFM)",
-            "GMSL2 interface (Coaxial cable of upto 15m with FAKRA connector)",
-            "Synchronized multi-camera solution (upto 4 cameras - 3MP @60fps, upto 8 cameras - 3MP @30fps)",
+            "GMSL2 interface (Coaxial cable of upto 15m)",
+            "Synchronized multi-camera solution",
             "IP69K-rated camera designed for autonomous mobility",
             "Ensures resilient camera streaming by monitoring sensor, MCU, and GMSL link health"
           ],
-          title: "STURDeCAM31 - 3MP Sony® ISX031 120dB HDR Camera for Autonomous Mobility",
+          title: "STURDeCAM31 - 3MP 120dB HDR GMSL2 Camera",
           documentname: "e-con-STURDeCAM31-technical-documents.zip",
           doctitle: "Technical documents for STURDeCAM31",
           buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM31",
         },
         'STURDeCAM34': {
           tableData: [
-            ['Sensor', 'onsemi&reg AR0341AT'],
+            ['Sensor', 'onsemi&reg; AR0341AT'],
             ['Frame Rate', '3MP @ 60 fps'],
             ['Output Format', 'UYVY'],
             ['Interface', 'GMSL2&trade;'],
             ['FOV', '64.62° (H), 51.28° (V), 83.5° (D)'],
             ['Temperature', '-40°C to 85°C'],
-            ['Certifications', 'CISPR-25 + ISO 11452-2/4 (Automotive EMC std)'],
             ['No of Cameras Supported', 'upto 8 cameras'],
             ['ISP', 'On-board high performance ISP'],
             ['Form factor', '25 x 25 mm'],
+                 ['Certifications ', `
+  <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
+  <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
+  <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
+`],  
           ],
           highlights: [
-            "Houses AR0341AT Image Sensor from onsemi&reg;",
+            'Houses AR0341AT Image Sensor from onsemi&reg;',
             "Super-exposure pixel technology",
             "Camera provides upto 140dB High Dynamic Range (Supports upto 150dB HDR via raw data output)",
             "Exceptional LED Flicker Mitigation (LFM)",
-            "Patented hot-pluggable GMSL support*",
+            "Patented hot-pluggable GMSL support",
             "GMSL2™ interface to transmit power and data up to 15m",
             "IP69K-rated enclosure",
             "Ensures resilient camera streaming by monitoring sensor, ISP and GMSL link health"
           ],
-          title: "STURDeCAM34 - 3MP AR0341AT 140dB HDR Camera Module",
+          title: "STURDeCAM34 - 3MP 140dB HDR GMSL2 Camera",
           documentname: "e-con-STURDeCAM34-technical-documents.zip",
           doctitle: "Technical documents for STURDeCAM34",
           buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM34_CUOAGX",
@@ -97,35 +127,38 @@ const Producttab = () => {
         
         'STURDeCAM88': {
           tableData: [
-            ['Sensor', "OmniVision's&reg OX08B40"],
+            ['Sensor', "OmniVision's&reg; OX08B40"],
             ['Frame Rate', '8MP @ 30 fps'],
             ['Output Format', 'Uncompressed UYVY format'],
             ['Interface', 'GMSL2&trade;'],
             ['FOV', '68.23°(H), 38.83°(V), 80.22°(D)'],
             ['Temperature', '-40°C to 85°C'],
-            ['Certifications', 'FCC Part 15 Subpart B / CE (Basic Compliance to sell in the US and Europe)'],
             ['No of Cameras Supported', 'upto 8 cameras'],
             ['ISP', 'On-board high performance ISP'],
             ['Form factor', '42 x 42 mm'],
+                 ['Certifications ', `
+  <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
+  <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
+  <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
+`],  
           ],
           highlights: [
-            "Houses STURDeCAM88 - 8MP (4K) HDR camera module based on OX08B40, OmniVision's automotive grade image sensor.",
-            "Plugs into NVIDIA® Jetson AGX Orin™ developer kits",
+            "8MP (4K) HDR camera module based on OX08B40, OmniVision's automotive grade image sensor.",
             "140dB High Dynamic Range (HDR) + LED Flicker Mitigation (LFM)",
-            "GMSL2™ interface (Coaxial cable of upto 15m with FAKRA connector)",
+            "GMSL2™ interface (Coaxial cable of upto 15m)",
             "On-board high performance ISP",
             "Multi camera synchronization support (up to 8 cameras)",
             "Dust and waterproof IP67-rated enclosure",
             "GMSL2 Health Monitoring (Patent Pending)"
           ],
-          title: "STURDeCAM88 - 4K 140dB HDR GMSL2 Camera Module",
+          title: "STURDeCAM88 - 4K 140dB HDR GMSL2 Camera",
           documentname: "e-con-STURDeCAM88-technical-documents.zip",
           doctitle: "Technical documents for STURDeCAM88",
           buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM88_CUOAGX",
         },
         'STURDeCAM84': {
           tableData: [
-            ['Sensor', 'onsemi&reg AR0823AT'],
+            ['Sensor', 'onsemi&reg; AR0823AT'],
             ['Frame Rate', '8MP @ 30 fps'],
             ['Output Format', 'RAW 12-bit'],
             ['Interface', 'GMSL2&trade;'],
@@ -154,7 +187,6 @@ const Producttab = () => {
             ['Interface', 'GigE'],
             ['FOV', '151.74°(D), 130°(H), 70.75°(V)'],
             ['Temperature', '-30°C to 70°C'],
-            ['ISP', 'On-board high performance ISP'],
             ['Form factor', '46mm x 46mm'],
           ],
           highlights: [
@@ -164,9 +196,9 @@ const Producttab = () => {
             "Low Latency upto 75ms",
             "PTP Network Time Synchronization",
             "IP67-Rated Enclosure",
-            "Compatible with CloVis Central™ - Device Management Platform *"
+            "Compatible with CloVis Central™ - Device Management Platform "
           ],
-          title: "RouteCAM_CU22_IP67 - Outdoor Lowlight GigE HDR Camera",
+          title: "RouteCAM_CU22_IP67 - Lowlight HDR GigE Camera",
           documentname: "e-con-RouteCAM_CU22_IP67-technical-documents.zip",
           doctitle: "Technical documents for RouteCAM_CU22",
         },
@@ -174,69 +206,76 @@ const Producttab = () => {
       },
   bgColor: 'white',
       color: '#344ea1',
-      images: [STURDeCAM31,STURDeCAM34,STURDeCAM84,STURDeCAM88,routecam22]
+      images: [STURDeCAM31,STURDeCAM34,STURDeCAM88,STURDeCAM84,routecam22]
     },
     '3MP GMSL2': {
       tabs: ['STURDeCAM31', 'STURDeCAM34'],
-      content: {
+       content: {
         'STURDeCAM31': {
           tableData: [
-            ['Sensor ', 'Sony&reg ISX031'],
+            ['Sensor ', 'Sony&reg; ISX031'],
             ['Frame Rate ', '3MP @ 60 fps'],
             ['Output Format ', 'UYVY'],
             ['Interface ', 'GMSL2&trade;'],
             ['FOV ', '54.04°(H), 42.86°(V), 70.17°(D) '],
             ['Temperature ', '-40°C to 85°C'],
-            ['Certifications ', 'ISO 16750-3 & ISO 16750-4 (Shock and Vibration)'],
             ['No of Cameras Supported ', 'upto 8 cameras'],
             ['ISP ', 'On-board high performance ISP'],
             ['Form factor ', '25 x 25 mm'],
+                 ['Certifications ', `
+  <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
+  <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
+  <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
+`],  
           ],
           highlights: [
-            "Houses STURDeCAM31 - HDR camera module based on Sony® ISX031 sensor incorporating sub-pixel technology",
+            "HDR camera module based on Sony® ISX031 sensor incorporating sub-pixel technology",
             "Low-light 120dB HDR without Motion artifacts",
             "LED Flicker Mitigation (LFM)",
-            "GMSL2 interface (Coaxial cable of upto 15m with FAKRA connector)",
-            "Synchronized multi-camera solution (upto 4 cameras - 3MP @60fps, upto 8 cameras - 3MP @30fps)",
+            "GMSL2 interface (Coaxial cable of upto 15m)",
+            "Synchronized multi-camera solution",
             "IP69K-rated camera designed for autonomous mobility",
             "Ensures resilient camera streaming by monitoring sensor, MCU, and GMSL link health"
           ],
-          title: "STURDeCAM31 - 3MP Sony® ISX031 120dB HDR Camera for Autonomous Mobility",
+          title: "STURDeCAM31 - 3MP 120dB HDR GMSL2 Camera",
           documentname: "e-con-STURDeCAM31-technical-documents.zip",
           doctitle: "Technical documents for STURDeCAM31",
           buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM31",
-
         },
-        'STURDeCAM34': {
+
+       'STURDeCAM34': {
           tableData: [
-            ['Sensor', 'onsemi&reg AR0341AT'],
+            ['Sensor', 'onsemi&reg; AR0341AT'],
             ['Frame Rate', '3MP @ 60 fps'],
             ['Output Format', 'UYVY'],
             ['Interface', 'GMSL2&trade;'],
             ['FOV', '64.62° (H), 51.28° (V), 83.5° (D)'],
             ['Temperature', '-40°C to 85°C'],
-            ['Certifications', 'CISPR-25 + ISO 11452-2/4 (Automotive EMC std)'],
             ['No of Cameras Supported', 'upto 8 cameras'],
             ['ISP', 'On-board high performance ISP'],
             ['Form factor', '25 x 25 mm'],
+                 ['Certifications ', `
+  <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
+  <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
+  <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
+`],  
           ],
           highlights: [
-            "Houses AR0341AT Image Sensor from onsemi&reg;",
+            'Houses AR0341AT Image Sensor from onsemi&reg;',
             "Super-exposure pixel technology",
             "Camera provides upto 140dB High Dynamic Range (Supports upto 150dB HDR via raw data output)",
             "Exceptional LED Flicker Mitigation (LFM)",
-            "Patented hot-pluggable GMSL support*",
+            "Patented hot-pluggable GMSL support",
             "GMSL2™ interface to transmit power and data up to 15m",
             "IP69K-rated enclosure",
             "Ensures resilient camera streaming by monitoring sensor, ISP and GMSL link health"
           ],
-
-          title: "STURDeCAM34 - 3MP AR0341AT 140dB HDR Camera Module",
+          title: "STURDeCAM34 - 3MP 140dB HDR GMSL2 Camera",
           documentname: "e-con-STURDeCAM34-technical-documents.zip",
           doctitle: "Technical documents for STURDeCAM34",
           buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM34_CUOAGX",
-
-        }
+        },
+       
       },
       bgColor: 'white',
       color: '#344ea1',
@@ -248,36 +287,38 @@ const Producttab = () => {
 
         'STURDeCAM88': {
           tableData: [
-            ['Sensor', "OmniVision's&reg OX08B40"],
+            ['Sensor', "OmniVision's&reg; OX08B40"],
             ['Frame Rate', '8MP @ 30 fps'],
             ['Output Format', 'Uncompressed UYVY format'],
             ['Interface', 'GMSL2&trade;'],
             ['FOV', '68.23°(H), 38.83°(V), 80.22°(D)'],
             ['Temperature', '-40°C to 85°C'],
-            ['Certifications', 'FCC Part 15 Subpart B / CE (Basic Compliance to sell in the US and Europe)'],
             ['No of Cameras Supported', 'upto 8 cameras'],
             ['ISP', 'On-board high performance ISP'],
             ['Form factor', '42 x 42 mm'],
+                 ['Certifications ', `
+  <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
+  <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
+  <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
+`],  
           ],
           highlights: [
-            "Houses STURDeCAM88 - 8MP (4K) HDR camera module based on OX08B40, OmniVision's automotive grade image sensor.",
-            "Plugs into NVIDIA® Jetson AGX Orin™ developer kits",
+            "8MP (4K) HDR camera module based on OX08B40, OmniVision's automotive grade image sensor.",
             "140dB High Dynamic Range (HDR) + LED Flicker Mitigation (LFM)",
-            "GMSL2™ interface (Coaxial cable of upto 15m with FAKRA connector)",
+            "GMSL2™ interface (Coaxial cable of upto 15m)",
             "On-board high performance ISP",
             "Multi camera synchronization support (up to 8 cameras)",
             "Dust and waterproof IP67-rated enclosure",
             "GMSL2 Health Monitoring (Patent Pending)"
           ],
-          title: "STURDeCAM88 - 4K 140dB HDR GMSL2 Camera Module",
+          title: "STURDeCAM88 - 4K 140dB HDR GMSL2 Camera",
           documentname: "e-con-STURDeCAM88-technical-documents.zip",
           doctitle: "Technical documents for STURDeCAM88",
           buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM88_CUOAGX",
-
         },
-        'STURDeCAM84': {
+'STURDeCAM84': {
           tableData: [
-            ['Sensor', 'onsemi&reg AR0823AT'],
+            ['Sensor', 'onsemi&reg; AR0823AT'],
             ['Frame Rate', '8MP @ 30 fps'],
             ['Output Format', 'RAW 12-bit'],
             ['Interface', 'GMSL2&trade;'],
@@ -298,6 +339,7 @@ const Producttab = () => {
           documentname: "e-con-STURDeCAM84-technical-documents.zip",
           doctitle: "Technical documents for STURDeCAM84",
         },
+
       },
       bgColor: 'white',
       color: '#344ea1',
@@ -306,7 +348,7 @@ const Producttab = () => {
     'POE/GigE': {
       tabs: ['RouteCAM_CU22',],
       content: {
-        'RouteCAM_CU22': {
+       'RouteCAM_CU22': {
           tableData: [
             ['Sensor', 'Sony&reg; STARVIS™ IMX662'],
             ['Frame Rate', '60 fps'],
@@ -314,7 +356,6 @@ const Producttab = () => {
             ['Interface', 'GigE'],
             ['FOV', '151.74°(D), 130°(H), 70.75°(V)'],
             ['Temperature', '-30°C to 70°C'],
-            ['ISP', 'On-board high performance ISP'],
             ['Form factor', '46mm x 46mm'],
           ],
           highlights: [
@@ -324,12 +365,13 @@ const Producttab = () => {
             "Low Latency upto 75ms",
             "PTP Network Time Synchronization",
             "IP67-Rated Enclosure",
-            "Compatible with CloVis Central™ - Device Management Platform *"
+            "Compatible with CloVis Central™ - Device Management Platform "
           ],
-          title: "RouteCAM_CU22_IP67 - Outdoor Lowlight GigE HDR Camera",
+          title: "RouteCAM_CU22_IP67 - Lowlight HDR GigE Camera",
           documentname: "e-con-RouteCAM_CU22_IP67-technical-documents.zip",
           doctitle: "Technical documents for RouteCAM_CU22",
         },
+        
       },
       bgColor: 'white',
       color: '#344ea1',
@@ -370,7 +412,17 @@ const Producttab = () => {
     }
   }, [selectedLeftTab, initialRightTab]);
 
-
+  useEffect(() => {
+    if (windowSize.width <= 1110 && selectedLeftTab === 'All Cameras') {
+      const firstValidTab = Object.keys(rightTabs).find(tab => 
+        tab !== 'All Cameras' && tab !== 'Supported Cameras'
+      );
+      if (firstValidTab) {
+        setSelectedLeftTab(firstValidTab);
+        setSelectedRightTab(rightTabs[firstValidTab].tabs[0]);
+      }
+    }
+  }, [windowSize.width, selectedLeftTab]);
 
   const currentContent = rightTabs[selectedLeftTab]?.content[selectedRightTab];
   const currentImage = rightTabs[selectedLeftTab]?.images?.[rightTabs[selectedLeftTab].tabs.indexOf(selectedRightTab)];
@@ -384,7 +436,7 @@ const Producttab = () => {
               {Object.keys(rightTabs).map((heading, index) => (
                 <div
                   key={index}
-                  className={`ProductTabs-LeftHeading ${heading === 'ALL' ? 'all-tab' : ''} ${heading === 'Camera' ? 'camera' : ''
+                  className={`ProductTabs-LeftHeading ${heading === 'All Cameras' ? 'all-tab' : ''} ${heading === 'Camera' ? 'camera' : ''
                     } ${selectedLeftTab === heading ? 'active' : ''}`}
                   onClick={() => handleLeftTabClick(heading)}
                   style={{

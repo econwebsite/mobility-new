@@ -3,11 +3,11 @@ import "./Manufacturing.css";
 
 const Manufacturing = () => {
   const facilities = [
-    "ISP Tuning Lab",
+    "Imaging Lab",
     "Mechanical Design Lab",
     "Vibration Shaker",
-    "Environmental Chamber",
-    "Combined Vibration & Environmental Chamber",
+    // "Environmental Chamber",
+    // "Combined Vibration & Environmental Chamber",
     "Industrial Oven",
     "ESD Lab",
     "Reliability Lab"
