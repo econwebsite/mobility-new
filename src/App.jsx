@@ -21,6 +21,7 @@ import NotFoundPage from "./Components/Notfoundpage";
 import TotalIndustries from './Components/Industriescomp/TotalIndustries';
 
 import Fullcasestudy from './Components/HomePagecomp/Casestudycomp/CasestudyContent/MiningCasestudy';
+import ProductCaseStudy from './Components/HomePagecomp/Casestudycomp/Casestudy';
 
 
 const App = () => {
@@ -53,10 +54,12 @@ const App = () => {
         <Route path="/blog/how-forward-facing-camera-works-in-adas/" element={<ForwardBlog/>} />
         <Route path="/blog/how-surround-view-cameras-improve-driving-parking-safety/" element={<SurroundBlog/>} />
         <Route path="/case-study/rugged-multi-camera-setup-for-off-road-mining-vehicles" element={<Fullcasestudy/>} />
+        <Route path="/case-study" element={<ProductCaseStudy/>} />
 
         <Route path="/industries" element={<TotalIndustries/>} />
         <Route path="/industries/:marketName?" element={<TotalIndustries />} />        
         <Route path="*" element={<NotFoundPage />} />
+
         </Routes>
         <Footerpage/>
 

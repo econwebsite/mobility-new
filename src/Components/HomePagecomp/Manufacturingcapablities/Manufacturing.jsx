@@ -5,10 +5,10 @@ const Manufacturing = () => {
   const facilities = [
     "Imaging Lab",
     "Mechanical Design Lab",
-    "Vibration Shaker",
+    // "Vibration Shaker",
     // "Environmental Chamber",
-    // "Combined Vibration & Environmental Chamber",
-    "Industrial Oven",
+    "Combined Vibration & Environmental Chamber",
+    "EMC Chamber",
     "ESD Lab",
     "Reliability Lab"
   ];

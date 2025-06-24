@@ -50,8 +50,8 @@ const Section = ({ children, id }) => (
         const element = document.querySelector(hash);
         if (element) {
           const header = document.querySelector('header') || document.querySelector('.mobile-header');
-          const headerHeight = header ? header.offsetHeight : 80;
-          const yOffset = -headerHeight -40;
+          const headerHeight = header ? header.offsetHeight : 0;
+          const yOffset = -headerHeight -10;
 
           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
 

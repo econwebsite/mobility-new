@@ -11,7 +11,6 @@ import npx from "../../../../assets/Productpage/platformsupport/npx.jpg";
 import renesas from "../../../../assets/Productpage/platformsupport/renesas.jpg"
 import texas from "../../../../assets/Productpage/platformsupport/texas.jpg"
 
-
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -26,22 +25,21 @@ const useWindowSize = () => {
       });
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return windowSize;
 };
 
 
-
 const Forwardtab = () => {
   const [selectedLeftTab, setSelectedLeftTab] = useState('All Cameras');
   const [selectedRightTab, setSelectedRightTab] = useState('STURDeCAM31');
-const [initialLeftTab, setInitialLeftTab] = useState(null);
+  const [initialLeftTab, setInitialLeftTab] = useState(null);
   const [initialRightTab, setInitialRightTab] = useState(null);
   const location = useLocation();
-const windowSize = useWindowSize();
+  const windowSize = useWindowSize();
 
   const images = [
     { id: 1, src: [platform], alt: 'platform support' },
@@ -51,17 +49,17 @@ const windowSize = useWindowSize();
     { id: 5, src: [texas], alt: 'texas' }
 
   ];
-  const rightTabs = {   
- 'Supported Cameras': {
+  const rightTabs = {
+    'Supported Cameras': {
       tabs: ['CAMERA_MODEL_1', 'CAMERA_MODEL_2'],
       images: [],
       bgColor: '#f1f2f2',
       color: '#344ea1',
     },
     'All Cameras': {
-          tabs: ['STURDeCAM31', 'STURDeCAM34', 'STURDeCAM88', 'STURDeCAM84'],
-          content: {
-            'STURDeCAM31': {
+      tabs: ['STURDeCAM31', 'STURDeCAM34', 'STURDeCAM88', 'STURDeCAM84'],
+      content: {
+        'STURDeCAM31': {
           tableData: [
             ['Sensor ', 'Sony&reg; ISX031'],
             ['Frame Rate ', '3MP @ 60 fps'],
@@ -72,11 +70,11 @@ const windowSize = useWindowSize();
             ['No of Cameras Supported ', 'upto 8 cameras'],
             ['ISP ', 'On-board high performance ISP'],
             ['Form factor ', '25 x 25 mm'],
-                 ['Certifications ', `
+            ['Certifications ', `
   <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
   <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
   <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
-`],  
+`],
           ],
           highlights: [
             "HDR camera module based on Sony® ISX031 sensor incorporating sub-pixel technology",
@@ -92,7 +90,7 @@ const windowSize = useWindowSize();
           doctitle: "Technical documents for STURDeCAM31",
           buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM31",
         },
-'STURDeCAM34': {
+        'STURDeCAM34': {
           tableData: [
             ['Sensor', 'onsemi&reg; AR0341AT'],
             ['Frame Rate', '3MP @ 60 fps'],
@@ -103,11 +101,11 @@ const windowSize = useWindowSize();
             ['No of Cameras Supported', 'upto 8 cameras'],
             ['ISP', 'On-board high performance ISP'],
             ['Form factor', '25 x 25 mm'],
-                 ['Certifications ', `
+            ['Certifications ', `
   <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
   <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
   <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
-`],  
+`],
           ],
           highlights: [
             'Houses AR0341AT Image Sensor from onsemi&reg;',
@@ -124,7 +122,7 @@ const windowSize = useWindowSize();
           doctitle: "Technical documents for STURDeCAM34",
           buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM34_CUOAGX",
         },
-   'STURDeCAM88': {
+        'STURDeCAM88': {
           tableData: [
             ['Sensor', "OmniVision's&reg; OX08B40"],
             ['Frame Rate', '8MP @ 30 fps'],
@@ -135,11 +133,11 @@ const windowSize = useWindowSize();
             ['No of Cameras Supported', 'upto 8 cameras'],
             ['ISP', 'On-board high performance ISP'],
             ['Form factor', '42 x 42 mm'],
-                 ['Certifications ', `
+            ['Certifications ', `
   <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
   <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
   <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
-`],  
+`],
           ],
           highlights: [
             "8MP (4K) HDR camera module based on OX08B40, OmniVision's automotive grade image sensor.",
@@ -155,7 +153,7 @@ const windowSize = useWindowSize();
           doctitle: "Technical documents for STURDeCAM88",
           buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM88_CUOAGX",
         },
- 'STURDeCAM84': {
+        'STURDeCAM84': {
           tableData: [
             ['Sensor', 'onsemi&reg; AR0823AT'],
             ['Frame Rate', '8MP @ 30 fps'],
@@ -177,16 +175,16 @@ const windowSize = useWindowSize();
           title: "STURDeCAM84 - World's Tiniest 8MP Automotive Camera",
           documentname: "e-con-STURDeCAM84-technical-documents.zip",
           doctitle: "Technical documents for STURDeCAM84",
-        },            
-          },
-      bgColor: 'white',
-          color: '#344ea1',
-          images: [STURDeCAM31,STURDeCAM34,STURDeCAM84,STURDeCAM88]
         },
+      },
+      bgColor: 'white',
+      color: '#344ea1',
+      images: [STURDeCAM31, STURDeCAM34, STURDeCAM88,STURDeCAM84]
+    },
     '4K GMSL2': {
       tabs: ['STURDeCAM88', 'STURDeCAM84'],
       content: {
- 'STURDeCAM88': {
+        'STURDeCAM88': {
           tableData: [
             ['Sensor', "OmniVision's&reg; OX08B40"],
             ['Frame Rate', '8MP @ 30 fps'],
@@ -197,11 +195,11 @@ const windowSize = useWindowSize();
             ['No of Cameras Supported', 'upto 8 cameras'],
             ['ISP', 'On-board high performance ISP'],
             ['Form factor', '42 x 42 mm'],
-                 ['Certifications ', `
+            ['Certifications ', `
   <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
   <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
   <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
-`],  
+`],
           ],
           highlights: [
             "8MP (4K) HDR camera module based on OX08B40, OmniVision's automotive grade image sensor.",
@@ -217,7 +215,7 @@ const windowSize = useWindowSize();
           doctitle: "Technical documents for STURDeCAM88",
           buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM88_CUOAGX",
         },
- 'STURDeCAM84': {
+        'STURDeCAM84': {
           tableData: [
             ['Sensor', 'onsemi&reg; AR0823AT'],
             ['Frame Rate', '8MP @ 30 fps'],
@@ -246,7 +244,7 @@ const windowSize = useWindowSize();
       color: '#344ea1',
       images: [STURDeCAM88, STURDeCAM84],
     },
-    
+
     '3MP GMSL2': {
       tabs: ['STURDeCAM31', 'STURDeCAM34'],
       content: {
@@ -261,11 +259,11 @@ const windowSize = useWindowSize();
             ['No of Cameras Supported ', 'upto 8 cameras'],
             ['ISP ', 'On-board high performance ISP'],
             ['Form factor ', '25 x 25 mm'],
-                 ['Certifications ', `
+            ['Certifications ', `
   <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
   <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
   <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
-`],  
+`],
           ],
           highlights: [
             "HDR camera module based on Sony® ISX031 sensor incorporating sub-pixel technology",
@@ -281,7 +279,7 @@ const windowSize = useWindowSize();
           doctitle: "Technical documents for STURDeCAM31",
           buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM31",
         },
- 'STURDeCAM34': {
+        'STURDeCAM34': {
           tableData: [
             ['Sensor', 'onsemi&reg; AR0341AT'],
             ['Frame Rate', '3MP @ 60 fps'],
@@ -292,11 +290,11 @@ const windowSize = useWindowSize();
             ['No of Cameras Supported', 'upto 8 cameras'],
             ['ISP', 'On-board high performance ISP'],
             ['Form factor', '25 x 25 mm'],
-                 ['Certifications ', `
+            ['Certifications ', `
   <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
   <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
   <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
-`],  
+`],
           ],
           highlights: [
             'Houses AR0341AT Image Sensor from onsemi&reg;',
@@ -319,58 +317,65 @@ const windowSize = useWindowSize();
       color: '#344ea1',
       images: [STURDeCAM31, STURDeCAM34],
     },
-    
+
   };
 
-  const handleLeftTabClick = (tab) => {
-      if (tab !== 'Supported Cameras') {
-        setSelectedLeftTab(tab);
-        setSelectedRightTab(rightTabs[tab].tabs[0]);
-      }
-    };
-  
-    const handleRightTabClick = (tab) => {
-      setSelectedRightTab(tab);
-    };
-    useEffect(() => {
-      if (location.state?.leftTab) {
-        setInitialLeftTab(location.state.leftTab);
-      }
-      if (location.state?.rightTab) {
-        setInitialRightTab(location.state.rightTab);
-      }
-    }, [location.state]);
-  
-    useEffect(() => {
-      if (initialLeftTab) {
-        setSelectedLeftTab(initialLeftTab);
-      }
-    }, [initialLeftTab]);
-  
-    useEffect(() => {
-      if (initialRightTab && rightTabs[selectedLeftTab]?.tabs.includes(initialRightTab)) {
-        setSelectedRightTab(initialRightTab);
-      } else if (rightTabs[selectedLeftTab]) {
-        setSelectedRightTab(rightTabs[selectedLeftTab].tabs[0]);
-      }
-    }, [selectedLeftTab, initialRightTab]);
-  
-    useEffect(() => {
-      if (windowSize.width <= 1110 && selectedLeftTab === 'All Cameras') {
-        const firstValidTab = Object.keys(rightTabs).find(tab => 
-          tab !== 'All Cameras' && tab !== 'Supported Cameras'
-        );
-        if (firstValidTab) {
-          setSelectedLeftTab(firstValidTab);
-          setSelectedRightTab(rightTabs[firstValidTab].tabs[0]);
+ useEffect(() => {
+    const hash = window.location.hash?.replace("#", "");
+    if (hash) {
+      for (const leftTab in rightTabs) {
+        if (rightTabs[leftTab]?.tabs?.includes(hash)) {
+          setSelectedLeftTab(leftTab);
+          setSelectedRightTab(hash);
+          break;
         }
       }
-    }, [windowSize.width, selectedLeftTab]);
-  
-    const currentContent = rightTabs[selectedLeftTab]?.content[selectedRightTab];
-    const currentImage = rightTabs[selectedLeftTab]?.images?.[rightTabs[selectedLeftTab].tabs.indexOf(selectedRightTab)];
-  
+    }
+  }, []);
 
+  useEffect(() => {
+    const leftTab = location.state?.leftTab;
+    const rightTab = location.state?.rightTab;
+
+    if (leftTab && rightTabs[leftTab]) {
+      setSelectedLeftTab(leftTab);
+      if (rightTab && rightTabs[leftTab].tabs.includes(rightTab)) {
+        setSelectedRightTab(rightTab);
+      } else {
+        setSelectedRightTab(rightTabs[leftTab].tabs[0]);
+      }
+    }
+  }, [location.state]);
+
+  useEffect(() => {
+    if (windowSize.width <= 1110 && selectedLeftTab === "All Cameras") {
+      const fallbackTab = Object.keys(rightTabs).find(
+        (tab) => tab !== "All Cameras" && tab !== "Supported Cameras"
+      );
+      if (fallbackTab) {
+        setSelectedLeftTab(fallbackTab);
+        setSelectedRightTab(rightTabs[fallbackTab].tabs[0]);
+      }
+    }
+  }, [windowSize.width, selectedLeftTab]);
+
+  const handleLeftTabClick = (tab) => {
+    if (tab === "Supported Cameras") return;
+    setSelectedLeftTab(tab);
+    setSelectedRightTab(rightTabs[tab].tabs[0]);
+  };
+
+  const handleRightTabClick = (tab) => {
+    setSelectedRightTab(tab);
+  };
+
+  const currentContent =
+    rightTabs[selectedLeftTab]?.content?.[selectedRightTab] || null;
+
+  const currentImage =
+    rightTabs[selectedLeftTab]?.images?.[
+      rightTabs[selectedLeftTab].tabs.indexOf(selectedRightTab)
+    ] || null;
 
   return (
     <div className="ProductTabs-Total">
@@ -414,7 +419,7 @@ const windowSize = useWindowSize();
               )}
 
               {selectedRightTab && currentContent && (
-                <div className="ProductTabs-ContentBox">
+                <div className="ProductTabs-ContentBox" id={selectedRightTab}>
                   <ProductTableData tableData={currentContent.tableData} imageSrc={currentImage} productName={selectedRightTab} title={currentContent.title} highlights={currentContent.highlights} documentname={currentContent.documentname} doctitle={currentContent.doctitle} buynow={currentContent.buynow} />
 
                   <div className="Productinsidetab-container">

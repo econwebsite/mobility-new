@@ -8,7 +8,7 @@
 // const CASE_STUDIES = {
 //   MINING_VEHICLE: {
 //     productName: 'CaseStudy',
-//     documentName: 'mining-vehicles-camera-solution.pdf',
+//     documentName: 'e-con_mining-vehicles-camera-solution',
 //     title: 'How e-con Systems helped equip large mining vehicles with custom multi-camera solutions to monitor blind spots',
 //     image: miningvehical,
 //     description: "e-con Systems helped a leading industrial automation provider in the mining sector to implement a custom multi-camera solution for large vehicles operating in high-risk environments.",

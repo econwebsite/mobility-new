@@ -1,5 +1,6 @@
 .whatneed-container {
   padding: 1rem !important;
+    overflow-x: hidden;
   background-color: #fff;
 }
 

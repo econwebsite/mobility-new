@@ -10,12 +10,36 @@ import qualcum from "../../../../assets/Productpage/platformsupport/qualcom.jpg"
 import npx from "../../../../assets/Productpage/platformsupport/npx.jpg";
 import nvidia from "../../../../assets/Productpage/platformsupport/nividia.jpg"
 
+
+
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowSize;
+};
+
 const Incabin = () => {
   const [selectedLeftTab, setSelectedLeftTab] = useState('All cameras');
   const [selectedRightTab, setSelectedRightTab] = useState('LOWLIGHT');
 const [initialLeftTab, setInitialLeftTab] = useState(null);
   const [initialRightTab, setInitialRightTab] = useState(null);
   const location = useLocation();
+  const windowSize = useWindowSize();
 
   const images = [
     { id: 1, src: [ambrella], alt: 'ambrella' },
@@ -39,7 +63,7 @@ const [initialLeftTab, setInitialLeftTab] = useState(null);
         'eDACAM27': {
             tableData: [
             ['Sensor','OmniVision&trade; OV2312'],
-            ['Frame Rate', '2MP 36 fps'],
+            ['Frame Rate', '2MP @ 36 fps'],
             ['Output Format', 'RGB - UYVY & IR - UYVY'],
             ['Interface', 'GMSL2'],
             ['FOV', ' 87.89° (D) x 80.86° (H) x 50.72° (V)'],
@@ -53,16 +77,16 @@ const [initialLeftTab, setInitialLeftTab] = useState(null);
             "940nm IR illumination LED ",
             "Available in multiple FOV options",
            ],
-          title: "eDACAM27 - 2MP OV2312 Global Shutter Camera with 15m cable support",
+          title: "eDACAM27 - 2MP OV2312 Global Shutter RGB-IR Camera",
           doctitle: "Technical documents for STURDeCAM27",
         },
         'eDACAM29': {
            tableData: [
             ['Sensor','OmniVision&trade; OV2311 '],
-            ['Frame Rate', '2MP 40 fps'],
+            ['Frame Rate', '2MP @ 40 fps'],
             ['Output Format', 'Y8 (8-bit)/Y16 (10-bit)'],
             ['Interface', 'GMSL2'],
-            ['FOV', '71.6°'],
+            ['DFOV', '71.6°'],
             ['Temperature', '-30°C to 70°C'],
            ['ISP', 'On-board high performance ISP'],
           ['Form factor', '30mm x 30mm'],
@@ -73,7 +97,7 @@ const [initialLeftTab, setInitialLeftTab] = useState(null);
             "940nm IR illumination LED ",
             "Available in multiple FOV options",
            ],
-          title: "eDACAM29 - 2MP OV2311 Global Shutter Camera with 15m cable support",
+          title: "eDACAM29 - 2MP OV2311 Global Shutter Monochrome Camera",
           doctitle: "Technical documents for STURDeCAM29",
         },
       },
@@ -83,43 +107,62 @@ const [initialLeftTab, setInitialLeftTab] = useState(null);
     }
   };
   
-const handleLeftTabClick = (tab) => {
-    if (tab !== 'Supported Cameras') {
-      setSelectedLeftTab(tab);
-      setSelectedRightTab(rightTabs[tab].tabs[0]);
+useEffect(() => {
+    const hash = window.location.hash?.replace("#", "");
+    if (hash) {
+      for (const leftTab in rightTabs) {
+        if (rightTabs[leftTab]?.tabs?.includes(hash)) {
+          setSelectedLeftTab(leftTab);
+          setSelectedRightTab(hash);
+          break;
+        }
+      }
     }
+  }, []);
+
+  useEffect(() => {
+    const leftTab = location.state?.leftTab;
+    const rightTab = location.state?.rightTab;
+
+    if (leftTab && rightTabs[leftTab]) {
+      setSelectedLeftTab(leftTab);
+      if (rightTab && rightTabs[leftTab].tabs.includes(rightTab)) {
+        setSelectedRightTab(rightTab);
+      } else {
+        setSelectedRightTab(rightTabs[leftTab].tabs[0]);
+      }
+    }
+  }, [location.state]);
+
+  useEffect(() => {
+    if (windowSize.width <= 1110 && selectedLeftTab === "All Cameras") {
+      const fallbackTab = Object.keys(rightTabs).find(
+        (tab) => tab !== "All Cameras" && tab !== "Supported Cameras"
+      );
+      if (fallbackTab) {
+        setSelectedLeftTab(fallbackTab);
+        setSelectedRightTab(rightTabs[fallbackTab].tabs[0]);
+      }
+    }
+  }, [windowSize.width, selectedLeftTab]);
+
+  const handleLeftTabClick = (tab) => {
+    if (tab === "Supported Cameras") return;
+    setSelectedLeftTab(tab);
+    setSelectedRightTab(rightTabs[tab].tabs[0]);
   };
 
   const handleRightTabClick = (tab) => {
     setSelectedRightTab(tab);
   };
-  useEffect(() => {
-    if (location.state?.leftTab) {
-      setInitialLeftTab(location.state.leftTab);
-    }
-    if (location.state?.rightTab) {
-      setInitialRightTab(location.state.rightTab);
-    }
-  }, [location.state]);
 
-  useEffect(() => {
-    if (initialLeftTab) {
-      setSelectedLeftTab(initialLeftTab);
-    }
-  }, [initialLeftTab]);
+  const currentContent =
+    rightTabs[selectedLeftTab]?.content?.[selectedRightTab] || null;
 
-  useEffect(() => {
-    if (initialRightTab && rightTabs[selectedLeftTab]?.tabs.includes(initialRightTab)) {
-      setSelectedRightTab(initialRightTab);
-    } else if (rightTabs[selectedLeftTab]) {
-      setSelectedRightTab(rightTabs[selectedLeftTab].tabs[0]);
-    }
-  }, [selectedLeftTab, initialRightTab]);
-
-
-
-  const currentContent = rightTabs[selectedLeftTab]?.content[selectedRightTab];
-  const currentImage = rightTabs[selectedLeftTab]?.images?.[rightTabs[selectedLeftTab].tabs.indexOf(selectedRightTab)];
+  const currentImage =
+    rightTabs[selectedLeftTab]?.images?.[
+      rightTabs[selectedLeftTab].tabs.indexOf(selectedRightTab)
+    ] || null;
 
   return (
     <div className="ProductTabs-Total">
@@ -163,7 +206,7 @@ const handleLeftTabClick = (tab) => {
               )}
 
               {selectedRightTab && currentContent && (
-                <div className="ProductTabs-ContentBox">
+                <div className="ProductTabs-ContentBox" id={selectedRightTab}>
                   <ProductTableData tableData={currentContent.tableData} imageSrc={currentImage} productName={selectedRightTab} title={currentContent.title} highlights={currentContent.highlights} documentname={currentContent.documentname} doctitle={currentContent.doctitle} buynow={currentContent.buynow} />
 
                   <div className="Productinsidetab-container">

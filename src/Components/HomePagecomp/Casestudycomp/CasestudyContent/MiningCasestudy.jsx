@@ -23,7 +23,7 @@ const MiningCasestudy = () => {
           <h1 className="future-case-heading">
           Developing a rugged, multi-camera setup for off-road mining vehicles
           </h1>
-          <Modelbutton className="future-case-button" text="Download casestudy" backgroundColor="#344ea1" animationColor="#69ba2f" hoverColor="#69ba2f" productName="case-study" docName="mining-vehicles-camera-solution.pdf" title="Case Study" />
+          <Modelbutton className="future-case-button" text="Download casestudy" backgroundColor="#344ea1" animationColor="#69ba2f" hoverColor="#69ba2f" productName="case-study" docName="e-con_mining-vehicles-camera-solution" title="Case Study" />
 
         </div>
 
@@ -62,7 +62,7 @@ const MiningCasestudy = () => {
               <li>Higher uptime due to fewer accidents and faster decision-making</li>
               <li>Durability in extreme weather and terrain with IP67 camera enclosures</li>
               <li>Faster deployment by avoiding changes to vehicle chassis or wiring</li>
-              <Modelbutton className="ProductTabs-Button" text="Download casestudy" backgroundColor="#344ea1" animationColor="#69ba2f" hoverColor="#69ba2f" productName="case-study" docName="mining-vehicles-camera-solution.pdf" title="Case Study"/>
+              <Modelbutton className="ProductTabs-Button" text="Download casestudy" backgroundColor="#344ea1" animationColor="#69ba2f" hoverColor="#69ba2f" productName="case-study" docName="e-con_mining-vehicles-camera-solution" title="Case Study"/>
 
             </ul>
           </div>

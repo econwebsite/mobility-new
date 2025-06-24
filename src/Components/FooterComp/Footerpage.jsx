@@ -79,7 +79,7 @@ const Footerpage = () => {
               </Dropdown>
               <Link to="/industries" className="Footer-link">Industries</Link>
               <Link to="/blog" className="Footer-link">Blog</Link>
-              <Link to="/company/contact-us" className="Footer-link">Contact</Link>
+              <Link to="/contact-us" className="Footer-link">Contact</Link>
             </nav>
           </div>
 

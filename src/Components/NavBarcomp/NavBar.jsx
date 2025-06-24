@@ -68,6 +68,8 @@ const NavBar = () => {
   const closeTimeoutRef = useRef(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false); 
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
+  const [anchorElResources, setAnchorElResources] = useState(null);
+const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
 
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
   const handlePopoverOpen = (event) => {
@@ -97,15 +99,30 @@ const NavBar = () => {
   useEffect(() => {
     if (!mobileOpen) {
       setMobileMenuOpen(false);
+       setMobileIndustriesOpen(false);
+    setMobileResourcesOpen(false);
     }
   }, [mobileOpen]);
 
   const handlePopoverLeave = () => {
     setAnchorEl(null);
     setAnchorElIndustries(null);
+  setAnchorElResources(null);
   };
+  const handleResourcesPopoverOpen = (event) => {
+  clearTimeout(closeTimeoutRef.current);
+  setAnchorElResources(event.currentTarget);
+};
+
+const handleResourcesPopoverClose = () => {
+  closeTimeoutRef.current = setTimeout(() => {
+    setAnchorElResources(null);
+  }, 100);
+};
   const open = Boolean(anchorEl);
   const openIndustries = Boolean(anchorElIndustries);
+
+
 
   const SolutionMenu = (
     <Box sx={{ 
@@ -264,7 +281,36 @@ const NavBar = () => {
       </MenuItem> 
     </Box>
   );
-
+const ResourcesMenu = (
+  <Box sx={{ 
+    p: 1, 
+    width: 250,
+    '& .MuiMenuItem-root': {
+      color: '#344ea1',
+      fontSize: '1.1em',
+      transition: 'all 0.2s ease-in-out',
+      '&:hover': {
+        backgroundColor: '#00aeef',
+        color: 'white',
+      }
+    }
+  }}>
+    <MenuItem 
+      component={Link} 
+      to="/blog" 
+      onClick={handleResourcesPopoverClose}
+    >
+      Blogs
+    </MenuItem>
+    <MenuItem 
+      component={Link} 
+      to="/case-study" 
+      onClick={handleResourcesPopoverClose}
+    >
+      Case Study
+    </MenuItem>
+  </Box>
+);
   const drawerContent = (
     <>
      <Box sx={{ 
@@ -390,17 +436,44 @@ const NavBar = () => {
         )}
         <ListItem disablePadding>
           <ListItemButton 
-            component={Link} 
-            to="/blog" 
-            onClick={handleDrawerToggle}
+            onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)}
             sx={{ '&:hover': { color: '#00aeef' } }}
           >
             <ListItemText 
-              primary="Blog" 
+              primary="Resources" 
               primaryTypographyProps={{ style: { color: 'white' } }} 
             />
+            {mobileResourcesOpen  ? <ExpandLess sx={{ color: 'white' }} /> : <ExpandMore sx={{ color: 'white' }} />}
           </ListItemButton>
         </ListItem>
+        {mobileResourcesOpen && (
+          <List sx={{ pl: 2 }}>
+            {[
+             
+              { label: 'Blogs', path: '/blog' },
+              { label: 'Case Study', path:"/case-study" },
+            ].map((item, index) => (
+              <ListItem key={index} disablePadding>
+                <ListItemButton
+                  component={Link}
+                  to={item.path}
+                  onClick={handleDrawerToggle}
+                  sx={{
+                    '&:hover .MuiListItemText-primary': { color: '#00aeef' },
+                    pl: 2,
+                  }}
+                >
+                  <ListItemText
+                    primary={item.label}
+                    primaryTypographyProps={{
+                      sx: { color: 'white', fontSize: '0.85em', textAlign: 'left' },
+                    }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        )}     
         <ListItem disablePadding>
           <ListItemButton 
             component={Link} 
@@ -461,11 +534,22 @@ const NavBar = () => {
                   >
                     Industries
                   </NavLink>
-                  <Divider orientation="vertical" flexItem />
                 </Box>
               )}
             </Box>
-        <NavLink to="/blog">Blog</NavLink>
+              <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent:"space-around" }}>
+              {isDesktop && (
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
+                  <Divider orientation="vertical" flexItem />
+                  <NavLink
+                    aria-haspopup="true"
+                    onMouseOver={handleResourcesPopoverOpen}
+                  >
+                    Resources
+                  </NavLink>
+                </Box>
+              )}
+            </Box>
         <Divider orientation="vertical" flexItem />
         <NavLink to="/contact-us">Contact Us</NavLink>
       </Box>
@@ -537,6 +621,24 @@ const NavBar = () => {
         >
           {IndustriesMenu}
         </Popover>
+        <Popover
+  open={Boolean(anchorElResources)}
+  anchorEl={anchorElResources}
+  onClose={handleResourcesPopoverClose}
+  anchorOrigin={{
+    vertical: 'bottom',
+    horizontal: 'left',
+  }}
+  transformOrigin={{
+    vertical: 'top',
+    horizontal: 'left',
+  }}
+  disableRestoreFocus
+  PaperProps={{ onMouseEnter: handlePopoverEnter, onMouseLeave: handleResourcesPopoverClose }}
+>
+  {ResourcesMenu}
+</Popover>
+
       </StyledAppBar>
       <StyledDrawer
         anchor="right"
@@ -560,6 +662,24 @@ const NavBar = () => {
         >
           {SolutionMenu}
         </Popover>
+      <Popover
+  open={Boolean(anchorElResources)}
+  anchorEl={anchorElResources}
+  onClose={handleResourcesPopoverClose}
+  anchorOrigin={{
+    vertical: 'bottom',
+    horizontal: 'left',
+  }}
+  transformOrigin={{
+    vertical: 'top',
+    horizontal: 'left',
+  }}
+  disableRestoreFocus
+  PaperProps={{ onMouseEnter: handlePopoverEnter, onMouseLeave: handleResourcesPopoverClose }}
+>
+  {ResourcesMenu}
+</Popover>
+
       </StyledDrawer>
     </>
   );

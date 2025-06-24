@@ -1,11 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import resolution from "../../../../assets/Productpage/drivermonitoring/resolution.png";
-import highframerate from "../../../../assets/Productpage/drivermonitoring/highframe-rate.png";
+import irillumination from "../../../../assets/Productpage/drivermonitoring/IR-illumination.png";
+import widefield from "../../../../assets/Productpage/drivermonitoring/wide-field-view.png";
 import globalshutter from "../../../../assets/Productpage/drivermonitoring/globalshutter.png";
 import nir from "../../../../assets/Productpage/drivermonitoring/nir-sensivity.png";
-
 
 
 const cardVariants = {
@@ -22,8 +21,8 @@ const cardVariants = {
 };
 
 const cardData = [
-  { img: resolution, title: "Resolution" },
-  { img: highframerate, title: "High frame rate" },
+  { img: irillumination, title: "IR illumination" },
+  { img: widefield, title: "Wide Field of View" },
   { img: globalshutter, title: "Global Shutter" },
   { img: nir, title: "NIR sensitivity" },
 ];

@@ -54,6 +54,7 @@
 .ProductTableData-HighlightColumn {
   display: flex;
   flex-direction: column;
+  align-self: center;
 }
 
 .highlight-heading {
@@ -97,7 +98,7 @@
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 20px;
 }
 
 .ProductTabs-Button {

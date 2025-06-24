@@ -29,12 +29,13 @@ const useWindowSize = () => {
       });
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return windowSize;
 };
+
 
 const Producttab = () => {
   const [selectedLeftTab, setSelectedLeftTab] = useState('All Cameras');
@@ -182,7 +183,7 @@ const windowSize = useWindowSize();
          'RouteCAM_CU22': {
           tableData: [
             ['Sensor', 'Sony&reg; STARVIS™ IMX662'],
-            ['Frame Rate', '60 fps'],
+            ['Frame Rate', 'Full HD @ 60 fps'],
             ['Output Format', 'Compressed MJPEG, H.265 and H.264 formats'],
             ['Interface', 'GigE'],
             ['FOV', '151.74°(D), 130°(H), 70.75°(V)'],
@@ -351,7 +352,7 @@ const windowSize = useWindowSize();
        'RouteCAM_CU22': {
           tableData: [
             ['Sensor', 'Sony&reg; STARVIS™ IMX662'],
-            ['Frame Rate', '60 fps'],
+            ['Frame Rate', 'Full HD @ 60 fps'],
             ['Output Format', 'Compressed MJPEG, H.265 and H.264 formats'],
             ['Interface', 'GigE'],
             ['FOV', '151.74°(D), 130°(H), 70.75°(V)'],
@@ -379,53 +380,63 @@ const windowSize = useWindowSize();
     }
   };
 
-  const handleLeftTabClick = (tab) => {
-    if (tab !== 'Supported Cameras') {
+  
+  useEffect(() => {
+      const hash = window.location.hash?.replace("#", "");
+      if (hash) {
+        for (const leftTab in rightTabs) {
+          if (rightTabs[leftTab]?.tabs?.includes(hash)) {
+            setSelectedLeftTab(leftTab);
+            setSelectedRightTab(hash);
+            break;
+          }
+        }
+      }
+    }, []);
+  
+    useEffect(() => {
+      const leftTab = location.state?.leftTab;
+      const rightTab = location.state?.rightTab;
+  
+      if (leftTab && rightTabs[leftTab]) {
+        setSelectedLeftTab(leftTab);
+        if (rightTab && rightTabs[leftTab].tabs.includes(rightTab)) {
+          setSelectedRightTab(rightTab);
+        } else {
+          setSelectedRightTab(rightTabs[leftTab].tabs[0]);
+        }
+      }
+    }, [location.state]);
+  
+    useEffect(() => {
+      if (windowSize.width <= 1110 && selectedLeftTab === "All Cameras") {
+        const fallbackTab = Object.keys(rightTabs).find(
+          (tab) => tab !== "All Cameras" && tab !== "Supported Cameras"
+        );
+        if (fallbackTab) {
+          setSelectedLeftTab(fallbackTab);
+          setSelectedRightTab(rightTabs[fallbackTab].tabs[0]);
+        }
+      }
+    }, [windowSize.width, selectedLeftTab]);
+  
+    const handleLeftTabClick = (tab) => {
+      if (tab === "Supported Cameras") return;
       setSelectedLeftTab(tab);
       setSelectedRightTab(rightTabs[tab].tabs[0]);
-    }
-  };
-
-  const handleRightTabClick = (tab) => {
-    setSelectedRightTab(tab);
-  };
-  useEffect(() => {
-    if (location.state?.leftTab) {
-      setInitialLeftTab(location.state.leftTab);
-    }
-    if (location.state?.rightTab) {
-      setInitialRightTab(location.state.rightTab);
-    }
-  }, [location.state]);
-
-  useEffect(() => {
-    if (initialLeftTab) {
-      setSelectedLeftTab(initialLeftTab);
-    }
-  }, [initialLeftTab]);
-
-  useEffect(() => {
-    if (initialRightTab && rightTabs[selectedLeftTab]?.tabs.includes(initialRightTab)) {
-      setSelectedRightTab(initialRightTab);
-    } else if (rightTabs[selectedLeftTab]) {
-      setSelectedRightTab(rightTabs[selectedLeftTab].tabs[0]);
-    }
-  }, [selectedLeftTab, initialRightTab]);
-
-  useEffect(() => {
-    if (windowSize.width <= 1110 && selectedLeftTab === 'All Cameras') {
-      const firstValidTab = Object.keys(rightTabs).find(tab => 
-        tab !== 'All Cameras' && tab !== 'Supported Cameras'
-      );
-      if (firstValidTab) {
-        setSelectedLeftTab(firstValidTab);
-        setSelectedRightTab(rightTabs[firstValidTab].tabs[0]);
-      }
-    }
-  }, [windowSize.width, selectedLeftTab]);
-
-  const currentContent = rightTabs[selectedLeftTab]?.content[selectedRightTab];
-  const currentImage = rightTabs[selectedLeftTab]?.images?.[rightTabs[selectedLeftTab].tabs.indexOf(selectedRightTab)];
+    };
+  
+    const handleRightTabClick = (tab) => {
+      setSelectedRightTab(tab);
+    };
+  
+    const currentContent =
+      rightTabs[selectedLeftTab]?.content?.[selectedRightTab] || null;
+  
+    const currentImage =
+      rightTabs[selectedLeftTab]?.images?.[
+        rightTabs[selectedLeftTab].tabs.indexOf(selectedRightTab)
+      ] || null;
 
   return (
     <div className="ProductTabs-Total">
@@ -469,7 +480,7 @@ const windowSize = useWindowSize();
               )}
 
               {selectedRightTab && currentContent && (
-                <div className="ProductTabs-ContentBox">
+                <div className="ProductTabs-ContentBox" id={selectedRightTab}>
                   <ProductTableData tableData={currentContent.tableData} imageSrc={currentImage} productName={selectedRightTab} title={currentContent.title} highlights={currentContent.highlights} documentname={currentContent.documentname} doctitle={currentContent.doctitle} buynow={currentContent.buynow} />
 
                   <div className="Productinsidetab-container">
