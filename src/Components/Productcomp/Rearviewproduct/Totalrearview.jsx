@@ -45,19 +45,21 @@ const Section = ({ children, id }) => (
       if (hash) {
         const element = document.querySelector(hash);
         if (element) {
-          const header = document.querySelector('header') || document.querySelector('.mobile-header');
-          const headerHeight = header ? header.offsetHeight : 0;
-          const yOffset = -headerHeight - 10;
-
-          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-          window.scrollTo({ top: y, behavior: isMobile ? 'auto' : 'smooth' });
+          const offset = 100; 
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - offset;
+  
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: isMobile ? 'auto' : 'smooth'
+          });
         }
       }
       if (location.state?.shouldScroll) {
         window.history.replaceState({}, document.title);
       }
     };
+    
     const timeout = setTimeout(scrollToSection, isMobile ? 500 : 300);
     return () => clearTimeout(timeout);
   }, [location]);

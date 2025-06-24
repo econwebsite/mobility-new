@@ -35,9 +35,8 @@ const useWindowSize = () => {
 
 const Incabin = () => {
   const [selectedLeftTab, setSelectedLeftTab] = useState('All cameras');
-  const [selectedRightTab, setSelectedRightTab] = useState('LOWLIGHT');
-const [initialLeftTab, setInitialLeftTab] = useState(null);
-  const [initialRightTab, setInitialRightTab] = useState(null);
+  const [selectedRightTab, setSelectedRightTab] = useState('eDACAM27');
+
   const location = useLocation();
   const windowSize = useWindowSize();
 
@@ -107,62 +106,116 @@ const [initialLeftTab, setInitialLeftTab] = useState(null);
     }
   };
   
-useEffect(() => {
-    const hash = window.location.hash?.replace("#", "");
-    if (hash) {
-      for (const leftTab in rightTabs) {
-        if (rightTabs[leftTab]?.tabs?.includes(hash)) {
-          setSelectedLeftTab(leftTab);
-          setSelectedRightTab(hash);
-          break;
+  useEffect(() => {
+      const hash = window.location.hash?.replace("#", "");
+      if (hash) {
+        const [rawLeft, right] = hash.split("/");
+        const left = rawLeft?.replace(/-/g, " "); 
+  
+        if (rightTabs[left]) {
+          setSelectedLeftTab(left);
+          if (rightTabs[left].tabs.includes(right)) {
+            setSelectedRightTab(right);
+            setTimeout(() => {
+              const element = document.getElementById(right);
+              if (element) {
+                const offset = 100; 
+                const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - offset;
+                
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
+              }
+            }, 200); 
+          } else {
+            const defaultRight = rightTabs[left].tabs[0];
+            setSelectedRightTab(defaultRight);
+          }
+        } else {
+          for (const leftTab in rightTabs) {
+            if (rightTabs[leftTab].tabs.includes(hash)) {
+              setSelectedLeftTab(leftTab);
+              setSelectedRightTab(hash);
+              setTimeout(() => {
+                const element = document.getElementById(hash);
+                if (element) {
+                  // Add offset scrolling here
+                  const offset = 100; // Adjust as needed
+                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                  const offsetPosition = elementPosition - offset;
+                  
+                  window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                  });
+                }
+              }, 200);
+              break;
+            }
+          }
         }
       }
-    }
-  }, []);
-
-  useEffect(() => {
-    const leftTab = location.state?.leftTab;
-    const rightTab = location.state?.rightTab;
-
-    if (leftTab && rightTabs[leftTab]) {
-      setSelectedLeftTab(leftTab);
-      if (rightTab && rightTabs[leftTab].tabs.includes(rightTab)) {
-        setSelectedRightTab(rightTab);
-      } else {
-        setSelectedRightTab(rightTabs[leftTab].tabs[0]);
+    }, []);
+  
+  
+    
+      useEffect(() => {
+        const leftTab = location.state?.leftTab;
+        const rightTab = location.state?.rightTab;
+    
+        if (leftTab && rightTabs[leftTab]) {
+          setSelectedLeftTab(leftTab);
+          if (rightTab && rightTabs[leftTab].tabs.includes(rightTab)) {
+            setSelectedRightTab(rightTab);
+          } else {
+            setSelectedRightTab(rightTabs[leftTab].tabs[0]);
+          }
+        }
+      }, [location.state]);
+    
+       useEffect(() => {
+      if (windowSize.width <= 1110 && selectedLeftTab === "All Cameras") {
+        const fallbackTab = Object.keys(rightTabs).find(
+          (tab) => tab !== "All Cameras" && tab !== "Supported Cameras"
+        );
+        if (fallbackTab) {
+          setSelectedLeftTab(fallbackTab);
+          setSelectedRightTab(rightTabs[fallbackTab].tabs[0]);
+        }
       }
-    }
-  }, [location.state]);
-
-  useEffect(() => {
-    if (windowSize.width <= 1110 && selectedLeftTab === "All Cameras") {
-      const fallbackTab = Object.keys(rightTabs).find(
-        (tab) => tab !== "All Cameras" && tab !== "Supported Cameras"
-      );
-      if (fallbackTab) {
-        setSelectedLeftTab(fallbackTab);
-        setSelectedRightTab(rightTabs[fallbackTab].tabs[0]);
-      }
-    }
-  }, [windowSize.width, selectedLeftTab]);
-
+    }, [windowSize.width, selectedLeftTab]);
+    
   const handleLeftTabClick = (tab) => {
-    if (tab === "Supported Cameras") return;
-    setSelectedLeftTab(tab);
-    setSelectedRightTab(rightTabs[tab].tabs[0]);
-  };
-
-  const handleRightTabClick = (tab) => {
-    setSelectedRightTab(tab);
-  };
-
-  const currentContent =
-    rightTabs[selectedLeftTab]?.content?.[selectedRightTab] || null;
-
-  const currentImage =
-    rightTabs[selectedLeftTab]?.images?.[
-      rightTabs[selectedLeftTab].tabs.indexOf(selectedRightTab)
-    ] || null;
+      if (tab === "Supported Cameras") return;
+      const defaultRightTab = rightTabs[tab].tabs[0];
+      setSelectedLeftTab(tab);
+      setSelectedRightTab(defaultRightTab);
+          window.history.pushState(
+        null, 
+        '', 
+        `#${tab.replace(/\s+/g, "-")}/${defaultRightTab}`
+      );
+    };
+  
+    const handleRightTabClick = (tab) => {
+      setSelectedRightTab(tab);
+          window.history.pushState(
+        null, 
+        '', 
+        `#${selectedLeftTab.replace(/\s+/g, "-")}/${tab}`
+      );
+    };
+  
+      const currentContent =
+        rightTabs[selectedLeftTab]?.content?.[selectedRightTab] || null;
+    
+      const currentImage =
+        rightTabs[selectedLeftTab]?.images?.[
+          rightTabs[selectedLeftTab].tabs.indexOf(selectedRightTab)
+        ] || null;
+  
 
   return (
     <div className="ProductTabs-Total">
