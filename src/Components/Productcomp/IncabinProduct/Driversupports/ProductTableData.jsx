@@ -4,11 +4,11 @@ import NewReleasesIcon from "../../../../assets/new-icon.png";
 import Modelbutton from "../../../ButtonComp/Modelbutton";
 import AnimationButton from "../../../ButtonComp/AnimationButton";
 
-function ProductTableData({ 
-  tableData, 
-  imageSrc, 
-  title, 
-  highlights, 
+function ProductTableData({
+  tableData,
+  imageSrc,
+  title,
+  highlights,
   documentname,
   doctitle,
   buynow
@@ -31,70 +31,63 @@ function ProductTableData({
 
             <div className="ProductTableData-HighlightColumn">
               <h5 className="highlight-heading">Highlights</h5>
-                   <ul className="highlight-list">
-  {highlights?.map((item, index) => (
-    <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
-  ))}
-</ul>
+              <ul className="highlight-list">
+                {highlights?.map((item, index) => (
+                  <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+                ))}
+              </ul>
             </div>
           </div>
 
           <div className="ProductTabs-total-Button">
-           {buynow && (
-    <AnimationButton 
-      text="Buy now" 
-      className="ProductTabs-Button1" 
-      backgroundColor="#00aeef" 
-      hoverColor="#344ea1" 
-      to={buynow}
-    />
-  )}
-            <Modelbutton 
+            {buynow && (
+              <AnimationButton
+                text="Buy now"
+                className="ProductTabs-Button1"
+                backgroundColor="#00aeef"
+                hoverColor="#344ea1"
+                to={buynow}
+              />
+            )}
+            <Modelbutton
               text="Contact Us"
-              className="ProductTabs-Button" 
-              backgroundColor="#344ea1" 
-              hoverColor="#00aeef"
-            />
-             {documentname && (
-            <Modelbutton 
-              text="Download Tech document" 
               className="ProductTabs-Button"
-              backgroundColor="#344ea1" 
+              backgroundColor="#344ea1"
               hoverColor="#00aeef"
-              productName="ProductDocument" 
-              docName={documentname} 
-              title={doctitle} 
             />
-             )}
+            {documentname && (
+              <Modelbutton
+                text="Download Tech document"
+                className="ProductTabs-Button"
+                backgroundColor="#344ea1"
+                hoverColor="#00aeef"
+                productName="ProductDocument"
+                docName={documentname}
+                title={doctitle}
+              />
+            )}
           </div>
         </div>
 
-        <div className="ProductTableData-TableWrapper">
-        <Table
-  responsive
-  bordered
-  className="w-100 product-spec-table"
-  style={{ borderColor: '#344ea1' }}
->
-  <tbody>
-    {tableData.map((row, index) => (
-      <tr key={index}>
-        {row.length === 1 ? (
-          <td colSpan="2" className="table-cell" dangerouslySetInnerHTML={{ __html: row[0] }} />
-        ) : (
-          row.map((cell, i) => (
-            <td
-              key={i}
-              className={`table-cell ${i === 0 ? 'label-cell' : 'value-cell'}`}
-              dangerouslySetInnerHTML={{ __html: cell }}
-            />
-          ))
-        )}
-      </tr>
-    ))}
-  </tbody>
-</Table>
-
+        <div className="ProductTableData-SpecGridWrapper">
+          <div className="ProductTableData-SpecGrid">
+            {tableData.map((row, index) => {
+              const isCertificationsRow =
+                row.length === 2 && row[0].toLowerCase().includes("certifications");
+              return (
+                <div
+                  key={index}
+                  className={`spec-item ${isCertificationsRow ? "full-width-item" : ""}`}
+                >
+                  <div className="spec-label" dangerouslySetInnerHTML={{ __html: row[0] }} />
+                  <div
+                    className={`spec-value ${isCertificationsRow ? "spec-certifications" : ""}`}
+                    dangerouslySetInnerHTML={{ __html: row[1] }}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

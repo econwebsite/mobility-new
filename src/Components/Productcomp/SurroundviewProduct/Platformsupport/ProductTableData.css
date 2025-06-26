@@ -153,49 +153,50 @@ text-align: center;
 }
 }
 
-.ProductTableData-TableWrapper {
+
+.ProductTableData-SpecGridWrapper {
   margin-top: 2rem;
-  overflow: hidden;
-}
-.product-spec-table td.label-cell {
-  width: 30%;
-  font-weight: 500;
-  color: #003873;
 }
 
-.product-spec-table td.value-cell {
-  width: 60%;
-  color: #344ea1;
+.ProductTableData-SpecGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
 }
 
-.table {
-  margin-bottom: 0;
+.spec-item {
+  background-color: #f9fafd;
+  border: 1px solid #dbe5f1;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: box-shadow 0.3s ease;
 }
 
-.table td, .table th {
-  border-color: #344ea1;
-  vertical-align: middle;
+.spec-item:hover {
+  box-shadow: 0 0 10px rgba(0, 56, 115, 0.15);
 }
 
-.table th {
-  background: #003873;
+.spec-label {
   color: #003873;
   font-weight: 600;
-  padding: 1rem;
-  
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-.table td {
-  
-  color: #2d3a5f;
-  padding: 0.7rem;
-  
+.spec-value {
+  color: #344ea1;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-.table tr:nth-child(even) {
-  background: #003873;
+.spec-full {
+  color: #344ea1;
+  font-size: 0.95rem;
+  padding: 0.5rem 0;
 }
-
-.table-cell strong {
-  color: #003873;
+.full-width-item {
+  grid-column: 1 / -1;
 }
