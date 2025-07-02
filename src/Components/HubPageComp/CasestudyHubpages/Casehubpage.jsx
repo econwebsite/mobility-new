@@ -30,8 +30,7 @@ const Casehubpage = () => {
             <AnimatedButton 
               className="casehubpage-read-more1" 
               text="Read more" 
-              backgroundColor="#344ea1" 
-              animationColor="#69ba2f" 
+              backgroundColor="#344ea1"  
               hoverColor="#69ba2f" 
               to="/blogs/choosing-best-dental-intraoral-camera"
             />
@@ -51,7 +50,6 @@ const Casehubpage = () => {
                 className="casehubpage-read-more" 
                 text="Read more" 
                 backgroundColor="#344ea1" 
-                animationColor="#69ba2f" 
                 hoverColor="#69ba2f" 
                 to="/blogs/autofocus-vs-fixed-focus-lenses-for-intraoral-cameras"
               />
@@ -67,7 +65,6 @@ const Casehubpage = () => {
                 className="casehubpage-read-more" 
                 text="Read more" 
                 backgroundColor="#344ea1" 
-                animationColor="#69ba2f" 
                 hoverColor="#69ba2f" 
                 to="/blogs/choosing-the-right-cmos-cameras-for-extraoral-imaging"
               />
@@ -83,7 +80,6 @@ const Casehubpage = () => {
                 className="casehubpage-read-more" 
                 text="Read more" 
                 backgroundColor="#344ea1" 
-                animationColor="#69ba2f" 
                 hoverColor="#69ba2f" 
                 to="/blogs/three-important-parameters-in-intraoral-camera-technology"
               />
@@ -99,7 +95,6 @@ const Casehubpage = () => {
                 className="casehubpage-read-more" 
                 text="Read more" 
                 backgroundColor="#344ea1" 
-                animationColor="#69ba2f" 
                 hoverColor="#69ba2f" 
                 to="/blogs/capturing-dentists-pov-with-dental-loupe-cameras"
               />

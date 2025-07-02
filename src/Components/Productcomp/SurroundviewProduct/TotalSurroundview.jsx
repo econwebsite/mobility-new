@@ -69,25 +69,23 @@ useEffect(() => {
       <title>360&deg; Surround View Cameras for ADAS & Mobility</title>
       <meta name='description' content='Get real-time 360° surround view camera with HDR, high sensitivity, long-range sync & ISP. Perfect for blind spot monitoring, parking assist & ADAS in mobility systems.' />
       </Helmet>
-             <Section id="top">
+             <div id="top">
             <ProductBanner/>
-            <Whatisneed/>
-            <div  id="surroundTab">
-              <div className='Total-Tab-title'>
-                <p>e-con's Cameras for Surround View</p>
-              </div>
+                   <div style={{ minHeight: '100vh' }}> 
+            <Whatisneed/></div>
+            <div  id="surroundTab" >
             <Producttab />
             </div>
-            </Section>
-            <Section>
+            </div>
+            <div>
             <ProductApplications/>
-            </Section>
-            <Section>
+            </div>
+            <div>
             <ProductBlogs/>
-            </Section>
-            <Section>
+            </div>
+            <div>
             <ContactUs/>
-            </Section>
+            </div>
         </div>
     );
 }

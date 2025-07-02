@@ -27,16 +27,27 @@ function IndustriesComp() {
     <div className="industriescomp-container">
       <h4 className="industries-title">Industries</h4>
       <div className="industriescomp-grid">
-        {items.map((item, index) => (
-          <Link to={item.link}>
-          <div key={item.id} className="industriescomp-card" style={{ animationDelay: `${index * 0.1}s` }}>
-            <img src={item.img} alt={item.title} className="industriescomp-image" />
-            <div className="industriescomp-overlay">
-              <h3 className="industriescomp-title">{item.title}</h3>
-            </div>
-          </div>
-          </Link>
-        ))}
+       {items.map((item, index) => (
+  <Link
+    key={item.id || index}
+    to={item.link}
+  >
+    <div
+      className="industriescomp-card"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <img
+        src={item.img}
+        alt={item.title}
+        className="industriescomp-image"
+      />
+      <div className="industriescomp-overlay">
+        <h3 className="industriescomp-title">{item.title}</h3>
+      </div>
+    </div>
+  </Link>
+))}
+
       </div>
     </div>
   );

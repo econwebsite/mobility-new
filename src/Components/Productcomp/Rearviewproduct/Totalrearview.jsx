@@ -17,12 +17,12 @@ const Totalmonitoring = () => {
 
   const isMobile = window.innerWidth <= 768;
 
-const sectionVariants = {
+const divVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
-const Section = ({ children, id }) => (
+const div = ({ children, id }) => (
   isMobile ? (
     <div id={id} style={{ marginBottom: "1px" }}>{children}</div>
   ) : (
@@ -31,7 +31,7 @@ const Section = ({ children, id }) => (
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={sectionVariants}
+        variants={divVariants}
         style={{ marginBottom: "1px",overflow:"hidden" }}
       >
       {children}
@@ -40,7 +40,7 @@ const Section = ({ children, id }) => (
 );
 
   useEffect(() => {
-    const scrollToSection = () => {
+    const scrollTodiv = () => {
       const hash = location.state?.hash || window.location.hash;
       if (hash) {
         const element = document.querySelector(hash);
@@ -60,7 +60,7 @@ const Section = ({ children, id }) => (
       }
     };
     
-    const timeout = setTimeout(scrollToSection, isMobile ? 500 : 300);
+    const timeout = setTimeout(scrollTodiv, isMobile ? 500 : 300);
     return () => clearTimeout(timeout);
   }, [location]);
 
@@ -70,25 +70,23 @@ const Section = ({ children, id }) => (
       <title>Rear View Cameras for ADAS & Mobility</title>
       <meta name='description' content='Industrial-grade rear view cameras with wide-angle visibility and high-resolution imaging for safe reversing, blind spot elimination, and surround view integration.' />
       </Helmet>
-             <Section id="top">
+             <div id="top">
             <ProductBanner/>
             <Whatisneed/>
             <div  id="rearviewTab">
-              <div className='Total-Tab-title'>
-                <p>e-con's Cameras for Rear View</p>
-              </div>
+             
             <Rearviewtab />
             </div>
-            </Section>
-            <Section>
+            </div>
+            <div>
             <DriverApplications/>
-            </Section>
-            <Section>
+            </div>
+            <div>
             <ProductBlog/>
-            </Section>
-            <Section>
+            </div>
+            <div>
             <ContactUs/>
-            </Section>
+            </div>
         </div>
     );
 }

@@ -17,7 +17,7 @@ const Totalforwardfacing = () => {
 
   const isMobile = window.innerWidth <= 768;
 
-const sectionVariants = {
+const divVariants = {
   hidden: {
     opacity: 0,
     y: 30,
@@ -26,7 +26,7 @@ const sectionVariants = {
   },  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const Section = ({ children, id }) => (
+const div = ({ children, id }) => (
   isMobile ? (
     <div id={id} style={{ marginBottom: "1px" }}>{children}</div>
   ) : (
@@ -35,7 +35,7 @@ const Section = ({ children, id }) => (
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      variants={sectionVariants}
+      variants={divVariants}
       style={{ marginBottom: "1px",overflow:"hidden" }}
     >
       {children}
@@ -44,7 +44,7 @@ const Section = ({ children, id }) => (
 );
 
  useEffect(() => {
-   const scrollToSection = () => {
+   const scrollTodiv = () => {
      const hash = location.state?.hash || window.location.hash;
      if (hash) {
        const element = document.querySelector(hash);
@@ -64,7 +64,7 @@ const Section = ({ children, id }) => (
      }
    };
    
-   const timeout = setTimeout(scrollToSection, isMobile ? 500 : 300);
+   const timeout = setTimeout(scrollTodiv, isMobile ? 500 : 300);
    return () => clearTimeout(timeout);
  }, [location]);
 
@@ -74,28 +74,26 @@ const Section = ({ children, id }) => (
       <title>Front View Cameras for ADAS & Mobility</title>
       <meta name='description' content='Explore forward facing cameras with HDR, LFM & high resolution. Designed for ADAS in mobility systems—ideal for lane assist, collision alerts & sign detection.' />
       </Helmet>
-      <Section id="top">
+      <div id="top">
         <ProductBanner />
         <Whatisneed />
         <div  id="forwardTab">
-              <div className='Total-Tab-title'>
-                <p>e-con's Cameras for Forward Facing</p>
-              </div>
+              
           <Forwardtab />
         </div>
-      </Section>
-      <Section>
+      </div>
+      <div>
         <ForwardApplications />
-      </Section>
+      </div>
 
-      <Section>
+      <div>
         <ProductBlog />
-      </Section>
+      </div>
   <ReleatedVideos/>
 
-      <Section>
+      <div>
         <ContactUs />
-      </Section>
+      </div>
     </div>
   );
 };

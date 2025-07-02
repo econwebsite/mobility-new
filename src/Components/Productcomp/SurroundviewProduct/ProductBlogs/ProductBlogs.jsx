@@ -28,7 +28,7 @@ const BlogProductPage = () => {
                 <h2>How do Surround View cameras improve driving and parking safety</h2>
           </Link>
                 <p>Surround-view systems provide 360-degree visibility to eliminate blind spots and improve safety. Get to know how cameras help them reduce the risk of collisions.</p>
-                <AnimationButton text="Read more" backgroundColor="#344ea1" hoverColor="white" animationColor="#69ba2f" to="/blog/how-surround-view-cameras-improve-driving-parking-safety/" className="blogproduct-btn" />
+                <AnimationButton text="Read more" backgroundColor="#344ea1" hoverColor="white"  to="/blog/how-surround-view-cameras-improve-driving-parking-safety/" className="blogproduct-btn" />
               </div>
             </div>
             <div className="blogproduct-column blogproduct-right">
@@ -42,7 +42,7 @@ const BlogProductPage = () => {
                   </div>
                   <div className="blogproduct-card-right">
                     <h6>How Does a Forward-Facing Camera Work, and What Are Its Use Cases in ADAS</h6>
-                    <AnimationButton text="Read more" backgroundColor="#344ea1" hoverColor="white" animationColor="#69ba2f" to="/blog/how-forward-facing-camera-works-in-adas/" className="blogproduct-btn" />
+                    <AnimationButton text="Read more" backgroundColor="#344ea1" hoverColor="white"  to="/blog/how-forward-facing-camera-works-in-adas/" className="blogproduct-btn" />
                   </div>
                 </div>
               </div>
@@ -56,7 +56,7 @@ const BlogProductPage = () => {
                   </div>
                   <div className="blogproduct-card-right">
                     <h6>Why HDR and LED Flicker Mitigation Are Game-Changers for Forward-Facing Cameras in ADAS</h6>
-                    <AnimationButton text="Read more" backgroundColor="#344ea1" hoverColor="white" animationColor="#69ba2f" to="/blog/why-hdr-lfm-matter-forward-facing-cameras-adas/" className="blogproduct-btn" />
+                    <AnimationButton text="Read more" backgroundColor="#344ea1" hoverColor="white"  to="/blog/why-hdr-lfm-matter-forward-facing-cameras-adas/" className="blogproduct-btn" />
                   </div>
                 </div>
               </div>
@@ -69,7 +69,7 @@ const BlogProductPage = () => {
                   </div>
                   <div className="blogproduct-card-right">
                     <h6>How driver monitoring cameras improve driving safety and their key features</h6>
-                    <AnimationButton text="Read more" backgroundColor="#344ea1" hoverColor="white" animationColor="#69ba2f" to="/blog/how-driver-monitoring-cameras-improve-safety-features/" className="blogproduct-btn" />
+                    <AnimationButton text="Read more" backgroundColor="#344ea1" hoverColor="white"  to="/blog/how-driver-monitoring-cameras-improve-safety-features/" className="blogproduct-btn" />
                   </div>
                 </div>
               </div>

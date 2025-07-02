@@ -58,7 +58,7 @@ function ProductTableData({
             <Modelbutton
               text="Download Tech document"
               className="ProductTabs-Button"
-              backgroundColor="#344ea1"
+              backgroundColor="#69ba2f"
               hoverColor="#00aeef"
               productName="ProductDocument"
               docName={documentname}

@@ -102,7 +102,7 @@ const DrivermonBlog = () => {
                                     <Link className="cardTitleLink" to="/blog/why-hdr-lfm-matter-forward-facing-cameras-adas/" style={{ textDecoration: "none" }}>
                                         <h2>Why HDR and LED Flicker Mitigation Are Game-Changers for Forward-Facing Cameras in ADAS</h2></Link>
                                     <p>Advanced driver-assistance systems depend on HDR and LED flicker mitigation features. Learn about the crucial role of forward facing cameras in enhancing ADAS safety.</p>
-                                    <AnimatedButton className="Blogreadmore-1" text="Read more" backgroundColor="#00aeef" animationColor="#69ba2f" hoverColor="#69ba2f" to='/blog/why-hdr-lfm-matter-forward-facing-cameras-adas/' />
+                                    <AnimatedButton className="Blogreadmore-1" text="Read more" backgroundColor="#00aeef"  hoverColor="#69ba2f" to='/blog/why-hdr-lfm-matter-forward-facing-cameras-adas/' />
                                 </div>
                                 <div className="CardBlogs">
                                     <Link className="cardImgLink" to="/blog/how-forward-facing-camera-works-in-adas/" style={{ textDecoration: "none" }}>
@@ -110,7 +110,7 @@ const DrivermonBlog = () => {
                                     <Link className="cardTitleLink" to="/blog/how-forward-facing-camera-works-in-adas/" style={{ textDecoration: "none" }}>
                                         <h2>How Does a Forward-Facing Camera Work, and What Are Its Use Cases in ADAS</h2></Link>
                                     <p>Forward-facing cameras are used in ADAS to improve object detection, lane tracking, etc. Discover the camera features that contribute to safer, smarter driving.</p>
-                                    <AnimatedButton className="Blogreadmore-1" text="Read more" backgroundColor="#00aeef" animationColor="#69ba2f" hoverColor="#69ba2f" to="/blog/how-forward-facing-camera-works-in-adas/"></AnimatedButton>
+                                    <AnimatedButton className="Blogreadmore-1" text="Read more" backgroundColor="#00aeef" hoverColor="#69ba2f" to="/blog/how-forward-facing-camera-works-in-adas/"></AnimatedButton>
                                 </div>
                                 <div className="CardBlogs">
                                     <Link className="cardImgLink" to="/blog/how-surround-view-cameras-improve-driving-parking-safety/" style={{ textDecoration: "none" }}>
@@ -119,7 +119,7 @@ const DrivermonBlog = () => {
                                         <h2>How do Surround View cameras improve driving and parking safety</h2>
                                     </Link>
                                     <p>Surround-view systems provide 360-degree visibility to eliminate blind spots and improve safety. Get to know how cameras help them reduce the risk of collisions.</p>
-                                    <AnimatedButton className="Blogreadmore-1" text="Read more" backgroundColor="#00aeef" animationColor="#69ba2f" hoverColor="#69ba2f" to="/blog/how-surround-view-cameras-improve-driving-parking-safety/"></AnimatedButton>
+                                    <AnimatedButton className="Blogreadmore-1" text="Read more" backgroundColor="#00aeef"  hoverColor="#69ba2f" to="/blog/how-surround-view-cameras-improve-driving-parking-safety/"></AnimatedButton>
                                 </div>
                             </div>
                         </div>

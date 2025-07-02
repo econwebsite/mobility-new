@@ -18,7 +18,7 @@ const Hubcasecard = () => {
               <h2 className="Hubcasecard-titleh2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
             </Link>
             <p className="Hubcasecard-text">Curabitur quis libero non urna commodo finibus non et justo. Phasellus consectetur gravida dui sit amet malesuada.</p>
-            <AnimatedButton className="Hubcasecard-button1" text="Read more" backgroundColor="#344ea1" animationColor="#69ba2f" hoverColor="#69ba2f" to="/blogs/imaging-challenges-dental-loupes-manufacturing"></AnimatedButton>
+            <AnimatedButton className="Hubcasecard-button1" text="Read more" backgroundColor="#344ea1"  hoverColor="#69ba2f" to="/blogs/imaging-challenges-dental-loupes-manufacturing"></AnimatedButton>
           </div>
 
           <div className="Hubcasecard-card">
@@ -29,7 +29,7 @@ const Hubcasecard = () => {
               <h2 className="Hubcasecard-titleh2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
             </Link>
             <p className="Hubcasecard-text">Curabitur quis libero non urna commodo finibus non et justo. Phasellus consectetur gravida dui sit amet malesuada.</p>
-            <AnimatedButton className="Hubcasecard-button1" text="Read more" backgroundColor="#344ea1" animationColor="#69ba2f" hoverColor="#69ba2f" to="/blogs/extraoral-cameras-image-quality-tuning"></AnimatedButton>
+            <AnimatedButton className="Hubcasecard-button1" text="Read more" backgroundColor="#344ea1" hoverColor="#69ba2f" to="/blogs/extraoral-cameras-image-quality-tuning"></AnimatedButton>
           </div>
 
           <div className="Hubcasecard-card">
@@ -40,7 +40,7 @@ const Hubcasecard = () => {
               <h2 className="Hubcasecard-titleh2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
             </Link>
             <p className="Hubcasecard-text">Curabitur quis libero non urna commodo finibus non et justo. Phasellus consectetur gravida dui sit amet malesuada.</p>
-            <AnimatedButton className="Hubcasecard-button1" text="Read more" backgroundColor="#344ea1" animationColor="#69ba2f" hoverColor="#69ba2f" to="/blogs/understanding-extraoral-cameras-dentistry"></AnimatedButton>
+            <AnimatedButton className="Hubcasecard-button1" text="Read more" backgroundColor="#344ea1"  hoverColor="#69ba2f" to="/blogs/understanding-extraoral-cameras-dentistry"></AnimatedButton>
           </div>
         </div>
       </div>

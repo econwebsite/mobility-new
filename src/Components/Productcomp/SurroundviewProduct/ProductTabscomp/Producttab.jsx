@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef  } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import './ProductTab.css';
 import ProductTableData from "../Platformsupport/ProductTableData";
 import Modelbutton from "../../../ButtonComp/Modelbutton";
@@ -42,8 +42,8 @@ const Producttab = () => {
   const [initialLeftTab, setInitialLeftTab] = useState(null);
   const [initialRightTab, setInitialRightTab] = useState(null);
   const location = useLocation();
-const windowSize = useWindowSize();
-const isUserInitiated = useRef(true);
+  const windowSize = useWindowSize();
+  const isUserInitiated = useRef(true);
 
   const images = [
     { id: 1, src: [platform], alt: 'platform support' },
@@ -69,14 +69,14 @@ const isUserInitiated = useRef(true);
             ['Interface ', 'GMSL2&trade;'],
             ['FOV ', '54.04°(H), 42.86°(V), 70.17°(D) '],
             ['Temperature ', '-40°C to 85°C'],
-          ['No of Cameras Supported ', 'upto 8 cameras'],
+            ['No of Cameras Supported ', 'upto 8 cameras'],
             ['ISP ', 'On-board high performance ISP'],
             ['Form factor ', '25 x 25 mm'],
             ['Certifications ', `
   <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
   <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
   <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
-`],  
+`],
           ],
           highlights: [
             "HDR camera module based on Sony® ISX031 sensor incorporating sub-pixel technology",
@@ -103,11 +103,11 @@ const isUserInitiated = useRef(true);
             ['No of Cameras Supported', 'upto 8 cameras'],
             ['ISP', 'On-board high performance ISP'],
             ['Form factor', '25 x 25 mm'],
-                 ['Certifications ', `
+            ['Certifications ', `
   <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
   <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
   <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
-`],  
+`],
           ],
           highlights: [
             'Houses AR0341AT Image Sensor from onsemi&reg;',
@@ -124,8 +124,8 @@ const isUserInitiated = useRef(true);
           doctitle: "Technical documents for STURDeCAM34",
           buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM34_CUOAGX",
         },
-       
-        
+
+
         'STURDeCAM88': {
           tableData: [
             ['Sensor', "OmniVision's&reg; OX08B40"],
@@ -137,11 +137,11 @@ const isUserInitiated = useRef(true);
             ['No of Cameras Supported', 'upto 8 cameras'],
             ['ISP', 'On-board high performance ISP'],
             ['Form factor', '42 x 42 mm'],
-                 ['Certifications ', `
+            ['Certifications ', `
   <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
   <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
   <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
-`],  
+`],
           ],
           highlights: [
             "8MP (4K) HDR camera module based on OX08B40, OmniVision's automotive grade image sensor.",
@@ -180,7 +180,7 @@ const isUserInitiated = useRef(true);
           documentname: "e-con-STURDeCAM84-technical-documents.zip",
           doctitle: "Technical documents for STURDeCAM84",
         },
-         'RouteCAM_CU22': {
+        'RouteCAM_CU22': {
           tableData: [
             ['Sensor', 'Sony&reg; STARVIS™ IMX662'],
             ['Frame Rate', 'Full HD @ 60 fps'],
@@ -203,15 +203,15 @@ const isUserInitiated = useRef(true);
           documentname: "e-con-RouteCAM_CU22_IP67-technical-documents.zip",
           doctitle: "Technical documents for RouteCAM_CU22",
         },
-        
+
       },
-  bgColor: 'white',
+      bgColor: 'white',
       color: '#344ea1',
-      images: [STURDeCAM31,STURDeCAM34,STURDeCAM88,STURDeCAM84,routecam22]
+      images: [STURDeCAM31, STURDeCAM34, STURDeCAM88, STURDeCAM84, routecam22]
     },
     '3MP GMSL2': {
       tabs: ['STURDeCAM31', 'STURDeCAM34'],
-       content: {
+      content: {
         'STURDeCAM31': {
           tableData: [
             ['Sensor ', 'Sony&reg; ISX031'],
@@ -223,11 +223,11 @@ const isUserInitiated = useRef(true);
             ['No of Cameras Supported ', 'upto 8 cameras'],
             ['ISP ', 'On-board high performance ISP'],
             ['Form factor ', '25 x 25 mm'],
-                 ['Certifications ', `
+            ['Certifications ', `
   <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
   <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
   <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
-`],  
+`],
           ],
           highlights: [
             "HDR camera module based on Sony® ISX031 sensor incorporating sub-pixel technology",
@@ -244,7 +244,7 @@ const isUserInitiated = useRef(true);
           buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM31",
         },
 
-       'STURDeCAM34': {
+        'STURDeCAM34': {
           tableData: [
             ['Sensor', 'onsemi&reg; AR0341AT'],
             ['Frame Rate', '3MP @ 60 fps'],
@@ -255,11 +255,11 @@ const isUserInitiated = useRef(true);
             ['No of Cameras Supported', 'upto 8 cameras'],
             ['ISP', 'On-board high performance ISP'],
             ['Form factor', '25 x 25 mm'],
-                 ['Certifications ', `
+            ['Certifications ', `
   <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
   <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
   <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
-`],  
+`],
           ],
           highlights: [
             'Houses AR0341AT Image Sensor from onsemi&reg;',
@@ -276,7 +276,7 @@ const isUserInitiated = useRef(true);
           doctitle: "Technical documents for STURDeCAM34",
           buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM34_CUOAGX",
         },
-       
+
       },
       bgColor: 'white',
       color: '#344ea1',
@@ -297,11 +297,11 @@ const isUserInitiated = useRef(true);
             ['No of Cameras Supported', 'upto 8 cameras'],
             ['ISP', 'On-board high performance ISP'],
             ['Form factor', '42 x 42 mm'],
-                 ['Certifications ', `
+            ['Certifications ', `
   <div style="margin-bottom: 10px;">ISO 16750-3 & ISO 16750-4 (Shock and Vibration)</div>
   <div style="margin-bottom: 10px;">CISPR-25 + ISO 11452-2/4 (Automotive EMC std)</div>
   <div>FCC Part 15 Subpart B/CE (Basic Compliance to sell in the US and Europe)</div>
-`],  
+`],
           ],
           highlights: [
             "8MP (4K) HDR camera module based on OX08B40, OmniVision's automotive grade image sensor.",
@@ -317,7 +317,7 @@ const isUserInitiated = useRef(true);
           doctitle: "Technical documents for STURDeCAM88",
           buynow: "https://www.e-consystems.com/webstore-dst.asp#STURDeCAM88_CUOAGX",
         },
-'STURDeCAM84': {
+        'STURDeCAM84': {
           tableData: [
             ['Sensor', 'onsemi&reg; AR0823AT'],
             ['Frame Rate', '8MP @ 30 fps'],
@@ -349,7 +349,7 @@ const isUserInitiated = useRef(true);
     'POE or GigE': {
       tabs: ['RouteCAM_CU22',],
       content: {
-       'RouteCAM_CU22': {
+        'RouteCAM_CU22': {
           tableData: [
             ['Sensor', 'Sony&reg; STARVIS™ IMX662'],
             ['Frame Rate', 'Full HD @ 60 fps'],
@@ -372,7 +372,7 @@ const isUserInitiated = useRef(true);
           documentname: "e-con-RouteCAM_CU22_IP67-technical-documents.zip",
           doctitle: "Technical documents for RouteCAM_CU22",
         },
-        
+
       },
       bgColor: 'white',
       color: '#344ea1',
@@ -380,11 +380,11 @@ const isUserInitiated = useRef(true);
     }
   };
 
-useEffect(() => {
+  useEffect(() => {
     const hash = window.location.hash?.replace("#", "");
     if (hash) {
       const [rawLeft, right] = hash.split("/");
-      const left = rawLeft?.replace(/-/g, " "); 
+      const left = rawLeft?.replace(/-/g, " ");
 
       if (rightTabs[left]) {
         setSelectedLeftTab(left);
@@ -393,17 +393,16 @@ useEffect(() => {
           setTimeout(() => {
             const element = document.getElementById(right);
             if (element) {
-              // Add offset scrolling here
-              const offset = 100; // Adjust as needed
+              const offset = 100;
               const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
               const offsetPosition = elementPosition - offset;
-              
+
               window.scrollTo({
                 top: offsetPosition,
                 behavior: 'smooth'
               });
             }
-          }, 200); 
+          }, 200);
         } else {
           const defaultRight = rightTabs[left].tabs[0];
           setSelectedRightTab(defaultRight);
@@ -416,11 +415,11 @@ useEffect(() => {
             setTimeout(() => {
               const element = document.getElementById(hash);
               if (element) {
-                // Add offset scrolling here
-                const offset = 100; // Adjust as needed
+
+                const offset = 100;
                 const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
                 const offsetPosition = elementPosition - offset;
-                
+
                 window.scrollTo({
                   top: offsetPosition,
                   behavior: 'smooth'
@@ -435,22 +434,22 @@ useEffect(() => {
   }, []);
 
 
-  
-    useEffect(() => {
-      const leftTab = location.state?.leftTab;
-      const rightTab = location.state?.rightTab;
-  
-      if (leftTab && rightTabs[leftTab]) {
-        setSelectedLeftTab(leftTab);
-        if (rightTab && rightTabs[leftTab].tabs.includes(rightTab)) {
-          setSelectedRightTab(rightTab);
-        } else {
-          setSelectedRightTab(rightTabs[leftTab].tabs[0]);
-        }
+
+  useEffect(() => {
+    const leftTab = location.state?.leftTab;
+    const rightTab = location.state?.rightTab;
+
+    if (leftTab && rightTabs[leftTab]) {
+      setSelectedLeftTab(leftTab);
+      if (rightTab && rightTabs[leftTab].tabs.includes(rightTab)) {
+        setSelectedRightTab(rightTab);
+      } else {
+        setSelectedRightTab(rightTabs[leftTab].tabs[0]);
       }
-    }, [location.state]);
-  
-     useEffect(() => {
+    }
+  }, [location.state]);
+
+  useEffect(() => {
     if (windowSize.width <= 1110 && selectedLeftTab === "All Cameras") {
       const fallbackTab = Object.keys(rightTabs).find(
         (tab) => tab !== "All Cameras" && tab !== "Supported Cameras"
@@ -461,38 +460,39 @@ useEffect(() => {
       }
     }
   }, [windowSize.width, selectedLeftTab]);
-  
-const handleLeftTabClick = (tab) => {
+
+  const handleLeftTabClick = (tab) => {
     if (tab === "Supported Cameras") return;
     const defaultRightTab = rightTabs[tab].tabs[0];
     setSelectedLeftTab(tab);
     setSelectedRightTab(defaultRightTab);
-        window.history.pushState(
-      null, 
-      '', 
+    window.history.pushState(
+      null,
+      '',
       `#${tab.replace(/\s+/g, "-")}/${defaultRightTab}`
     );
   };
 
   const handleRightTabClick = (tab) => {
     setSelectedRightTab(tab);
-        window.history.pushState(
-      null, 
-      '', 
+    window.history.pushState(
+      null,
+      '',
       `#${selectedLeftTab.replace(/\s+/g, "-")}/${tab}`
     );
   };
 
-    const currentContent =
-      rightTabs[selectedLeftTab]?.content?.[selectedRightTab] || null;
-  
-    const currentImage =
-      rightTabs[selectedLeftTab]?.images?.[
-        rightTabs[selectedLeftTab].tabs.indexOf(selectedRightTab)
-      ] || null;
+  const currentContent =
+    rightTabs[selectedLeftTab]?.content?.[selectedRightTab] || null;
+
+  const currentImage =
+    rightTabs[selectedLeftTab]?.images?.[
+    rightTabs[selectedLeftTab].tabs.indexOf(selectedRightTab)
+    ] || null;
 
   return (
     <div className="ProductTabs-Total">
+      <h1>e-con's Cameras for Surround View</h1>
       <div className='mainContainer'>
         <div className="ProductTabs-newcontainpro">
           <div className="ProductTabs-Container">

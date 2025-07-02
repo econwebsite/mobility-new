@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { message, Dropdown, Menu } from 'antd';
-import { RiPhoneFill, RiMailFill } from 'react-icons/ri';
+import { RiPhoneFill, RiMailFill, RiMapPin2Fill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import econlogo from "../../assets/homepage/footerlogo-1.svg";
 import './Footerpage.css';
@@ -94,6 +94,27 @@ const Footerpage = () => {
                 <RiMailFill className="custom-icon" />
                 <a href="mailto:camerasolutions@e-consystems.com" className="Footer-contactLink">camerasolutions@e-consystems.com</a>
               </div>
+              <div className="Footer-contactItem location">
+  <RiMapPin2Fill className="custom-icon" />
+  <div className="Footer-locationDetails">
+    <p>North America (West)</p>
+    <span className="Footer-contactLink">
+      3340 Walnut Avenue, Suite #280,<br />
+      Fremont, CA 94538
+    </span>
+    <p>North America (Central)</p>
+    <span className="Footer-contactLink">
+      11027 Sandistan Manor Ct,<br />
+      St Louis, MO 63146, USA
+    </span>
+    <p>North America (East)</p>
+    <span className="Footer-contactLink">
+      200, Innovative Way, Suite 1380,<br />
+      Nashua, NH 03062, USA
+    </span>
+  </div>
+</div>
+
             </div>
           </div>
 

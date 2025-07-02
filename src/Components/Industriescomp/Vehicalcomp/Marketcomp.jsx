@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./Market.css";
-
 import Marketescamera from "../Industrycam/MarketCameras"
 import agricover from "../../../assets/homepage/Industries/agriculture-cover-img.png"
 import miningcover from "../../../assets/homepage/Industries/mining-cover-img.png"
@@ -181,25 +180,15 @@ const handleMarketChange = (market) => {
   <div className="marketwe-text">
     <h3 className="marketwe-heading">{marketData[selectedMarket].title}</h3>
 
-    <p className="marketwe-description">{marketData[selectedMarket].beforeImage}</p>
+<p className="marketwe-description">{marketData[selectedMarket].beforeImage}</p>
 
-    {/* <div className="marketwe-image-wrapper">
-      <img 
-        src={marketData[selectedMarket].image} 
-        alt={marketData[selectedMarket].title} 
-        className="marketwe-image" 
-      />
-    </div> */}
-    <br></br>
-    <Marketescamera
+<Marketescamera
   singleimg={marketData[selectedMarket]?.singleimg}
   buttons={marketData[selectedMarket]?.buttons || []}
 />
 
-    <br></br>
+<p className="marketwe-description">{marketData[selectedMarket].afterImage}</p>
 
-    <p className="marketwe-description">{marketData[selectedMarket].afterImage}</p>
-    {/* <Releatedcam key={selectedMarket} cameras={marketData[selectedMarket]?.cameras || []} /> */}
   </div>
 
 </div>

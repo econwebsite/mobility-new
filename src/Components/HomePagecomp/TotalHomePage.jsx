@@ -53,12 +53,13 @@ const TotalHomePage = () => {
     const [isContactPage, setIsContactPage] = useState(false);
   
 
-    useEffect(() => {
-      let url = window.location.pathname.replace('/', '');
-      if (url === "mobility/"? "/":"/") {
-        setIsContactPage(true);
-      }
-    }, []);
+useEffect(() => {
+  const path = window.location.pathname;
+  if (path === "/" || path === "/mobility/") {
+    setIsContactPage(true);
+  }
+}, []);
+
   
   return (
     <div style={{ padding: "0px", margin: "0px" }}>

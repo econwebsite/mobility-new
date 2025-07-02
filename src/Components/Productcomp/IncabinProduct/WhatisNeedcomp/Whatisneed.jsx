@@ -1,83 +1,67 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-
-import irillumination from "../../../../assets/Productpage/drivermonitoring/IR-illumination.png";
-import widefield from "../../../../assets/Productpage/drivermonitoring/wide-field-view.png";
-import globalshutter from "../../../../assets/Productpage/drivermonitoring/globalshutter.png";
-import nir from "../../../../assets/Productpage/drivermonitoring/nir-sensivity.png";
-
-
-const cardVariants = {
-  hidden: { opacity: 0, x: 100 },
-  visible: (i) => ({
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: i * 0.5,
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  }),
-};
+import hdr from "../../../../assets/Productpage/surroundview/New folder/What_is_needed-02.jpg"
+import range from "../../../../assets/Productpage/surroundview/New folder/What_is_needed-03.jpg"
+import new1 from "../../../../assets/Productpage/surroundview/New folder/What_is_needed-05.jpg"
+import load from "../../../../assets/Productpage/surroundview/New folder/What_is_needed-04.jpg"
 
 const cardData = [
-  { img: irillumination, title: "IR illumination" },
-  { img: widefield, title: "Wide Field of View" },
-  { img: globalshutter, title: "Global Shutter" },
-  { img: nir, title: "NIR sensitivity" },
+  {
+    title: 'IR illumination',
+    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    image: hdr,
+  },
+  {
+    title: 'Wide Field of View',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    image: range,
+  },
+  {
+    title: 'Global Shutter',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    image:new1,
+  },
+  {
+    title: 'NIR sensitivity',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    image: load,
+  },
+  
 ];
 
 const Whatisneed = () => {
   return (
-    <div className="whatneed-container">
-      <div className="mainContainer">
-        <div className="whatneed-containerparagraph">
-          <p className="whatneed-standparagraphtext">
-          In-cabin monitoring cameras are designed to enhance road safety by tracking driver behavior and alertness. With high frame rate and global shutter performance, along with excellent near-infrared (NIR) capabilities, these industrial-grade cameras are highly effective in detecting signs of drowsiness or distraction. This capability is critical for accident prevention and plays a key role in the functionality of advanced driver-assistance systems (ADAS). The integration of RGB-IR technology enables the cameras to capture clear images in both visible and infrared light without the need for mechanical filters. This feature ensures reliable performance both day and night and contributes to the camera’s extended lifespan.          </p>
+    <div style={{backgroundColor:"#58a9ff"}}>
+    <div className="whatisneed-container">
+      <header className="whatisneed-header">
+        <div>
+          <h1>What is needed?</h1>
         </div>
+      </header>
 
-        <h1 className="whatneed-title">What is needed?</h1>
-        <br />
+      <main>
+        <ul className="whatisneed-cards" style={{ '--numcards': cardData.length }}>
+          {cardData.map((card, index) => (
+           <li
+  className={`whatisneed-card ${index % 2 !== 0 ? 'reverse' : ''}`}
+  id={`card-${index + 1}`}
+  key={index}
+  style={{ '--index': index + 1 }}
+>
 
-        <div className="whatneed-grid">
-  {cardData.slice(0, 4).map((item, index) => (
-    <motion.div
-      className="whatneed-box"
-      key={index}
-      custom={index}
-      variants={cardVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-    >
-      <div className="alignment-whatneedbox">
-        <img src={item.img} alt={item.title} className="whatneed-image" />
-        <p>{item.title}</p>
-      </div>
-    </motion.div>
-  ))}
-</div>
-
-<div className="whatneed-grid" style={{ justifyContent: 'center' }}>
-  {cardData.slice(4).map((item, index) => (
-    <motion.div
-      className="whatneed-box"
-      key={index + 4}
-      custom={index + 4}
-      variants={cardVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-    >
-      <div className="alignment-whatneedbox">
-        <img src={item.img} alt={item.title} className="whatneed-image" />
-        <p>{item.title}</p>
-      </div>
-    </motion.div>
-  ))}
-</div>
-
-      </div>
+              <div className="whatisneed-cardcontent">
+                <div>
+                  <h2>{card.title}</h2>
+                  <p>{card.description}</p>
+                </div>
+                <figure>
+                  <img src={card.image} alt={card.title} />
+                </figure>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </main>
+    </div>
     </div>
   );
 };

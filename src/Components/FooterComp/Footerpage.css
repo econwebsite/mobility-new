@@ -113,6 +113,25 @@
 .Footer-contactLink:hover {
   color: #00f9ff;
 }
+.Footer-contactItem.location {
+  align-items: flex-start;
+}
+.Footer-locationDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.Footer-locationDetails p {
+  margin: 0;
+  font-weight: 400;
+  color: #00f9ff;
+}
+
+.Footer-locationDetails span {
+  line-height: 1.5;
+}
+
 
 .Footer-newsletterForm {
   margin-bottom: 2rem;
