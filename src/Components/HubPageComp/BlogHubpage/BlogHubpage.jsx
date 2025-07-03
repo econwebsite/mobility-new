@@ -44,7 +44,7 @@ const BlogHubpage = () => {
            
 
               
-              <AnimatedButton className="BlogHubPage-card-button" text="Read more" backgroundColor="#003873"  hoverColor="#69ba2f" to="/blog/how-forward-facing-camera-works-in-adas/" />
+              <AnimatedButton className="BlogHubPage-card-button" text="Read more" backgroundColor="#344ea1"  hoverColor="#69ba2f" to="/blog/how-forward-facing-camera-works-in-adas/" />
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@ const BlogHubpage = () => {
   <ReadOutlined  className="BlogHubPage-calendar-icon" />
   <span>April 19, 2025</span>
 </div></div>
-              <AnimatedButton className="BlogHubPage-card-button" text="Read more" backgroundColor="#003873"  hoverColor="#69ba2f" to="/blog/why-hdr-lfm-matter-forward-facing-cameras-adas/" />
+              <AnimatedButton className="BlogHubPage-card-button" text="Read more" backgroundColor="#344ea1"  hoverColor="#69ba2f" to="/blog/why-hdr-lfm-matter-forward-facing-cameras-adas/" />
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@ const BlogHubpage = () => {
   <ReadOutlined  className="BlogHubPage-calendar-icon" />
   <span>April 21, 2025</span>
 </div> </div>
-              <AnimatedButton className="BlogHubPage-card-button" text="Read more" backgroundColor="#003873"  hoverColor="#69ba2f" to="/blog/how-driver-monitoring-cameras-improve-safety-features/" />
+              <AnimatedButton className="BlogHubPage-card-button" text="Read more" backgroundColor="#344ea1"  hoverColor="#69ba2f" to="/blog/how-driver-monitoring-cameras-improve-safety-features/" />
             </div>
           </div>
         </div>
@@ -116,7 +116,7 @@ const BlogHubpage = () => {
   <ReadOutlined  className="BlogHubPage-calendar-icon" />
   <span>April 24, 2025</span>
 </div> </div>
-              <AnimatedButton className="BlogHubPage-card-button" text="Read more" backgroundColor="#003873"  hoverColor="#69ba2f" to="/blog/how-surround-view-cameras-improve-driving-parking-safety/" />
+              <AnimatedButton className="BlogHubPage-card-button" text="Read more" backgroundColor="#344ea1"  hoverColor="#69ba2f" to="/blog/how-surround-view-cameras-improve-driving-parking-safety/" />
             </div>
           </div>
         </div>

@@ -1,8 +1,7 @@
 import React from 'react';
-import hdr from "../../../../assets/Productpage/surroundview/New folder/What_is_needed-02.jpg"
-import range from "../../../../assets/Productpage/surroundview/New folder/What_is_needed-03.jpg"
-import new1 from "../../../../assets/Productpage/surroundview/New folder/What_is_needed-05.jpg"
-import load from "../../../../assets/Productpage/surroundview/New folder/What_is_needed-04.jpg"
+import hdr from "../../../../assets/Productpage/what-needed/high-dynamic-range.jpg"
+import diverselens from "../../../../assets/Productpage/what-needed/customizable-lens.jpg"
+import ip69k from "../../../../assets/Productpage/what-needed/ip69k.jpg"
 
 const cardData = [
   {
@@ -13,12 +12,12 @@ const cardData = [
   {
     title: 'Diverse lens options',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    image: range,
+    image: diverselens,
   },
   {
     title: 'IP69K-rated Enclosure',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    image:new1,
+    image:ip69k,
   },
   
 ];
