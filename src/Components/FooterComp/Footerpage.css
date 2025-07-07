@@ -110,9 +110,9 @@
   transition: color 0.3s ease;
 }
 
-.Footer-contactLink:hover {
+/* .Footer-contactLink:hover {
   color: #00f9ff;
-}
+} */
 .Footer-contactItem.location {
   align-items: flex-start;
 }

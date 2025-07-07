@@ -1,5 +1,6 @@
 .whatisneed-container {
   width: 90vw;
+  max-width: 1400px;
   margin: 0 auto;
   padding-bottom: 5vh;
   background: #58a9ff;
@@ -139,5 +140,11 @@ ul.whatisneed-cards {
   .whatisneed-card {
     position: static;
     padding-top: 0;
+  }
+}
+
+@media (min-width: 1540px) {
+  .whatisneed-card {
+    padding-top: 2em;
   }
 }
