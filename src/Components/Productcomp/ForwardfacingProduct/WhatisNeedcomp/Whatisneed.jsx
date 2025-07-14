@@ -39,7 +39,7 @@ const Whatisneed = () => {
     <div className="whatisneed-container">
       <header className="whatisneed-header">
         <div>
-          <h1>What Our Cameras Offer?</h1>
+          <h1>What is needed?</h1>
         </div>
       </header>
 
