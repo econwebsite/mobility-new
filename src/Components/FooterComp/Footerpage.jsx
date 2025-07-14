@@ -95,25 +95,25 @@ const Footerpage = () => {
                 <a href="mailto:camerasolutions@e-consystems.com" className="Footer-contactLink">camerasolutions@e-consystems.com</a>
               </div>
               <div className="Footer-contactItem location">
-  <RiMapPin2Fill className="custom-icon" />
-  <div className="Footer-locationDetails">
-    <p>North America (West)</p>
-    <span className="Footer-contactLink">
-      3340 Walnut Avenue, Suite #280,<br />
-      Fremont, CA 94538
-    </span>
-    <p>North America (Central)</p>
-    <span className="Footer-contactLink">
-      11027 Sandistan Manor Ct,<br />
-      St Louis, MO 63146, USA
-    </span>
-    <p>North America (East)</p>
-    <span className="Footer-contactLink">
-      200, Innovative Way, Suite 1380,<br />
-      Nashua, NH 03062, USA
-    </span>
-  </div>
-</div>
+                <RiMapPin2Fill className="custom-icon" />
+                <div className="Footer-locationDetails">
+                  <p>North America (West)</p>
+                  <span className="Footer-contactLink">
+                    3340 Walnut Avenue, Suite #280,<br />
+                    Fremont, CA 94538
+                  </span>
+                  <p>North America (Central)</p>
+                  <span className="Footer-contactLink">
+                    11027 Sandistan Manor Ct,<br />
+                    St Louis, MO 63146, USA
+                  </span>
+                  <p>North America (East)</p>
+                  <span className="Footer-contactLink">
+                    200, Innovative Way, Suite 1380,<br />
+                    Nashua, NH 03062, USA
+                  </span>
+                </div>
+              </div>
 
             </div>
           </div>

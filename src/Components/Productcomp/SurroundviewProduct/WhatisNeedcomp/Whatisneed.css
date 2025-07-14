@@ -43,7 +43,7 @@ ul.whatisneed-cards {
   background: #f1f2f2;
   border-radius: 2rem;
   padding: 2rem;
-  box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(42, 40, 40, 0.1);
   gap: 1.5rem;
   align-items: center;
   overflow: hidden;

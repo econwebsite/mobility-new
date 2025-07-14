@@ -7,22 +7,22 @@ import nirsensitivity from "../../../../assets/Productpage/what-needed/nir-sensi
 const cardData = [
   {
     title: 'IR illumination',
-    description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    description:"In low-light or nighttime driving, the IR illumination feature lets our cameras capture clear facial and eye movement data without distracting the driver. It enables continuous monitoring during late shifts, tunnel driving, or dimly lit cabins. This supports alertness detection, distraction warnings, and biometric tracking with consistent image quality.",
     image: hdr,
   },
   {
-    title: 'Wide Field of View',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    title: 'Wide Field of View (FOV)',
+    description: 'Driver monitoring requires full cabin visibility, from facial cues to hand movements. Our cameras feature a wide FoV to track the driver’s posture, gaze, and behavior without blind spots. So, mobility systems can interpret engagement levels and trigger safety responses in real time, across passenger vehicles, trucks, or autonomous platforms.',
     image: widefield,
   },
   {
-    title: 'Global Shutter',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    title: 'Global shutter',
+    description: 'In-cabin vibrations or rapid head movements can blur images with rolling shutter sensors. Our cameras use global shutter technology to capture frames without distortion, even during sudden motion. It is critical for high-speed monitoring of micro-expressions, eye blinks, or gestures, delivering clean input for in-cabin analytics and behavioral AI models.',
     image:globalshutter,
   },
   {
-    title: 'NIR sensitivity',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    title: 'Near-Infrared (NIR) sensitivity',
+    description: 'Our cameras are tuned for high NIR sensitivity, enabling them to operate alongside IR illumination with minimal noise and high contrast. They provide crisp imaging in dark or enclosed environments. It helps mobility systems identify fatigue, distraction, or unauthorized access, regardless of ambient light inside the vehicle.',
     image: nirsensitivity,
   },
   
@@ -34,7 +34,7 @@ const Whatisneed = () => {
     <div className="whatisneed-container">
       <header className="whatisneed-header">
         <div>
-          <h1>What is needed?</h1>
+          <h1>What Our Cameras Offer?</h1>
         </div>
       </header>
 

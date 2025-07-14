@@ -1,5 +1,5 @@
 .Footer-container {
-  background: linear-gradient(145deg, #1a428a, #1e50a0);
+background: linear-gradient(145deg, #1a428a, #1e50a0);
   color: #ffffff;
   padding: 2em;
   font-family: 'Poppins', sans-serif;
@@ -97,7 +97,7 @@
 }
 
 .custom-icon {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #00f9ff !important;
   fill: #00f9ff !important;
 }
@@ -119,17 +119,19 @@
 .Footer-locationDetails {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.2rem;
 }
 
 .Footer-locationDetails p {
   margin: 0;
   font-weight: 400;
+  font-size: 1em;
   color: #00f9ff;
 }
 
 .Footer-locationDetails span {
   line-height: 1.5;
+  font-size: 0.9em
 }
 
 
