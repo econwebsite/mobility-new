@@ -270,7 +270,9 @@
   .ProductTabs-ContentBox p:before {
     content: "- ";
   }
-  
+  .ProductTabs-Total h1{
+    font-size: 1.6em;
+  }
 
 }
 

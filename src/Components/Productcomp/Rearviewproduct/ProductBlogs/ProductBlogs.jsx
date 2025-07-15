@@ -1,5 +1,4 @@
 import React from 'react';
-import './Productblog.css'; 
 import surroundview from "../../../../assets/Productpage/rearview/surroundview-left-blog.jpg";
 import forwardfacing from "../../../../assets/Productpage/rearview/forwardfacing-blog.jpg";
 import hdrblog from "../../../../assets/Productpage/rearview/hdr-led-blog.jpg";

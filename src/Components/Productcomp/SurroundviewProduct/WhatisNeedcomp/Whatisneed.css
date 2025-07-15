@@ -3,7 +3,7 @@
   max-width: 1400px;
   margin: 0 auto;
   padding-bottom: 5vh;
-  background: #58a9ff;
+  background: #5F77B1;
 }
 
 .whatisneed-header {
@@ -43,7 +43,10 @@ ul.whatisneed-cards {
   background: #f1f2f2;
   border-radius: 2rem;
   padding: 2rem;
-  box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(42, 40, 40, 0.1);
+box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.05),
+    0 8px 16px rgba(0, 0, 0, 0.08),
+    0 12px 24px rgba(100, 100, 100, 0.05);
   gap: 1.5rem;
   align-items: center;
   overflow: hidden;
@@ -55,26 +58,29 @@ ul.whatisneed-cards {
   gap: 1.5rem;
   align-items: center;
 }
-
 .whatisneed-cardcontent > div {
   grid-area: text;
-  width: 100%;
-  max-width: 90%;
-  text-align: left;
-  display: grid;
-  gap: 1rem;
-}
-.whatisneed-cardcontent h2 {
-  background-color: #58a9ff;
-  color: white;
-  font-weight: 600;
-  font-size: 1.8rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  display: inline-block;
-  box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  max-width: 100%;
+  background: transparent;
 }
 
+.whatisneed-cardcontent h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #00aeef;
+  position: relative;
+  margin: 0;
+  display: inline-block;
+  padding-bottom: 6px;
+  line-height: 1;
+  width: fit-content;
+  box-decoration-break: clone;
+}
 
 .whatisneed-cardcontent p {
   color: #344ea1;
@@ -95,6 +101,8 @@ ul.whatisneed-cards {
   height: auto;
   object-fit: cover;
   border-radius: 0.4em;
+    box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(42, 40, 40, 0.1);
+
 }
 
 @media (max-width: 900px) {

@@ -6,12 +6,12 @@ import customizablelens from "../../../../assets/Productpage/what-needed/customi
 
 const cardData = [
   {
-    title: 'High Dynamic Range (HDR)',
+    title: 'High dynamic range (HDR)',
     description:"HDR empowers mobility systems to deliver high-quality visuals in difficult lighting contrasts like exiting a tunnel or passing streetlights at night. By balancing overexposed and underexposed areas, our cameras keep lane markings, road signs, and moving objects visible across varied conditions, day or night. This leads to better object detection and safer navigation.",
     image: hdr,
   },
   {
-    title: 'LED Flicker Mitigation (LFM)',
+    title: 'LED flicker mitigation (LFM)',
     description: 'LED lighting creates flickering artifacts in camera feeds, especially from traffic signals or digital signs. Our cameras use LFM to match the sensor timing with LED pulse rates, preventing inconsistent image capture. It guarantees reliable detection in LED-lit settings like tunnels, intersections, and nighttime streets for continuous, stable monitoring.',
     image: lfm,
   },
@@ -21,13 +21,13 @@ const cardData = [
     image:highresolution,
   },
   {
-    title: 'Multiple lens option',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    title: 'Option for multiple lenses',
+    description: 'Different mobility tasks call for different visual priorities. In addition to customizable lenses, our cameras offer multiple pre-qualified lens options to match varying detection ranges, FoV needs, and platform setups. This streamlines integration without compromising performance.',
     image: highresolution,
   },
    {
-    title: 'Rugged Enclosure',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    title: 'Rugged enclosure',
+    description: 'Forward-mounted cameras face constant exposure to dust, debris, and weather. Our rugged enclosures protect internal electronics against shocks and the elements, maintaining image integrity across terrain and usage extremes.',
     image: highresolution,
   },
    
@@ -35,7 +35,7 @@ const cardData = [
 
 const Whatisneed = () => {
   return (
-    <div style={{backgroundColor:"#58a9ff"}}>
+    <div style={{backgroundColor:"#5F77B1"}}>
     <div className="whatisneed-container">
       <header className="whatisneed-header">
         <div>

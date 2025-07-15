@@ -11,7 +11,7 @@ const cardData = [
     image: hdr,
   },
   {
-    title: 'Wide Field of View (FOV)',
+    title: 'Wide field of view (FOV)',
     description: 'Driver monitoring requires full cabin visibility, from facial cues to hand movements. Our cameras feature a wide FoV to track the driver’s posture, gaze, and behavior without blind spots. So, mobility systems can interpret engagement levels and trigger safety responses in real time, across passenger vehicles, trucks, or autonomous platforms.',
     image: widefield,
   },
@@ -30,7 +30,7 @@ const cardData = [
 
 const Whatisneed = () => {
   return (
-    <div style={{backgroundColor:"#58a9ff"}}>
+    <div style={{backgroundColor:"#5F77B1"}}>
     <div className="whatisneed-container">
       <header className="whatisneed-header">
         <div>

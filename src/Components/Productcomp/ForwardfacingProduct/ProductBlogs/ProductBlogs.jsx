@@ -1,5 +1,4 @@
 import React from 'react';
-import './Productblog.css'; 
 import forwardfacing from "../../../../assets/Productpage/forwardfacing/forwardfacing-left-blog.jpg";
 import drivermonitoring from "../../../../assets/Productpage/forwardfacing/drivermonitoring-blog.jpg";
 import hdrblog from "../../../../assets/Productpage/forwardfacing/hdr-led-blog.jpg";

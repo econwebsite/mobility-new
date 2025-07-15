@@ -10,7 +10,7 @@ import hightperfisp from "../../../../assets/Productpage/what-needed/high-perfor
 
 const cardData = [
   {
-    title: 'High Dynamic Range (HDR)',
+    title: 'High dynamic range (HDR)',
     description:"HDR helps capture balanced images even in scenes with extreme contrast between bright and dark areas. It reduces motion blur and distortion by adjusting exposure across the frame. For mobility systems, our cameras provide clear visuals during quick lighting transitions like entering tunnels or facing oncoming headlights.",
     image: hdr,
   },
@@ -36,14 +36,14 @@ const cardData = [
   },
   {
     title: 'IP69K enclosure',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    description: 'Surround-view cameras tend to be mounted low or exposed. Our IP69K-rated housing withstands pressure washes, rain, mud, and off-road debris, keeping the system reliable in harsh, all-weather conditions',
     image: hightperfisp,
   },
 ];
 
 const Whatisneed = () => {
   return (
-    <div style={{backgroundColor:"#58a9ff"}}>
+    <div style={{backgroundColor:"#5F77B1"}}>
     <div className="whatisneed-container">
       <header className="whatisneed-header">
         <div>
