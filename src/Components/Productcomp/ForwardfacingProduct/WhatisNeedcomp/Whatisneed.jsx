@@ -2,7 +2,12 @@ import React from 'react';
 import hdr from "../../../../assets/Productpage/what-needed/high-dynamic-range.jpg"
 import lfm from "../../../../assets/Productpage/what-needed/lfm.jpg"
 import highresolution from "../../../../assets/Productpage/what-needed/high-resolution.jpg"
-import customizablelens from "../../../../assets/Productpage/what-needed/customizable-lens.jpg"
+import mutiplelense from "../../../../assets/Productpage/what-needed/multiple-lens.jpg"
+import ip69k from "../../../../assets/Productpage/what-needed/ip69k.jpg"
+import hdricon from "../../../../assets/Productpage/what-needed/hdr-icon.png"
+import lfmicon from "../../../../assets/Productpage/what-needed/lfm-icon.png"
+import highresicon from "../../../../assets/Productpage/what-needed/high-resolution-icon.png"
+import longrangeicon from "../../../../assets/Productpage/what-needed/long-range-interface-icon.png"
 
 const cardData = [
   {
@@ -23,18 +28,29 @@ const cardData = [
   {
     title: 'Option for multiple lenses',
     description: 'Different mobility tasks call for different visual priorities. In addition to customizable lenses, our cameras offer multiple pre-qualified lens options to match varying detection ranges, FoV needs, and platform setups. This streamlines integration without compromising performance.',
-    image: highresolution,
+    image: mutiplelense,
   },
    {
     title: 'Rugged enclosure',
     description: 'Forward-mounted cameras face constant exposure to dust, debris, and weather. Our rugged enclosures protect internal electronics against shocks and the elements, maintaining image integrity across terrain and usage extremes.',
-    image: highresolution,
+    image: ip69k,
   },
+  {
+    type: 'features',
+    title: 'What is needed?',
+    features: [
+      { icon: hdricon, label: 'High dynamic range (HDR)' },
+      { icon: lfmicon, label: 'LED flicker mitigation (LFM)' },
+      { icon:highresicon, label: 'High resolution' },
+      { icon: longrangeicon, label: 'Option for multiple lenses' },
+      { icon: longrangeicon, label: 'Rugged enclosure' },
+    ]
+  }
    
 ];
 
 const Whatisneed = () => {
-  return (
+   return (
     <div style={{backgroundColor:"#5F77B1"}}>
     <div className="whatisneed-container">
       <header className="whatisneed-header">
@@ -46,22 +62,36 @@ const Whatisneed = () => {
       <main>
         <ul className="whatisneed-cards" style={{ '--numcards': cardData.length }}>
           {cardData.map((card, index) => (
-           <li
-  className={`whatisneed-card ${index % 2 !== 0 ? 'reverse' : ''}`}
-  id={`card-${index + 1}`}
-  key={index}
-  style={{ '--index': index + 1 }}
->
-
-              <div className="whatisneed-cardcontent">
-                <div>
-                  <h2>{card.title}</h2>
-                  <p>{card.description}</p>
+            <li
+              className={`whatisneed-card ${index % 2 !== 0 ? 'reverse' : ''} ${card.type === 'features' ? 'features-card' : ''}`}
+              key={index}
+              style={{ '--index': index + 1 }}
+            >
+              {card.type === 'features' ? (
+                <div className="whatisneed-cardcontent">
+                  <div className="features-content">
+                    <h2>{card.title}</h2>
+                    <div className="feature-items">
+                      {card.features.map((feature, idx) => (
+                        <div className="feature-item" key={idx}>
+                          <img src={feature.icon} className={feature.icon}></img>
+                          <span>{feature.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <figure>
-                  <img src={card.image} alt={card.title} />
-                </figure>
-              </div>
+              ) : (
+                <div className="whatisneed-cardcontent">
+                  <div>
+                    <h2>{card.title}</h2>
+                    <p>{card.description}</p>
+                  </div>
+                  <figure>
+                    <img src={card.image} alt={card.title} />
+                  </figure>
+                </div>
+              )}
             </li>
           ))}
         </ul>

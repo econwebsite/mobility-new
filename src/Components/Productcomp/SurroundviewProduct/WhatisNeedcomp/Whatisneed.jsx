@@ -3,10 +3,13 @@ import './Whatisneed.css';
 import hdr from "../../../../assets/Productpage/what-needed/high-dynamic-range.jpg"
 import highsensitivity from "../../../../assets/Productpage/what-needed/high-sensitivity.jpg"
 import longrange from "../../../../assets/Productpage/what-needed/long-range-interface.jpg"
-import Compatibility from "../../../../assets/Productpage/what-needed/compatibility-platforms.jpg"
 import synchronization from "../../../../assets/Productpage/what-needed/camera-synchronization.jpg"
 import hightperfisp from "../../../../assets/Productpage/what-needed/high-performance-isp.jpg"
-
+import ip69k from "../../../../assets/Productpage/what-needed/ip69k.jpg"
+import hdricon from "../../../../assets/Productpage/what-needed/hdr-icon.png"
+import highsensicon from "../../../../assets/Productpage/what-needed/high-sensitivity-icon.png"
+import longrangeicon from "../../../../assets/Productpage/what-needed/long-range-interface-icon.png"
+import highisp from "../../../../assets/Productpage/what-needed/high-performance-isp-icon.png"
 
 const cardData = [
   {
@@ -37,8 +40,21 @@ const cardData = [
   {
     title: 'IP69K enclosure',
     description: 'Surround-view cameras tend to be mounted low or exposed. Our IP69K-rated housing withstands pressure washes, rain, mud, and off-road debris, keeping the system reliable in harsh, all-weather conditions',
-    image: hightperfisp,
+    image: ip69k,
   },
+  {
+  type: 'features',
+  title: 'What is needed?',
+  features: [
+    { icon: hdricon, label: 'High dynamic range (HDR)' },
+    { icon: highsensicon, label: 'High sensitivity' },
+    { icon:longrangeicon, label: 'Long range interface' },
+    { icon: longrangeicon, label: 'Multi-camera synchronization' },
+    { icon: highisp, label: 'High performance ISP' },
+    { icon: longrangeicon, label: 'IP69K enclosure' }
+  ]
+}
+
 ];
 
 const Whatisneed = () => {
@@ -54,22 +70,36 @@ const Whatisneed = () => {
       <main>
         <ul className="whatisneed-cards" style={{ '--numcards': cardData.length }}>
           {cardData.map((card, index) => (
-           <li
-  className={`whatisneed-card ${index % 2 !== 0 ? 'reverse' : ''}`}
-  id={`card-${index + 1}`}
-  key={index}
-  style={{ '--index': index + 1 }}
->
-
-              <div className="whatisneed-cardcontent">
-                <div>
-                  <h2>{card.title}</h2>
-                  <p>{card.description}</p>
+            <li
+              className={`whatisneed-card ${index % 2 !== 0 ? 'reverse' : ''} ${card.type === 'features' ? 'features-card' : ''}`}
+              key={index}
+              style={{ '--index': index + 1 }}
+            >
+              {card.type === 'features' ? (
+                <div className="whatisneed-cardcontent">
+                  <div className="features-content">
+                    <h2>{card.title}</h2>
+                    <div className="feature-items">
+                      {card.features.map((feature, idx) => (
+                        <div className="feature-item" key={idx}>
+                          <img src={feature.icon} className={feature.icon}></img>
+                          <span>{feature.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <figure>
-                  <img src={card.image} alt={card.title} />
-                </figure>
-              </div>
+              ) : (
+                <div className="whatisneed-cardcontent">
+                  <div>
+                    <h2>{card.title}</h2>
+                    <p>{card.description}</p>
+                  </div>
+                  <figure>
+                    <img src={card.image} alt={card.title} />
+                  </figure>
+                </div>
+              )}
             </li>
           ))}
         </ul>

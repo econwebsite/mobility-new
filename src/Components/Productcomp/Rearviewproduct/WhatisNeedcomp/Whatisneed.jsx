@@ -1,7 +1,13 @@
 import React from 'react';
 import hdr from "../../../../assets/Productpage/what-needed/high-dynamic-range.jpg"
-import diverselens from "../../../../assets/Productpage/what-needed/customizable-lens.jpg"
+import fov from "../../../../assets/Productpage/what-needed/wide-field-view.jpg"
+import highsensitivity from "../../../../assets/Productpage/what-needed/high-sensitivity.jpg"
 import ip69k from "../../../../assets/Productpage/what-needed/ip69k.jpg"
+
+import hdricon from "../../../../assets/Productpage/what-needed/hdr-icon.png"
+import fovicon from "../../../../assets/Productpage/what-needed/fov-icon.png"
+import highsensicon from "../../../../assets/Productpage/what-needed/high-sensitivity-icon.png"
+import longrangeicon from "../../../../assets/Productpage/what-needed/long-range-interface-icon.png"
 
 const cardData = [
   {
@@ -12,23 +18,32 @@ const cardData = [
    {
     title: 'Wider field of view (FoV)',
     description: 'Rear visibility demands broader coverage to detect hazards, blind spots, or moving objects across wide angles. Our cameras support wide FoV lenses that enhance spatial awareness during parking, reversing, and docking maneuvers.',
-    image: hdr,
+    image: fov,
   },
   {
     title: 'High sensitivity',
     description: 'Low-light environments like warehouses, shaded alleys, or nighttime loading zones require reliable image capture. Our high-sensitivity cameras pick up more light with less noise, delivering sharper rear visuals even under minimal illumination.',
-    image: hdr,
+    image: highsensitivity,
   },
   {
     title: 'IP69K-rated enclosure',
     description: 'Rear-mounted cameras are exposed to water, dust, mud, and pressure washdowns. Our cameras come housed in IP69K-rated enclosures that withstand harsh outdoor conditions. It ensures superior performance through rain, snow, high-pressure cleaning, and off-road grime. Rear-view functionality is kept intact across industrial, commercial, and all-weather mobility operations.',
     image:ip69k,
   },
-  
+  {
+    type: 'features',
+    title: 'What is needed?',
+    features: [
+      { icon: hdricon, label: 'High dynamic range (HDR)' },
+      { icon: fovicon, label: 'Wider field of view (FoV)' },
+      { icon:highsensicon, label: 'High sensitivity' },
+      { icon: longrangeicon, label: 'IP69K-rated enclosure' },
+    ]
+  }
 ];
 
 const Whatisneed = () => {
-  return (
+   return (
     <div style={{backgroundColor:"#5F77B1"}}>
     <div className="whatisneed-container">
       <header className="whatisneed-header">
@@ -40,22 +55,36 @@ const Whatisneed = () => {
       <main>
         <ul className="whatisneed-cards" style={{ '--numcards': cardData.length }}>
           {cardData.map((card, index) => (
-           <li
-  className={`whatisneed-card ${index % 2 !== 0 ? 'reverse' : ''}`}
-  id={`card-${index + 1}`}
-  key={index}
-  style={{ '--index': index + 1 }}
->
-
-              <div className="whatisneed-cardcontent">
-                <div>
-                  <h2>{card.title}</h2>
-                  <p>{card.description}</p>
+            <li
+              className={`whatisneed-card ${index % 2 !== 0 ? 'reverse' : ''} ${card.type === 'features' ? 'features-card' : ''}`}
+              key={index}
+              style={{ '--index': index + 1 }}
+            >
+              {card.type === 'features' ? (
+                <div className="whatisneed-cardcontent">
+                  <div className="features-content">
+                    <h2>{card.title}</h2>
+                    <div className="feature-items">
+                      {card.features.map((feature, idx) => (
+                        <div className="feature-item" key={idx}>
+                          <img src={feature.icon} className={feature.icon}></img>
+                          <span>{feature.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <figure>
-                  <img src={card.image} alt={card.title} />
-                </figure>
-              </div>
+              ) : (
+                <div className="whatisneed-cardcontent">
+                  <div>
+                    <h2>{card.title}</h2>
+                    <p>{card.description}</p>
+                  </div>
+                  <figure>
+                    <img src={card.image} alt={card.title} />
+                  </figure>
+                </div>
+              )}
             </li>
           ))}
         </ul>

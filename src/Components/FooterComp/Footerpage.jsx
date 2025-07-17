@@ -94,7 +94,7 @@ const Footerpage = () => {
                 <RiMailFill className="custom-icon" />
                 <a href="mailto:camerasolutions@e-consystems.com" className="Footer-contactLink">camerasolutions@e-consystems.com</a>
               </div>
-              <div className="Footer-contactItem location">
+              {/* <div className="Footer-contactItem location">
                 <RiMapPin2Fill className="custom-icon" />
                 <div className="Footer-locationDetails">
                   <p>North America (West)</p>
@@ -113,7 +113,7 @@ const Footerpage = () => {
                     Nashua, NH 03062, USA
                   </span>
                 </div>
-              </div>
+              </div> */}
 
             </div>
           </div>

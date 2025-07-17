@@ -12,7 +12,7 @@ import Totalincabin from "./Components/Productcomp/IncabinProduct/Totalmonitorin
 import Totalrearview from "./Components/Productcomp/Rearviewproduct/Totalrearview"
 import ScrollToTop from "./Components/ScrollToTop"
 import BlogHubpage from './Components/HubPageComp/BlogHubpage/BlogHubpage';
-import ContactUs from './Components/HomePagecomp/Homecontactus/ContactUs';
+import Totalcontact from './Components/HomePagecomp/Homecontactus/Totalcontact';
 import HdrLedBlog from "./Components/FutureBlog/HdrLedBlog"
 import DrivermonBlog from "./Components/FutureBlog/DrivermonBlog"
 import ForwardBlog from "./Components/FutureBlog/ForwardBlog"
@@ -47,7 +47,7 @@ const App = () => {
         <Route path="/forward-facing-cameras" element={<Totalforwardfacing/>} />
         <Route path="/driver-monitoring-cameras" element={<Totalincabin/>} />
         <Route path="/rear-view-cameras" element={<Totalrearview/>} />
-        <Route path="/contact-us" element={<ContactUs/>} />
+        <Route path="/contact-us" element={<Totalcontact/>} />
         <Route path="/blog" element={<BlogHubpage/>} />
         <Route path="/blog/why-hdr-lfm-matter-forward-facing-cameras-adas/" element={<HdrLedBlog/>} />
         <Route path="/blog/how-driver-monitoring-cameras-improve-safety-features/" element={<DrivermonBlog/>} />
