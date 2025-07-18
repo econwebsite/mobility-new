@@ -7,7 +7,8 @@ import ip69k from "../../../../assets/Productpage/what-needed/ip69k.jpg"
 import hdricon from "../../../../assets/Productpage/what-needed/hdr-icon.png"
 import lfmicon from "../../../../assets/Productpage/what-needed/lfm-icon.png"
 import highresicon from "../../../../assets/Productpage/what-needed/high-resolution-icon.png"
-import longrangeicon from "../../../../assets/Productpage/what-needed/long-range-interface-icon.png"
+import ip69icon from "../../../../assets/Productpage/what-needed/ip69-icon.png"
+import multiplelenseicon from "../../../../assets/Productpage/what-needed/multiple-lense-icon.png"
 
 const cardData = [
   {
@@ -42,8 +43,8 @@ const cardData = [
       { icon: hdricon, label: 'High dynamic range (HDR)' },
       { icon: lfmicon, label: 'LED flicker mitigation (LFM)' },
       { icon:highresicon, label: 'High resolution' },
-      { icon: longrangeicon, label: 'Option for multiple lenses' },
-      { icon: longrangeicon, label: 'Rugged enclosure' },
+      { icon: multiplelenseicon, label: 'Option for multiple lenses' },
+      { icon: ip69icon, label: 'Rugged enclosure' },
     ]
   }
    

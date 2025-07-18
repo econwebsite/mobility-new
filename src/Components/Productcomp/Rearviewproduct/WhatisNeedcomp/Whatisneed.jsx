@@ -8,6 +8,7 @@ import hdricon from "../../../../assets/Productpage/what-needed/hdr-icon.png"
 import fovicon from "../../../../assets/Productpage/what-needed/fov-icon.png"
 import highsensicon from "../../../../assets/Productpage/what-needed/high-sensitivity-icon.png"
 import longrangeicon from "../../../../assets/Productpage/what-needed/long-range-interface-icon.png"
+import ip69icon from "../../../../assets/Productpage/what-needed/ip69-icon.png"
 
 const cardData = [
   {
@@ -37,7 +38,7 @@ const cardData = [
       { icon: hdricon, label: 'High dynamic range (HDR)' },
       { icon: fovicon, label: 'Wider field of view (FoV)' },
       { icon:highsensicon, label: 'High sensitivity' },
-      { icon: longrangeicon, label: 'IP69K-rated enclosure' },
+      { icon: ip69icon, label: 'IP69K-rated enclosure' },
     ]
   }
 ];

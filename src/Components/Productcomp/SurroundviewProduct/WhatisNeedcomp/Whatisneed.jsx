@@ -10,6 +10,8 @@ import hdricon from "../../../../assets/Productpage/what-needed/hdr-icon.png"
 import highsensicon from "../../../../assets/Productpage/what-needed/high-sensitivity-icon.png"
 import longrangeicon from "../../../../assets/Productpage/what-needed/long-range-interface-icon.png"
 import highisp from "../../../../assets/Productpage/what-needed/high-performance-isp-icon.png"
+import multisync from "../../../../assets/Productpage/what-needed/multi-camera-sync-icon.png"
+import ip69icon from "../../../../assets/Productpage/what-needed/ip69-icon.png"
 
 const cardData = [
   {
@@ -49,9 +51,9 @@ const cardData = [
     { icon: hdricon, label: 'High dynamic range (HDR)' },
     { icon: highsensicon, label: 'High sensitivity' },
     { icon:longrangeicon, label: 'Long range interface' },
-    { icon: longrangeicon, label: 'Multi-camera synchronization' },
+    { icon: multisync, label: 'Multi-camera synchronization' },
     { icon: highisp, label: 'High performance ISP' },
-    { icon: longrangeicon, label: 'IP69K enclosure' }
+    { icon: ip69icon, label: 'IP69K enclosure' }
   ]
 }
 
