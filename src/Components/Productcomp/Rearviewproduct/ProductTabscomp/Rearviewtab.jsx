@@ -31,15 +31,11 @@ const useWindowSize = () => {
   return windowSize;
 };
 
-
-
 const Rearview = () => {
 const [selectedLeftTab, setSelectedLeftTab] = useState('All Cameras');
   const [selectedRightTab, setSelectedRightTab] = useState('STURDeCAM31');
-  const [initialLeftTab, setInitialLeftTab] = useState(null);
-  const [initialRightTab, setInitialRightTab] = useState(null);
   const location = useLocation();
-const windowSize = useWindowSize();
+  const windowSize = useWindowSize();
 
   const images = [
     { id: 1, src: [platform], alt: 'platform support' },
@@ -52,6 +48,7 @@ const windowSize = useWindowSize();
 
   const rightTabs = {
     'Supported Cameras': {
+      tabs:[],
       bgColor: 'transparent',
       color: '#344ea1',
       images: [],
@@ -259,7 +256,7 @@ const windowSize = useWindowSize();
   };
 
 
-useEffect(() => {
+  useEffect(() => {
     const hash = window.location.hash?.replace("#", "");
     if (hash) {
       const [rawLeft, right] = hash.split("/");
@@ -272,8 +269,7 @@ useEffect(() => {
           setTimeout(() => {
             const element = document.getElementById(right);
             if (element) {
-              // Add offset scrolling here
-              const offset = 100; // Adjust as needed
+              const offset = 100;
               const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
               const offsetPosition = elementPosition - offset;
               
@@ -295,8 +291,7 @@ useEffect(() => {
             setTimeout(() => {
               const element = document.getElementById(hash);
               if (element) {
-                // Add offset scrolling here
-                const offset = 100; // Adjust as needed
+                const offset = 100;
                 const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
                 const offsetPosition = elementPosition - offset;
                 
@@ -313,23 +308,21 @@ useEffect(() => {
     }
   }, []);
 
-
+  useEffect(() => {
+    const leftTab = location.state?.leftTab;
+    const rightTab = location.state?.rightTab;
   
-    useEffect(() => {
-      const leftTab = location.state?.leftTab;
-      const rightTab = location.state?.rightTab;
-  
-      if (leftTab && rightTabs[leftTab]) {
-        setSelectedLeftTab(leftTab);
-        if (rightTab && rightTabs[leftTab].tabs.includes(rightTab)) {
-          setSelectedRightTab(rightTab);
-        } else {
-          setSelectedRightTab(rightTabs[leftTab].tabs[0]);
-        }
+    if (leftTab && rightTabs[leftTab]) {
+      setSelectedLeftTab(leftTab);
+      if (rightTab && rightTabs[leftTab].tabs.includes(rightTab)) {
+        setSelectedRightTab(rightTab);
+      } else {
+        setSelectedRightTab(rightTabs[leftTab].tabs[0]);
       }
-    }, [location.state]);
+    }
+  }, [location.state]);
   
-     useEffect(() => {
+  useEffect(() => {
     if (windowSize.width <= 1110 && selectedLeftTab === "All Cameras") {
       const fallbackTab = Object.keys(rightTabs).find(
         (tab) => tab !== "All Cameras" && tab !== "Supported Cameras"
@@ -341,12 +334,12 @@ useEffect(() => {
     }
   }, [windowSize.width, selectedLeftTab]);
   
-const handleLeftTabClick = (tab) => {
+  const handleLeftTabClick = (tab) => {
     if (tab === "Supported Cameras") return;
     const defaultRightTab = rightTabs[tab].tabs[0];
     setSelectedLeftTab(tab);
     setSelectedRightTab(defaultRightTab);
-        window.history.pushState(
+    window.history.pushState(
       null, 
       '', 
       `#${tab.replace(/\s+/g, "-")}/${defaultRightTab}`
@@ -355,20 +348,20 @@ const handleLeftTabClick = (tab) => {
 
   const handleRightTabClick = (tab) => {
     setSelectedRightTab(tab);
-        window.history.pushState(
+    window.history.pushState(
       null, 
       '', 
       `#${selectedLeftTab.replace(/\s+/g, "-")}/${tab}`
     );
   };
 
-    const currentContent =
-      rightTabs[selectedLeftTab]?.content?.[selectedRightTab] || null;
+  const currentContent =
+    rightTabs[selectedLeftTab]?.content?.[selectedRightTab] || null;
   
-    const currentImage =
-      rightTabs[selectedLeftTab]?.images?.[
-        rightTabs[selectedLeftTab].tabs.indexOf(selectedRightTab)
-      ] || null;
+  const currentImage =
+    rightTabs[selectedLeftTab]?.images?.[
+      rightTabs[selectedLeftTab].tabs.indexOf(selectedRightTab)
+    ] || null;
 
 
   return (

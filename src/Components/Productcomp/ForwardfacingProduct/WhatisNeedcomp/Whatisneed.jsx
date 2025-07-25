@@ -4,11 +4,6 @@ import lfm from "../../../../assets/Productpage/what-needed/lfm.jpg"
 import highresolution from "../../../../assets/Productpage/what-needed/high-resolution.jpg"
 import mutiplelense from "../../../../assets/Productpage/what-needed/multiple-lens.jpg"
 import ip69k from "../../../../assets/Productpage/what-needed/ip69k.jpg"
-import hdricon from "../../../../assets/Productpage/what-needed/hdr-icon.png"
-import lfmicon from "../../../../assets/Productpage/what-needed/lfm-icon.png"
-import highresicon from "../../../../assets/Productpage/what-needed/high-resolution-icon.png"
-import ip69icon from "../../../../assets/Productpage/what-needed/ip69-icon.png"
-import multiplelenseicon from "../../../../assets/Productpage/what-needed/multiple-lense-icon.png"
 
 const cardData = [
   {
@@ -40,11 +35,11 @@ const cardData = [
     type: 'features',
     title: 'What is needed?',
     features: [
-      { icon: hdricon, label: 'High dynamic range (HDR)' },
-      { icon: lfmicon, label: 'LED flicker mitigation (LFM)' },
-      { icon:highresicon, label: 'High resolution' },
-      { icon: multiplelenseicon, label: 'Option for multiple lenses' },
-      { icon: ip69icon, label: 'Rugged enclosure' },
+      { image: hdr, label: 'High dynamic range (HDR)' },
+      { image: lfm, label: 'LED flicker mitigation (LFM)' },
+      { image:highresolution, label: 'High resolution' },
+      { image: mutiplelense, label: 'Option for multiple lenses' },
+      { image: ip69k, label: 'Rugged enclosure' },
     ]
   }
    
@@ -53,51 +48,57 @@ const cardData = [
 const Whatisneed = () => {
    return (
     <div style={{backgroundColor:"#5F77B1"}}>
-    <div className="whatisneed-container">
-      <header className="whatisneed-header">
-        <div>
-          <h1>What is needed?</h1>
-        </div>
-      </header>
+      <div className="whatisneed-container">
+        <header className="whatisneed-header">
+          <div>
+            <h1>What is needed?</h1>
+          </div>
+        </header>
 
-      <main>
-        <ul className="whatisneed-cards" style={{ '--numcards': cardData.length }}>
-          {cardData.map((card, index) => (
-            <li
-              className={`whatisneed-card ${index % 2 !== 0 ? 'reverse' : ''} ${card.type === 'features' ? 'features-card' : ''}`}
-              key={index}
-              style={{ '--index': index + 1 }}
-            >
-              {card.type === 'features' ? (
-                <div className="whatisneed-cardcontent">
-                  <div className="features-content">
-                    <h2>{card.title}</h2>
-                    <div className="feature-items">
-                      {card.features.map((feature, idx) => (
-                        <div className="feature-item" key={idx}>
-                          <img src={feature.icon} className={feature.icon}></img>
-                          <span>{feature.label}</span>
-                        </div>
-                      ))}
+        <main>
+          <ul className="whatisneed-cards" style={{ '--numcards': cardData.length }}>
+            {cardData.map((card, index) => (
+              <li
+                className={`whatisneed-card ${index % 2 !== 0 ? 'reverse' : ''} ${card.type === 'features' ? 'features-card' : ''}`}
+                key={index}
+                style={{ '--index': index + 1 }}
+              >
+                {card.type === 'features' ? (
+                  <div className="whatisneed-cardcontent">
+                    <div className="features-content">
+                      <h2>{card.title}</h2>
+                      <div className="feature-items">
+                        {card.features.map((feature, idx) => (
+                          <div className="feature-item" key={idx}>
+                            <div className="icon-wrapper">
+                              <img 
+                                src={feature.image} 
+                                alt={feature.label} 
+                                className="feature-icon"
+                              />
+                            </div>
+                            <span>{feature.label}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ) : (
-                <div className="whatisneed-cardcontent">
-                  <div>
-                    <h2>{card.title}</h2>
-                    <p>{card.description}</p>
+                ) : (
+                  <div className="whatisneed-cardcontent">
+                    <div>
+                      <h2>{card.title}</h2>
+                      <p>{card.description}</p>
+                    </div>
+                    <figure>
+                      <img src={card.image} alt={card.title} />
+                    </figure>
                   </div>
-                  <figure>
-                    <img src={card.image} alt={card.title} />
-                  </figure>
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
-      </main>
-    </div>
+                )}
+              </li>
+            ))}
+          </ul>
+        </main>
+      </div>
     </div>
   );
 };
