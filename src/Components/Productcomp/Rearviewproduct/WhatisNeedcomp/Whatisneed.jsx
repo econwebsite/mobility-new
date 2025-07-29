@@ -21,7 +21,7 @@ const cardData = [
     image: highsensitivity,
   },
   {
-    title: 'IP69K-rated enclosure',
+    title: 'Rugged enclosure',
     description: 'Rear-mounted cameras are exposed to water, dust, mud, and pressure washdowns. Our cameras come housed in IP69K-rated enclosures that withstand harsh outdoor conditions. It ensures superior performance through rain, snow, high-pressure cleaning, and off-road grime. Rear-view functionality is kept intact across industrial, commercial, and all-weather mobility operations.',
     image:ip69k,
   },
@@ -32,7 +32,7 @@ const cardData = [
       { image: hdr, label: 'High dynamic range (HDR)' },
       { image: fov, label: 'Wider field of view (FoV)' },
       { image:highsensitivity, label: 'High sensitivity' },
-      { image: ip69k, label: 'IP69K-rated enclosure' },
+      { image: ip69k, label: 'Rugged enclosure' },
     ]
   }
 ];

@@ -35,7 +35,7 @@ const cardData = [
     image: hightperfisp,
   },
   {
-    title: 'IP69K enclosure',
+    title: 'Rugged enclosure',
     description: 'Surround-view cameras tend to be mounted low or exposed. Our IP69K-rated housing withstands pressure washes, rain, mud, and off-road debris, keeping the system reliable in harsh, all-weather conditions',
     image: ip69k,
   },
@@ -48,7 +48,7 @@ const cardData = [
     { image:longrange, label: 'Long range interface' },
     { image: synchronization, label: 'Multi-camera synchronization' },
     { image: hightperfisp, label: 'High performance ISP' },
-    { image: ip69k, label: 'IP69K enclosure' }
+    { image: ip69k, label: 'Rugged enclosure' }
   ]
 }
 ];
