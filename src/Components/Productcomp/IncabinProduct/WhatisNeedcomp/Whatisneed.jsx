@@ -1,5 +1,5 @@
 import React from 'react';
-import widefield from "../../../../assets/Productpage/what-needed/wide-field-view.jpg"
+import incabinfov from "../../../../assets/Productpage/what-needed/incabin-fov.jpg"
 import globalshutter from "../../../../assets/Productpage/what-needed/global-shutter.jpg"
 import nirsensitivity from "../../../../assets/Productpage/what-needed/nir-sensitivity.jpg"
 
@@ -9,7 +9,7 @@ const cardData = [
   {
     title: 'Wide field of view (FOV)',
     description: 'Driver monitoring requires full cabin visibility, from facial cues to hand movements. Our cameras feature a wide FoV to track the driver’s posture, gaze, and behavior without blind spots. So, mobility systems can interpret engagement levels and trigger safety responses in real time, across passenger vehicles, trucks, or autonomous platforms.',
-    image: widefield,
+    image: incabinfov,
   },
   {
     title: 'Global shutter',
@@ -25,7 +25,7 @@ const cardData = [
     type: 'features',
     title: 'What is needed?',
     features: [
-      { image: widefield, label: 'Wide field of view (FOV)' },
+      { image: incabinfov, label: 'Wide field of view (FOV)' },
       { image:globalshutter, label: 'Global shutter' },
       { image: nirsensitivity, label: 'Near-Infrared (NIR) sensitivity' },
     ]
