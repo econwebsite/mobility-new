@@ -62,7 +62,8 @@ const Whatisneed = () => {
                               <img 
                                 src={feature.image} 
                                 alt={feature.label} 
-                                className="feature-icon"
+                                
+                                className="feature-icon1"
                               />
                             </div>
                             <span>{feature.label}</span>

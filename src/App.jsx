@@ -32,7 +32,7 @@ const App = () => {
   return (
 
           <BrowserRouter 
-          // basename="/mobility"
+          basename="/mobility"
           >
                     <HelmetProvider>
           
